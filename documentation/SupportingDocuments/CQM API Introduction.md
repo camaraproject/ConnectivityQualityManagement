@@ -22,27 +22,31 @@ This document explains the purpose and differences of these tools, without prese
 ## 2. Introduction — Why Connectivity Quality Management Matters
 Mobile connectivity is today mostly consumed as **best-effort connectivity**. This means that the network tries to provide the best possible performance at any given moment, but the actual experience may vary depending on many factors, such as network deployment, coverage conditions, terrain, indoor or outdoor location, mobility, and current network usage.
 
-For many digital services, best-effort connectivity is sufficient. Users of many standard applications like messaging, browsing, background synchronisation can normally tolerate variable throughput, latency or radio conditions.
+For many digital services, best-effort connectivity is sufficient. Users of many standard applications like messaging, browsing, background synchronisation can normally tolerate variable throughput, latency or varying radio conditions.
 
 Other services, however, may need a more predictable connectivity performance under specific conditions. A live video application may need stable uplink performance during a contribution window. A point-of-sale terminal may need reliable connectivity during the opening hours of a temporary store. A media production team may need several devices to operate in the same venue. An enterprise may need a specific connectivity behaviour for a limited period or within a defined location.
 
 Connectivity Quality Management (CQM) addresses these needs by exposing API-based tools that allow application providers to discover, request, configure, reserve or manage connectivity quality in a standardised way.
 
-The key concept is not that the API consumer controls the mobile network for its application directly. It does not. The API consumer works with external-facing abstractions exposed by the operator, such as QoS profiles, QoS sessions, bookings, service areas, device assignments and dedicated connectivity environments.
+The key concept is, that API consumers and application developers do not need to have detailed understanding of mobile network realizations. API consumers work with external-facing abstractions of network capabilities exposed by the operator, such as QoS profiles, QoS sessions, bookings, service areas, device assignments and dedicated connectivity environments.
 
-In simple terms, CQM helps API consumers understand and request **well-defined connectivity performance** when ordinary best-effort behaviour is not enough for a specific service, moment, location or group of devices.
+In simple terms, CQM helps API consumers understand and request **well-defined connectivity quality** when ordinary best-effort behaviour is not enough for a specific service, moment, location or group of devices.
 ## 3. CQM Concepts in Plain Language
-Before looking at each API, it is useful to understand a small set of shared CQM concepts.
-| Concept | Plain-language meaning | Why it matters in CQM |
+Before looking at each API, it is useful to understand a small set of shared CQM concepts, **from an API Consumer perspective**.
+| Concept | Plain-language meaning | Why it matters |
 |---|---|---|
-| Connectivity performance described by a QoS profile | A QoS profile describes offered connectivity performance characteristics, such as throughput, latency, priority or other network treatment parameters. | It provides the common reference used by CQM APIs when an API consumer wants to request, assign, reserve or discover well-defined connectivity performance.|
-| On-Demand QoS session | The application of a QoS profile to all applications of a device or, where supported, to a specific application flow, usually for a defined duration. | It explains the `quality-on-demand` model: requesting a specific QoS treatment when it is needed. |
-| Provisioning QoS Session | A longer-lived way of establishing or maintaining QoS behaviour for a device, service or subscription. | It explains `qos-provisioning`: QoS behaviour is not only requested temporarily on demand, but may also be configured more persistently. |
-| Booking | A planned reservation of connectivity performance for a future time window and, where applicable, a service area. | It explains `qos-booking` and related reservation-based APIs. |
-| Service area | The geographic area where the requested or reserved connectivity performance is expected to apply. | It is central to booking and dedicated connectivity scenarios, while keeping operator-internal topology hidden. |
-| Device assignment | The act of linking one or more devices to a reservation or reserved connectivity environment. | It explains why `qos-booking-and-assignment` and `dedicated-network-accesses` are relevant when devices must be assigned, replaced or managed over time. |
-| Network profile |  A Dedicated Networks construct that describes a richer or multi-dimensional connectivity offering, potentially including multiple QoS profiles, aggregated capacity, device limits and related conditions.| |
-| Discovery of capabilities| The concept of discovery allows API consumer to retrieve information about offered capabilities and usable combinations | The API consumer only needs to know abstracted information in an understandable format | 
+| Connectivity Quality | Quality of the connectivity, characterized by parameters such as throughput, latency, priority or other network treatment parameters. | API consumers need better than best-effort connectivity quality, depending on the usage scenario and its context. |
+| Connection | Devices connection to the network with certain connectivity quality, e.g. best-effort or better. Each connection has an IP address on the device. | It explains the underlying foundations of Connectivity Quality concepts. | 
+| Default connection | When the device connects to the network, it gets a default connection. The quality of the default connection is defined by the device subscription. | Provides connectivity with default (aka non-prioritized) connectivity quality. | 
+| Prioritized Connection | A device connection where all App Flows (as default) are prioritized according to the assigned connectivity quality. The device gets the priorized connection, when the device is connected and the prioritization is active. | Provides connectivity with prioritized connectivity quality. |
+| QoS profile |  Is a representation of characteristics of the Connectivity Quality. | Concept presented by the API to the Application Developer. Provided by the `qos-profiles` API. |
+| QoS On-Demand Session | Period of time, when your App-Flow(s) gets prioritization on an existing connection, established on-demand. Filter information is provided to identify the App Flow packets. A QoS Session can be used in a default or a prioritized connection. | It explains the `quality-on-demand` model: requesting a specific QoS treatment when it is needed. |
+| QoS Provisioning Session | Period of time, when a device has a Prioritized Connection established in a semi-permanent fashion. | It explains `qos-provisioning`: QoS behaviour is not only requested short-term on demand, but may also be configured more persistently. |
+| Connectivity Booking | A reservation of Connectivity Quality for a future time, a place, and for a number of devices. | It allows an API consumer to rely of Connectivity Quality availability, when reservation got accepted. It explains `qos-booking` and related reservation-based APIs. |
+| Service area | The place (geographic area) where certain Connectivity Quality is supported by the network. | It is central describing supported network capabilites, including booking and dedicated connectivity scenarios, while keeping operator-internal topology hidden. |
+| Device assignment | The act of linking a device to a QoS Provisioning Session or a Connectivity Booking. After the assignment, the device can establish a Prioritized Connection with the actual required quality. | Used in `qos-provisioning`. It explains why `qos-booking-and-assignment` and `dedicated-network-accesses` are relevant when devices must be assigned, replaced or managed over time. |
+| Network profile | Is a representation of advanced characteristics of the Connectivity Quality, potentially including multiple QoS profiles, aggregated capacity, device limits and related conditions.| Concept presented by the API to the Application Developer. |
+| Discovery of capabilities| Allows API consumer to retrieve information about supported network connectivity capabilities and optionally usable combinations in terms of time and place. | The API consumer only needs to know abstracted information in an understandable format. | 
 
 
 
