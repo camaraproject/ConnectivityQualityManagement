@@ -328,7 +328,18 @@ The main relationships are:
 - `qos-booking-and-assignment` adds multi-device assignment behaviour to the reservation model.
 - `dedicated-network` and `dedicated-network-accesses` allows for a richer reserved environment pattern, especially when multiple QoS profiles or deeper preparation are needed.
 
-This matrix is intended to explain portfolio roles. It is **not** a strict API selection guide and should not be read as a guarantee of operator support.
+| API | Category | Timing | Service area | Device model | QoS / profile model |
+| --- | --- | --- | --- | --- | --- |
+| `qos-profiles` | Discovery / support | n/a | n/a | n/a | Catalogue of QoS profiles |
+| `dedicated-network-profiles` | Discovery / support | n/a | n/a | n/a | Catalogue of network profiles |
+| `quality-on-demand` | On-demand | Immediate, session duration | Not the primary dimension | Single device or flow | One QoS profile per session |
+| `qos-provisioning` | Longer-lived assignment | Persistent until changed | Not the primary dimension | Device, service or subscription | One QoS profile assignment |
+| `qos-booking` | Reservation-based | Future time window | Defined service area | One device per booking | One QoS profile per booking |
+| `qos-booking-and-assignment` | Reservation-based | Future time window | Defined service area | Multiple devices via assignment | One QoS profile per reservation |
+| `dedicated-network` | Reservation-based (Dedicated Networks) | Reserved environment lifecycle | Defined service area | Multiple devices via accesses | Potentially multiple QoS profiles via a network profile |
+| `dedicated-network-accesses` | Reservation-based (Dedicated Networks) | Aligned with the reserved environment | Inherited from the reserved environment | Device-level access management | Inherited from the reserved environment |
+
+This matrix is intended to make portfolio roles visible. It is **not** a strict API selection guide and does not guarantee CSP support for any specific combination.
 
 ---
 
