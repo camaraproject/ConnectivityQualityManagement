@@ -20,7 +20,8 @@ The CQM portfolio can be summarised as follows:
 - `dedicated-network` and `dedicated-network-accesses` represent a more advanced connectivity environment, specifically when involving multiple QoS profiles and deeper operator-side preparation.
 
 From an API consumer perspective, the CQM portfolio should be understood as a set of API tools for different connectivity-quality needs. The relevant tool depends on what the application and its usage needs to achieve: discovering available QoS profiles, requesting well-defined connectivity performance immediately, applying a longer-lived QoS assignment, reserving connectivity performance for a future time and service area, assigning several devices to a reservation, or using a richer reserved connectivity environment with multiple QoS profiles.
-This document explains the purpose and differences of these tools, without presenting them as a mandatory implementation sequence or as a universal decision tree. Actual API availability and supported capabilities may vary by CSP and market.
+From an API consumer perspective, the CQM portfolio is best understood as a set of API tools for different connectivity-quality needs: discovering available capabilities, requesting well-defined connectivity performance immediately, applying a longer-lived QoS assignment, reserving connectivity performance for a future time and service area, managing device assignment, or using a reserved connectivity environment that may expose multiple QoS profiles.
+This document explains the purpose and differences of those tools. It is not a normative specification, not a CSP implementation roadmap, and not a strict API selection guide. Actual API availability and supported capabilities vary by CSP and market, and API consumers should always check what their provider supports.
 
 ## 2. Introduction — Why Connectivity Quality Management Matters
 
