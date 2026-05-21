@@ -82,7 +82,16 @@ The same logic can also be understood through adjacent examples such as a festiv
 | Apply connectivity treatment more persistently | Longer-lived QoS assignment, mainly `qos-provisioning` | The ASP or service provider may need a QoS behaviour to remain associated with a device, service or subscription until changed. |
 | Reserve connectivity performance for a future time and service area | Reservation-based connectivity management, mainly `qos-booking` | The ASP needs to know in advance whether the requested QoS profile can be reserved for a given time window and location. |
 | Manage several devices under a reservation | Reservation plus device assignment, mainly `qos-booking-and-assignment` | The ASP may need to reserve connectivity first and assign or re-assign devices later, especially when the final device list is not known at booking time. |
-| Use several QoS profiles within a reserved connectivity environment | Dedicated connectivity environment, mainly `dedicated-network` with `dedicated-network-accesses` and `dedicated-network-profiles` where applicable | The ASP may need multiple QoS profiles for different devices, traffic types or production roles within the same broader connectivity environment. |
+| Possible need around the live event | What the API consumer is trying to do | CQM tool category |
+| --- | --- | --- |
+| Find out which QoS profiles or network profiles the CSP exposes | Discovery of capabilities before any request | Discovery / support APIs |
+| Make a single device or flow go live now with defined uplink performance | Get a time-bounded QoS treatment immediately | On-demand connectivity management |
+| Keep a defined QoS behaviour associated with a device, service or subscription beyond a short session | Apply a longer-lived QoS assignment | Longer-lived QoS assignment |
+| Secure defined connectivity performance in advance for a known future window and venue area | Reserve connectivity quality ahead of time | Reservation-based connectivity management |
+| Reserve connectivity for the event and later assign or change the devices that will use it | Combine reservation with device assignment | Reservation-based connectivity management |
+| Operate several devices and traffic types in the same venue under one reserved environment that may expose multiple QoS profiles | Use a reserved connectivity environment | Reservation-based connectivity management (Dedicated Networks family) |
+
+The same logic can be transposed to adjacent contexts such as a festival, a pop-up store, temporary point-of-sale terminals or short-term enterprise connectivity at a site. The journey is illustrative: it shows the main dimensions (timing, geography, devices, profile model) that distinguish the CQM tools. It does **not** imply that every scenario uses every API or that the APIs must be invoked together or in sequence.
 
 ## 5. Portfolio Grouping
 
