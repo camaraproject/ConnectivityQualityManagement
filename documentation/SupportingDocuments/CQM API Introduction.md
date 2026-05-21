@@ -157,7 +157,7 @@ CAMARA specification availability and CSP availability are not the same thing. A
 
 ## 6. API Deep Dives
 
-This section explains each API at product and concept level. It intentionally avoids endpoint-by-endpoint or schema-by-schema detail.
+Each API is explained with the same compact structure: the need it addresses, what it controls or exposes, the API consumer takeaway, and what it should not be confused with. Endpoint-level and schema-level detail is intentionally out of scope.
 
 ### 6.1 `quality-on-demand` — Immediate QoS sessions
 
