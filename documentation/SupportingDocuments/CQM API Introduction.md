@@ -408,6 +408,8 @@ This document should be anchored in:
 - use-case driven CQM comparison material, especially event, media production, pop-up store and data-boost scenarios;
 - the SIM Swap / Device Swap / Tenure / Number Recycling explanatory whitepaper as inspiration for communication style and structure.
 
-Internal CQM consolidation notes may be used as preparation material, but should not be exposed as visible external content unless the document is explicitly marked as internal.
+- the published CAMARA specifications for the in-scope CQM APIs;
+- public CAMARA material related to CQM;
+- use-case-driven CQM explanatory material, especially event, media production, pop-up store and data-boost scenarios.
 
 ## Appendix (e.g. change log)
