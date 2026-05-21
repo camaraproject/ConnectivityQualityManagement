@@ -364,7 +364,14 @@ In short:
 - `qos-provisioning` is the longer-lived assignment pattern.
 - `qos-booking` is the simple planned reservation pattern.
 - `qos-booking-and-assignment` is the multi-device assignment pattern.
-- `dedicated-network` is the advanced dedicated-connectivity pattern.
+The CQM portfolio is best read as a set of API tools for different connectivity-quality needs. The main dimensions that distinguish them are:
+
+- whether the need is immediate, persistent or planned for a future window;
+- whether a service area is part of the request;
+- whether one device or several devices are involved, and whether device assignment must be managed over time;
+- whether one QoS profile is enough, or the scenario benefits from a reserved environment that may expose multiple QoS profiles and related conditions.
+
+Discovery / support APIs help the API consumer see what is available. On-demand and longer-lived QoS tools apply a QoS profile to a device, service or flow. Reservation-based tools commit connectivity quality in advance, with the Dedicated Networks family extending this to reserved connectivity environments with device access management.
 
 ### 8.2 Guardrails for external readers
 
