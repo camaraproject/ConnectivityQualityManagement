@@ -12,12 +12,12 @@ In CAMARA, these connectivity characteristics are typically described through **
 
 The CQM portfolio can be summarised as follows:
 
-- `qos-profiles` helps API consumers discover or reference the QoS profiles made available by the operator. The usage of this API for resolving the connectivity characteristics is optional.
-- `quality-on-demand` enables an application to request an immediate, time-bounded QoS session.
-- `qos-provisioning` supports longer-lived QoS assignment to a device, service or subscription.
-- `qos-booking` introduces planned QoS: a reservation for a defined future time window and service area.
-- `qos-booking-and-assignment` extends the booking idea to scenarios where several devices may need to be assigned or re-assigned to a reservation.
-- `dedicated-network` and `dedicated-network-accesses` represent a more advanced connectivity environment, specifically when involving multiple QoS profiles and deeper operator-side preparation.
+- `qos-profiles` API helps API consumers discover or reference the QoS profiles made available by the operator. The usage of this API for resolving the connectivity characteristics is optional.
+- `quality-on-demand` API enables an application to request an immediate, time-bounded QoS session.
+- `qos-provisioning` API supports longer-lived QoS assignment to a device, service or subscription.
+- `qos-booking` API introduces planned QoS: a reservation for a defined future time window and service area.
+- `qos-booking-and-assignment` API extends the booking idea to scenarios where several devices may need to be assigned or re-assigned to a reservation.
+- `dedicated-network` APIs allow manament advanced connectivity performance, specifically when involving multiple different QoS profiles.
 
 From an API consumer perspective, the CQM portfolio should be understood as a set of API tools for different connectivity-quality needs. The relevant tool depends on what the application and its usage needs to achieve: discovering available QoS profiles, requesting well-defined connectivity performance immediately, applying a longer-lived QoS assignment, reserving connectivity performance for a future time and service area, assigning several devices to a reservation, or using a richer reserved connectivity environment with multiple QoS profiles.
 From an API consumer perspective, the CQM portfolio is best understood as a set of API tools for different connectivity-quality needs: discovering available capabilities, requesting well-defined connectivity performance immediately, applying a longer-lived QoS assignment, reserving connectivity performance for a future time and service area, managing device assignment, or using a reserved connectivity environment that may expose multiple QoS profiles.
