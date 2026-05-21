@@ -93,7 +93,7 @@ The same logic can also be understood through adjacent examples such as a festiv
 
 The same logic can be transposed to adjacent contexts such as a festival, a pop-up store, temporary point-of-sale terminals or short-term enterprise connectivity at a site. The journey is illustrative: it shows the main dimensions (timing, geography, devices, profile model) that distinguish the CQM tools. It does **not** imply that every scenario uses every API or that the APIs must be invoked together or in sequence.
 
-## 5. Portfolio Grouping
+## 5. Scope and Portfolio Grouping
 
 This document explains the CQM API portfolio at product and concept level. It is written for non-telco experts, API consumers, developers and technical product people who need to understand what each API is for without reading the YAML specifications or understanding internal mobile network topology.
 The document covers the following CQM APIs, using the **Fall25 CQM portfolio** as the reference view:
