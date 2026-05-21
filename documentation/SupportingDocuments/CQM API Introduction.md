@@ -48,7 +48,18 @@ Before looking at each API, it is useful to understand a small set of shared CQM
  | Service area | The geographic area where the requested or reserved connectivity performance is expected to apply. | It is central to booking and dedicated connectivity scenarios, while keeping operator-internal topology hidden. |
  | Device assignment | The act of linking one or more devices to a reservation or reserved connectivity environment. | It explains why `qos-booking-and-assignment` and `dedicated-network-accesses` are relevant when devices must be assigned, replaced or managed over time. |
  | Network profile | A Dedicated Networks construct that describes a richer or multi-dimensional connectivity offering, potentially including multiple QoS profiles, aggregated capacity, device limits and related conditions. | |
- | Discovery of capabilities | The concept of discovery allows API consumer to retrieve information about offered capabilities and usable combinations | The API consumer only needs to know abstracted information in an understandable format |
+Before looking at each API, it is useful to understand a small set of CQM concepts. These concepts are API-facing: they describe what an API consumer sees and works with, not how the operator implements them internally.
+
+| Concept | Plain-language meaning | Why it matters in CQM |
+| --- | --- | --- |
+| QoS profile | A QoS profile describes offered connectivity performance characteristics, such as throughput, latency, priority or other network treatment parameters. | It is the common reference used across CQM APIs whenever an API consumer wants to request, assign or reserve well-defined connectivity performance. |
+| Discovery of capabilities | Discovery allows an API consumer to retrieve available QoS profiles, network profiles or supported connectivity options before requesting, assigning or reserving them. | It lets the API consumer work with abstracted, understandable information rather than guessing what the CSP offers. |
+| On-demand QoS session | A time-bounded application of a QoS profile to a device or, where supported, to a specific application flow, requested when the connectivity treatment is needed. | It explains the `quality-on-demand` model: ask for a defined QoS treatment at the moment it is needed. |
+| Provisioned QoS session | A longer-lived QoS treatment associated with a device, service or subscription, established through provisioning rather than requested dynamically for a short duration. | It explains `qos-provisioning`: QoS behaviour can be configured persistently, not only requested on demand. |
+| Connectivity booking | A reservation of connectivity quality for a future time window, service area and one or more devices. | It explains the reservation-based tools, where the API consumer needs advance commitment for a known future need. |
+| Service area | The geographic area where the requested or reserved connectivity performance is expected to apply. | It is central to booking and reserved connectivity environments, while keeping operator-internal topology hidden. |
+| Device assignment | The act of linking one or more devices to a provisioned QoS session, a connectivity booking or a reserved connectivity environment. | It explains why several APIs separate "what is reserved or provisioned" from "which devices use it", which is useful when device lists change over time. |
+| Network profile | A Dedicated Networks construct representing a richer or multi-dimensional connectivity offering, potentially including multiple QoS profiles, aggregated capacity, device limits and related conditions. | It is the discovery-side concept for Dedicated Networks: what kind of reserved connectivity environment the CSP exposes, before any booking or device assignment. |
 
 ## 4. Common Journey: Live Event Connectivity
 
