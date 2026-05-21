@@ -305,7 +305,7 @@ A booking request may be accepted or rejected based on what the CSP can support 
 | API consumer takeaway | This is the device-side companion to `dedicated-network`. It is the API consumer's tool to manage which devices may use the reserved environment. |
 | Not to be confused with | Discovering network profiles (`dedicated-network-profiles`) or creating the reserved environment itself (`dedicated-network`). |
 
-## 7. Comparative Matrix and Portfolio Relationships
+## 7. Comparative Matrix and Purpose-Oriented Navigation
 
 The CQM APIs are related because they all deal with connectivity quality. However, they differ substantially in scope and complexity.
 
