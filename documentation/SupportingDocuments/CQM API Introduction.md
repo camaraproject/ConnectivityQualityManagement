@@ -62,7 +62,7 @@ The provider may face different connectivity-quality needs:
 - reserve QoS for a future event window and venue area;
 - manage several devices under a common reservation;
 - use a more advanced dedicated connectivity environment when multilple QoS profiles may be available or managed for a complex production.
-The table below uses the live-event context only as an illustrative frame. It does **not** imply that the APIs must be used in sequence, that all APIs are used together, or that every operator supports every pattern. Each API tool addresses a different type of connectivity-quality need.
+Around this event, the provider may face several different connectivity performance needs. These needs do not all apply to every event, and they are not steps of a single sequence. They are independent illustrations of what different CQM tools are intended for.
 
 | Possible need in a live-event context | API tool / category | Main API or API family |
  | --- | --- | --- |
