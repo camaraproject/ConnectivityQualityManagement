@@ -35,7 +35,7 @@ The key concept is, that API consumers and application developers do not need to
 
 In simple terms, CQM helps API consumers understand and request **well-defined connectivity performance** when ordinary best-effort behaviour is not enough for a specific service, moment, location or group of devices.
 
-## 3. CQM Concepts in Plain Language
+## 3. Core CQM Concepts in Plain Language
 
 Before looking at each API, it is useful to understand a small set of shared CQM concepts.
 
