@@ -393,7 +393,11 @@ API consumers should not assume that every CQM scenario requires multi-device as
 API consumers need to understand what they can expect from each CQM tool: whether a request can be accepted, why it may be rejected, what happens when the requested connectivity performance cannot be supported, and how changes are communicated. Confidence levels, capacity pre-checks or prediction mechanisms may be useful for some scenarios, but they should only be described as available when they are explicitly supported by the API or the CSP offering.
 
 6. **Keep internal CQM mechanics out of external explanations.**  
-External readers do not need WG harmonisation plans, Q1/Q3 options, governance topics or potential future API consolidation discussions to understand the API portfolio.
+1. **Do not assume operator topology.** API consumers work with external abstractions such as QoS profiles, QoS sessions, connectivity bookings, service areas, device assignments and network profiles. They do not need to reason about internal network topology.
+2. **Do not assume universal CSP support.** CAMARA specification availability and CSP availability are not the same thing. API consumers should check which APIs and which capabilities their CSP supports. For example, features that may be expressed in a QoS profile description are not necessarily activated in every CSP offering.
+3. **Do not turn the portfolio into a strict decision tree.** The same scenario may be addressed differently depending on CSP capabilities, market maturity and commercial context.
+4. **Match the API tool to the actual need.** Some needs are addressed by an on-demand QoS session, others by a longer-lived assignment, a simple connectivity booking, a booking with device assignment, or a reserved connectivity environment. The relevant API tool depends on the API consumer need, the CSP offering and market availability.
+5. **Be clear on expected system behaviour.** API consumers need clear expectations on acceptance, rejection, reliability and expected system behaviour. Where the CSP exposes mechanisms such as capacity pre-checks or confidence indications, they should be described only when explicitly supported by the API or the CSP offering.
 
 ### 8.3 Sources and version notes
 
