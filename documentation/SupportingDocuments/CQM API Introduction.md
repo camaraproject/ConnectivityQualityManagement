@@ -309,7 +309,7 @@ A booking request may be accepted or rejected based on what the CSP can support 
 
 The CQM APIs are related because they all deal with connectivity quality. However, they differ substantially in scope and complexity.
 
-The most useful comparison is not by endpoints or schemas, but by capability axes: time, geography, device model, profile model and operational complexity.
+The CQM APIs share the topic of connectivity quality but differ in scope. The most useful comparison is by capability axes: timing, geography, device model and profile model.
 
 | API | Timing | Area | Device model | QoS/profile model | Complexity |
 | --- | --- | --- | --- | --- | --- |
