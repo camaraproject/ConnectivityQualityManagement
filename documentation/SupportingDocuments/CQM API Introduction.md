@@ -126,7 +126,34 @@ This document is **not**:
 - a strict API selection guide;
 - a normative CAMARA specification;
 - a comparison of YAML endpoints, schemas or payloads.
-It should be read as an explanation of the portfolio structure and the main conceptual differences between the APIs. Specification availability and operator availability are not the same thing; API consumers should always check what their provider supports.
+This section explains how the in-scope APIs are grouped, so the rest of the document can be navigated by purpose rather than by API name alone.
+
+The CQM APIs in scope are grouped as follows:
+
+- **Discovery / support APIs** — expose information about what the CSP makes available, without changing connectivity behaviour:
+  - `qos-profiles`
+  - `dedicated-network-profiles`
+- **On-demand connectivity management** — request a defined QoS treatment for immediate, time-bounded use:
+  - `quality-on-demand`
+- **Longer-lived QoS assignment** — associate a QoS treatment with a device, service or subscription persistently:
+  - `qos-provisioning`
+- **Reservation-based connectivity management** — commit connectivity quality in advance for a future time, service area and one or more devices, with or without a richer reserved environment:
+  - `qos-booking`
+  - `qos-booking-and-assignment`
+  - `dedicated-network`
+  - `dedicated-network-accesses`
+
+This document is intended for non-telco experts, API consumers, ASPs, developers and technical product people who need to understand what each API is for without reading YAML specifications or studying mobile network topology.
+
+It is **not**:
+
+- a normative CAMARA specification;
+- a CSP implementation roadmap;
+- a strict API selection decision tree;
+- a comparison of YAML endpoints, schemas or payloads;
+- an internal Working Group harmonisation document.
+
+CAMARA specification availability and CSP availability are not the same thing. API consumers should always check which CQM APIs and which capabilities their provider supports.
 
 ## 6. API Deep Dives
 
