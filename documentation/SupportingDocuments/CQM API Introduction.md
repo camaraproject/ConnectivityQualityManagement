@@ -27,9 +27,7 @@ This document explains the purpose and differences of those tools. It is not a n
 
 Mobile connectivity is today mostly consumed as **best-effort connectivity**. This means that the network tries to provide the best possible performance at any given moment, but the actual experience may vary depending on many factors, such as network deployment, coverage conditions, terrain, indoor or outdoor location, mobility, and current network usage.
 
-For many digital services, best-effort connectivity is sufficient. Users of many standard applications like messaging, browsing, background synchronisation can normally tolerate variable throughput, latency or varying radio conditions.
-
-Other services, however, may need a more predictable connectivity performance under specific conditions. A live video application may need stable uplink performance during a contribution window. A point-of-sale terminal may need reliable connectivity during the opening hours of a temporary store. A media production team may need several devices to operate in the same venue. An enterprise may need a specific connectivity behaviour for a limited period or within a defined location.
+For many digital services, best-effort connectivity is sufficient. Users of many standard applications like messaging, browsing, background synchronisation can normally tolerate variable throughput, latency or varying radio conditions. Other services need more predictable connectivity performance under specific conditions: a live video application may need stable uplink performance during a contribution window, a point-of-sale terminal may need reliable connectivity during the opening hours of a temporary store, a media production team may need several devices to operate in the same venue, or an enterprise may need a specific connectivity behaviour for a limited period or within a defined location.
 
 Connectivity Quality Management (CQM) addresses these needs by exposing API-based tools that allow application providers to discover, request, configure, reserve or manage connectivity quality in a standardised way.
 
