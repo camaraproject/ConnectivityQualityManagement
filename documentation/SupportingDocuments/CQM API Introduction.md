@@ -27,7 +27,7 @@ This document explains the purpose and differences of those tools. It is not a n
 
 Mobile connectivity is today mostly consumed as **best-effort connectivity**. This means that the network tries to provide the best possible performance at any given moment, but the actual experience may vary depending on many factors, such as network deployment, coverage conditions, terrain, indoor or outdoor location, mobility, and current network usage.
 
-For many digital services, best-effort connectivity is sufficient. Users of many standard applications like messaging, browsing, background synchronisation can normally tolerate variable throughput, latency or varying radio conditions. Other services need more predictable connectivity performance under specific conditions: a live video application may need stable uplink performance during a contribution window, a point-of-sale terminal may need reliable connectivity during the opening hours of a temporary store, a media production team may need several devices to operate in the same venue, or an enterprise may need a specific connectivity behaviour for a limited period or within a defined location.
+For many digital services, best-effort connectivity is sufficient. Users of many standard applications like messaging, browsing, background synchronisation can normally tolerate variable throughput, latency or varying radio conditions. Other services need more predictable connectivity performance under specific conditions: a live video application may need stable uplink performance during an media production event, a point-of-sale terminal may need reliable connectivity during the opening hours of a temporary store, a media production team may need several devices to operate in the same venue, or an enterprise may need a specific connectivity behaviour for a limited period or within a defined location.
 
 Connectivity Quality Management (CQM) addresses these needs by exposing API-based tools that allow application providers to discover, request, configure, reserve or manage connectivity quality in a standardised way.
 
@@ -37,17 +37,6 @@ In simple terms, CQM helps API consumers understand and request **well-defined c
 
 ## 3. Core CQM Concepts in Plain Language
 
-Before looking at each API, it is useful to understand a small set of shared CQM concepts.
-
-| Concept | Plain-language meaning | Why it matters in CQM |
-| --- | --- | --- |
- | Connectivity performance described by a QoS profile | A QoS profile describes offered connectivity performance characteristics, such as throughput, latency, priority or other network treatment parameters. | It provides the common reference used by CQM APIs when an API consumer wants to request, assign, reserve or discover well-defined connectivity performance. |
- | On-Demand QoS session | The application of a QoS profile to all applications of a device or, where supported, to a specific application flow, usually for a defined duration. | It explains the `quality-on-demand` model: requesting a specific QoS treatment when it is needed. |
- | Provisioning QoS Session | A longer-lived way of establishing or maintaining QoS behaviour for a device, service or subscription. | It explains `qos-provisioning`: QoS behaviour is not only requested temporarily on demand, but may also be configured more persistently. |
- | Booking | A planned reservation of connectivity performance for a future time window and, where applicable, a service area. | It explains `qos-booking` and related reservation-based APIs. |
- | Service area | The geographic area where the requested or reserved connectivity performance is expected to apply. | It is central to booking and dedicated connectivity scenarios, while keeping operator-internal topology hidden. |
- | Device assignment | The act of linking one or more devices to a reservation or reserved connectivity environment. | It explains why `qos-booking-and-assignment` and `dedicated-network-accesses` are relevant when devices must be assigned, replaced or managed over time. |
- | Network profile | A Dedicated Networks construct that describes a richer or multi-dimensional connectivity offering, potentially including multiple QoS profiles, aggregated capacity, device limits and related conditions. | |
 Before looking at each API, it is useful to understand a small set of CQM concepts. These concepts are API-facing: they describe what an API consumer sees and works with, not how the operator implements them internally.
 
 | Concept | Plain-language meaning | Why it matters in CQM |
