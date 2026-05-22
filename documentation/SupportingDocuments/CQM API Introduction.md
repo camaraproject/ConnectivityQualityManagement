@@ -10,7 +10,7 @@ The CAMARA Connectivity Quality Management (CQM) portfolio addresses these needs
 At a high level, CQM is based on the idea that some API consumers (representing connectivity users) need well-defined connectivity performance, such as predictable uplink behaviour, latency characteristics, prioritisation, or a minimum throughput. These needs may be linked to a specific application, an entire device, a service, a user category, an enterprise usage context, or a specific event scenario.
 In CAMARA, these well-defined connectivity performances are typically described through **QoS profiles**, which can then be discovered, requested, assigned, reserved, or used as part of a richer connectivity environment.
 
-The CQM portfolio can be summarised as follows:
+This document explains the purpose and differences of those tools. It is not a normative specification, not a CSP implementation roadmap, and not a strict API selection guide. Actual API availability and supported capabilities vary by CSP and market, and API consumers should always check what their provider supports. The CQM portfolio can be summarised as follows:
 
 - `qos-profiles` API helps API consumers discover or reference the QoS profiles made available by the operator. The usage of this API for resolving the connectivity characteristics is optional.
 - `quality-on-demand` API enables an application to request an immediate, time-bounded QoS session.
@@ -21,7 +21,7 @@ The CQM portfolio can be summarised as follows:
 
 From an API consumer perspective, the CQM portfolio should be understood as a set of capabilities, exposed by different API for specific connectivity-quality needs. The relevant capability depends on what the application and its usage needs to achieve: discovering available QoS profiles, applying well-defined connectivity performance immediately or as a long-lived QoS assignment, reserving connectivity performance for a future time and service area, assigning several devices to a reservation, or using a richer reserved connectivity environment with multiple QoS profiles.
 
-This document explains the purpose and differences of those tools. It is not a normative specification, not a CSP implementation roadmap, and not a strict API selection guide. Actual API availability and supported capabilities vary by CSP and market, and API consumers should always check what their provider supports.
+
 
 ## 2. Introduction — Why Connectivity Quality Management Matters
 
@@ -35,20 +35,21 @@ The key concept is, that API consumers and application developers do not need to
 
 In simple terms, CQM helps API consumers understand and request **well-defined connectivity performance** when ordinary best-effort behaviour is not enough for a specific service, moment, location or group of devices.
 
+This document explains the CQM API portfolio at product and concept level. It is written for non-telco experts, API consumers, developers and technical product people who need to understand what each API is for without digesting the YAML specifications in detail or understanding internal mobile network topology.
+
+
 ## 3. Core CQM Concepts in Plain Language
 
 Before looking at each API, it is useful to understand a small set of CQM concepts. These concepts are API-facing: they describe what an API consumer sees and works with, not how the operator implements them internally.
 
 | Concept | Plain-language meaning | Why it matters in CQM |
 | --- | --- | --- |
-| QoS profile | A QoS profile describes offered connectivity performance characteristics, such as throughput, latency, priority or other network treatment parameters. | It is the common reference used across CQM APIs whenever an API consumer wants to request, assign or reserve well-defined connectivity performance. |
+| Connectivity Performance | Performance of the connectivity, characterized by parameters such as throughput, latency, priority or other network treatment parameters. | API consumers need better than best-effort connectivity quality, depending on the usage scenario and its context. |
+| QoS profile | A QoS profile describes offered connectivity performance characteristics, such as throughput, latency, priority or other network treatment parameters. _(Q: should we move this later?)_ | It is the common reference used across CQM APIs whenever an API consumer wants to request, assign or reserve well-defined connectivity performance. |
 | Discovery of capabilities | Discovery allows an API consumer to retrieve available QoS profiles, network profiles or supported connectivity options before requesting, assigning or reserving them. | It lets the API consumer work with abstracted, understandable information rather than guessing what the CSP offers. |
-| On-demand QoS session | A time-bounded application of a QoS profile to a device or, where supported, to a specific application flow, requested when the connectivity treatment is needed. | It explains the `quality-on-demand` model: ask for a defined QoS treatment at the moment it is needed. |
-| Provisioned QoS session | A longer-lived QoS treatment associated with a device, service or subscription, established through provisioning rather than requested dynamically for a short duration. | It explains `qos-provisioning`: QoS behaviour can be configured persistently, not only requested on demand. |
 | Connectivity booking | A reservation of connectivity quality for a future time window, service area and one or more devices. | It explains the reservation-based tools, where the API consumer needs advance commitment for a known future need. |
 | Service area | The geographic area where the requested or reserved connectivity performance is expected to apply. | It is central to booking and reserved connectivity environments, while keeping operator-internal topology hidden. |
 | Device assignment | The act of linking one or more devices to a provisioned QoS session, a connectivity booking or a reserved connectivity environment. | It explains why several APIs separate "what is reserved or provisioned" from "which devices use it", which is useful when device lists change over time. |
-| Network profile | A Dedicated Networks construct representing a richer or multi-dimensional connectivity offering, potentially including multiple QoS profiles, aggregated capacity, device limits and related conditions. | It is the discovery-side concept for Dedicated Networks: what kind of reserved connectivity environment the CSP exposes, before any booking or device assignment. |
 
 ## 4. Common Journey: Live Event Connectivity
 
@@ -93,29 +94,10 @@ The same logic can also be understood through adjacent examples such as a festiv
 
 The same logic can be transposed to adjacent contexts such as a festival, a pop-up store, temporary point-of-sale terminals or short-term enterprise connectivity at a site. The journey is illustrative: it shows the main dimensions (timing, geography, devices, profile model) that distinguish the CQM tools. It does **not** imply that every scenario uses every API or that the APIs must be invoked together or in sequence.
 
-## 5. Scope and Portfolio Grouping
 
-This document explains the CQM API portfolio at product and concept level. It is written for non-telco experts, API consumers, developers and technical product people who need to understand what each API is for without reading the YAML specifications or understanding internal mobile network topology.
-The document covers the following CQM APIs, using the **Fall25 CQM portfolio** as the reference view:
+## 6. API Deep Dives
 
-- `quality-on-demand`
-- `qos-provisioning`
-- `qos-booking`
-- `qos-booking-and-assignment`
-- `dedicated-network` and `dedicated-network-accesses`
-Discovery APIs:
-- `qos-profiles`
-- `dedicated-network-profiles`
-
-This document is **not**:
-
-- a CAMARA CQM Working Group harmonisation plan;
-- an operator implementation roadmap;
-- a mandatory deployment sequence;
-- a strict API selection guide;
-- a normative CAMARA specification;
-- a comparison of YAML endpoints, schemas or payloads.
-This section explains how the in-scope APIs are grouped, so the rest of the document can be navigated by purpose rather than by API name alone.
+Each API is explained with the same compact structure: the need it addresses, what it controls or exposes, the API consumer takeaway, and what it should not be confused with. Endpoint-level and schema-level detail is intentionally out of scope.
 
 The CQM APIs in scope are grouped as follows:
 
@@ -132,21 +114,18 @@ The CQM APIs in scope are grouped as follows:
   - `dedicated-network`
   - `dedicated-network-accesses`
 
-This document is intended for non-telco experts, API consumers, ASPs, developers and technical product people who need to understand what each API is for without reading YAML specifications or studying mobile network topology.
 
-It is **not**:
+API specific concepts:
 
-- a normative CAMARA specification;
-- a CSP implementation roadmap;
-- a strict API selection decision tree;
-- a comparison of YAML endpoints, schemas or payloads;
-- an internal Working Group harmonisation document.
+| Concept | Plain-language meaning | Why it matters |
+|---|---|---|
+| Connection | Devices connection to the network with certain connectivity quality, e.g. best-effort or better. Each connection has an IP address on the device. | It explains the underlying foundations of Connectivity Quality concepts. | 
+| Default connection | When the device connects to the network, it gets a default connection. The quality of the default connection is defined by the device subscription. | Provides connectivity with default (aka non-prioritized) connectivity quality. | 
+| Prioritized Connection | A device connection where all App Flows (as default) are prioritized according to the assigned connectivity quality. The device gets the priorized connection, when the device is connected and the prioritization is active. | Provides connectivity with prioritized connectivity quality. |
+| On-demand QoS session | A time-bounded instantiation of a QoS profile to a specific or all application flow of a device, requested when the connectivity treatment is needed. | It explains the `quality-on-demand` model: ask for a defined QoS treatment at the moment it is needed. |
+| Provisioned QoS session | A longer-lived QoS treatment associated with a device, service or subscription, established through provisioning rather than requested dynamically for a short duration. | It explains `qos-provisioning`: QoS behaviour can be configured persistently, not only requested on demand. |
+| Network profile | Is a representation of advanced characteristics of the Connectivity Quality, potentially including multiple QoS profiles, aggregated capacity, device limits and related conditions.| Concept presented by the API to the Application Developer. |
 
-CAMARA specification availability and CSP availability are not the same thing. API consumers should always check which CQM APIs and which capabilities their provider supports.
-
-## 6. API Deep Dives
-
-Each API is explained with the same compact structure: the need it addresses, what it controls or exposes, the API consumer takeaway, and what it should not be confused with. Endpoint-level and schema-level detail is intentionally out of scope.
 
 ### 6.1 `quality-on-demand` — Immediate QoS sessions
 
