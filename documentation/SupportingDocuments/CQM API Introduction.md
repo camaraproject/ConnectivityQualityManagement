@@ -10,7 +10,10 @@ The CAMARA Connectivity Quality Management (CQM) portfolio addresses these needs
 At a high level, CQM is based on the idea that some API consumers (representing connectivity users) need well-defined connectivity performance, such as predictable uplink behaviour, latency characteristics, prioritisation, or a minimum throughput. These needs may be linked to a specific application, an entire device, a service, a user category, an enterprise usage context, or a specific event scenario.
 In CAMARA, these well-defined connectivity performances are typically described through **QoS profiles**, which can then be discovered, requested, assigned, reserved, or used as part of a richer connectivity environment.
 
-This document explains the purpose and differences of those tools. It is not a normative specification, not a CSP implementation roadmap, and not a strict API selection guide. Actual API availability and supported capabilities vary by CSP and market, and API consumers should always check what their provider supports. The CQM portfolio can be summarised as follows:
+This document explains the purpose and differences of those tools.
+It is not a normative specification, not a CSP implementation roadmap, and not a strict API selection guide.
+Actual API availability and supported capabilities vary by CSP and market, and API consumers should always check what their provider supports.
+The CQM portfolio can be summarised as follows:
 
 - `qos-profiles` API helps API consumers discover or reference the QoS profiles made available by the operator. The usage of this API for resolving the connectivity characteristics is optional.
 - `quality-on-demand` API enables an application to request an immediate, time-bounded QoS session.
@@ -19,28 +22,35 @@ This document explains the purpose and differences of those tools. It is not a n
 - `qos-booking-and-assignment` API extends the booking idea to scenarios where several devices may need to be assigned or re-assigned to a reservation.
 - `dedicated-network` APIs allow manament advanced connectivity performance, specifically when involving multiple different QoS profiles.
 
-From an API consumer perspective, the CQM portfolio should be understood as a set of capabilities, exposed by different API for specific connectivity-quality needs. The relevant capability depends on what the application and its usage needs to achieve: discovering available QoS profiles, applying well-defined connectivity performance immediately or as a long-lived QoS assignment, reserving connectivity performance for a future time and service area, assigning several devices to a reservation, or using a richer reserved connectivity environment with multiple QoS profiles.
+From an API consumer perspective, the CQM portfolio should be understood as a set of capabilities, exposed by different API for specific connectivity-quality needs.
+The relevant capability depends on what the application and its usage needs to achieve: discovering available QoS profiles, applying well-defined connectivity performance immediately or as a long-lived QoS assignment, reserving connectivity performance for a future time and service area, assigning several devices to a reservation, or using a richer reserved connectivity environment with multiple QoS profiles.
 
 
 
 ## 2. Introduction — Why Connectivity Quality Management Matters
 
-Mobile connectivity is today mostly consumed as **best-effort connectivity**. This means that the network tries to provide the best possible performance at any given moment, but the actual experience may vary depending on many factors, such as network deployment, coverage conditions, terrain, indoor or outdoor location, mobility, and current network usage.
+Mobile connectivity is today mostly consumed as **best-effort connectivity**.
+This means that the network tries to provide the best possible performance at any given moment, but the actual experience may vary depending on many factors, such as network deployment, coverage conditions, terrain, indoor or outdoor location, mobility, and current network usage.
 
-For many digital services, best-effort connectivity is sufficient. Users of many standard applications like messaging, browsing, background synchronisation can normally tolerate variable throughput, latency or varying radio conditions. Other services need more predictable connectivity performance under specific conditions: a live video application may need stable uplink performance during an media production event, a point-of-sale terminal may need reliable connectivity during the opening hours of a temporary store, a media production team may need several devices to operate in the same venue, or an enterprise may need a specific connectivity behaviour for a limited period or within a defined location.
+For many digital services, best-effort connectivity is sufficient.
+Users of many standard applications like messaging, browsing, background synchronisation can normally tolerate variable throughput, latency or varying radio conditions.
+Other services need more predictable connectivity performance under specific conditions: a live video application may need stable uplink performance during an media production event, a point-of-sale terminal may need reliable connectivity during the opening hours of a temporary store, a media production team may need several devices to operate in the same venue, or an enterprise may need a specific connectivity behaviour for a limited period or within a defined location.
 
 Connectivity Quality Management (CQM) addresses these needs by exposing API-based tools that allow application providers to discover, request, configure, reserve or manage connectivity quality in a standardised way.
 
-The key concept is, that API consumers and application developers do not need to have detailed understanding of mobile network realizations. API consumers work with external-facing abstractions of network capabilities exposed by the operator, such as QoS profiles, QoS sessions, bookings, service areas, device assignments and dedicated connectivity environments.
+The key concept is, that API consumers and application developers do not need to have detailed understanding of mobile network realizations.
+API consumers work with external-facing abstractions of network capabilities exposed by the operator, such as QoS profiles, QoS sessions, bookings, service areas, device assignments and dedicated connectivity environments.
 
 In simple terms, CQM helps API consumers understand and request **well-defined connectivity performance** when ordinary best-effort behaviour is not enough for a specific service, moment, location or group of devices.
 
-This document explains the CQM API portfolio at product and concept level. It is written for non-telco experts, API consumers, developers and technical product people who need to understand what each API is for without digesting the YAML specifications in detail or understanding internal mobile network topology.
+This document explains the CQM API portfolio at product and concept level.
+It is written for non-telco experts, API consumers, developers and technical product people who need to understand what each API is for without digesting the YAML specifications in detail or understanding internal mobile network topology.
 
 
 ## 3. Core CQM Concepts in Plain Language
 
-Before looking at each API, it is useful to understand a small set of CQM concepts. These concepts are API-facing: they describe what an API consumer sees and works with, not how the operator implements them internally.
+Before looking at each API, it is useful to understand a small set of CQM concepts.
+These concepts are API-facing: they describe what an API consumer sees and works with, not how the operator implements them internally.
 
 | Concept | Plain-language meaning | Why it matters in CQM |
 | --- | --- | --- |
@@ -98,7 +108,8 @@ The same logic can be transposed to adjacent contexts such as a festival, a pop-
 
 ## 6. API Deep Dives
 
-Each API is explained with the same compact structure: the need it addresses, what it controls or exposes, the API consumer takeaway, and what it should not be confused with. Endpoint-level and schema-level detail is intentionally out of scope.
+Each API is explained with the same compact structure: the need it addresses, what it controls or exposes, the API consumer takeaway, and what it should not be confused with. 
+Endpoint-level and schema-level detail is intentionally out of scope.
 
 
 API specific concepts:
@@ -141,7 +152,8 @@ The CQM APIs in scope are grouped as follows:
 
 `quality-on-demand` is about immediate QoS activation. It is not a booking mechanism and should not be explained as one.
 
-A On Demand QoS request may fail if the operator cannot support the requested QoS profile at the current location and the current time window. This may be because of high load or because the QoS profile is not supported at the current location.
+A On Demand QoS request may fail if the operator cannot support the requested QoS profile at the current location and the current time window.
+This may be because of high load or because the QoS profile is not supported at the current location.
 
 ### 6.2 Longer-lived QoS assignment
 
@@ -168,7 +180,9 @@ A On Demand QoS request may fail if the operator cannot support the requested Qo
 | API consumer takeaway | The essential difference from `quality-on-demand` is planning. The essential difference from `qos-provisioning` is that the commitment is bounded by time and service area. |
 | Not to be confused with | Multi-device assignment, network profiles or reserved connectivity environments. |
 
-A booking request may be accepted or rejected based on what the CSP can support in the requested time window and service area. API consumers need clear expectations on acceptance, rejection, reliability and expected system behaviour. Where the CSP exposes them, mechanisms such as capacity pre-checks or confidence indications can support these expectations, but they should only be assumed when the API or the CSP offering explicitly supports them.
+A booking request may be accepted or rejected based on what the CSP can support in the requested time window and service area.
+API consumers need clear expectations on acceptance, rejection, reliability and expected system behaviour.
+Where the CSP exposes them, mechanisms such as capacity pre-checks or confidence indications can support these expectations, but they should only be assumed when the API or the CSP offering explicitly supports them.
 
 #### `qos-booking-and-assignment` — Connectivity booking with device assignment
 
@@ -263,7 +277,8 @@ The main relationships are:
 | `dedicated-network` | Reservation-based (Dedicated Networks) | Reserved environment lifecycle | Defined service area | Multiple devices via accesses | Potentially multiple QoS profiles via a network profile |
 | `dedicated-network-accesses` | Reservation-based (Dedicated Networks) | Aligned with the reserved environment | Inherited from the reserved environment | Device-level access management | Inherited from the reserved environment |
 
-This matrix is intended to make portfolio roles visible. It is **not** a strict API selection guide and does not guarantee CSP support for any specific combination.
+This matrix is intended to make portfolio roles visible.
+It is **not** a strict API selection guide and does not guarantee CSP support for any specific combination.
 
 ---
 
@@ -288,40 +303,57 @@ In short:
 - `qos-provisioning` is the longer-lived assignment pattern.
 - `qos-booking` is the simple planned reservation pattern.
 - `qos-booking-and-assignment` is the multi-device assignment pattern.
-The CQM portfolio is best read as a set of API tools for different connectivity-quality needs. The main dimensions that distinguish them are:
+The CQM portfolio is best read as a set of API tools for different connectivity-quality needs. 
+The main dimensions that distinguish them are:
 
 - whether the need is immediate, persistent or planned for a future window;
 - whether a service area is part of the request;
 - whether one device or several devices are involved, and whether device assignment must be managed over time;
 - whether one QoS profile is enough, or the scenario benefits from a reserved environment that may expose multiple QoS profiles and related conditions.
 
-Discovery / support APIs help the API consumer see what is available. On-demand and longer-lived QoS tools apply a QoS profile to a device, service or flow. Reservation-based tools commit connectivity quality in advance, with the Dedicated Networks family extending this to reserved connectivity environments with device access management.
+Discovery / support APIs help the API consumer see what is available.
+On-demand and longer-lived QoS tools apply a QoS profile to a device, service or flow.
+Reservation-based tools commit connectivity quality in advance, with the Dedicated Networks family extending this to reserved connectivity environments with device access management.
 
 ### 8.2 Guardrails for external readers
 
 When explaining or using the CQM portfolio, the following guardrails matter:
 
 1. **Do not expose operator topology.**  
-API consumers should have only a high level of understanding of a cellular system and its intrinsic behaviour. Concepts like cells, cell-edges and radio carriers are understood on high level. API consumers should not need to have detailed understanding of the network topology, including cells, grids, carriers, radio layers or internal coverage planning.
+API consumers should have only a high level of understanding of a cellular system and its intrinsic behaviour.
+Concepts like cells, cell-edges and radio carriers are understood on high level.
+API consumers should not need to have detailed understanding of the network topology, including cells, grids, carriers, radio layers or internal coverage planning.
 
 2. **Do not imply universal support.**  
-CAMARA specification and operator availability are not the same thing. API consumers should check which APIs and what capabilities their provider supports. API consumers should not assume that all possible capabilities and features are supported by a CSP. For example, QoS Profile description within the QoS Profile API allows usage of features like DSCP or L4S, which may not be leveraged by the offering CSP.
+CAMARA specification and operator availability are not the same thing.
+API consumers should check which APIs and what capabilities their provider supports.
+API consumers should not assume that all possible capabilities and features are supported by a CSP.
+For example, QoS Profile description within the QoS Profile API allows usage of features like DSCP or L4S, which may not be leveraged by the offering CSP.
 
 3. **Do not turn the portfolio into a strict decision tree.**  
 The same business scenario may be addressed differently depending on operator capabilities, market maturity and commercial context.
 
 4. **Choose the API tool according to the actual connectivity need.**  
-API consumers should not assume that every CQM scenario requires multi-device assignment or a dedicated connectivity environment. Some needs may be addressed through immediate QoS, longer-lived QoS assignment, or a simple planned reservation. Other scenarios may require device assignment or a reserved environment where multiple QoS profiles are available. The relevant API tool depends on the need, the CSP offering and the capabilities available in the target market.
+API consumers should not assume that every CQM scenario requires multi-device assignment or a dedicated connectivity environment.
+Some needs may be addressed through immediate QoS, longer-lived QoS assignment, or a simple planned reservation.
+Other scenarios may require device assignment or a reserved environment where multiple QoS profiles are available.
+The relevant API tool depends on the need, the CSP offering and the capabilities available in the target market.
 
 5. **Be clear about expected system behaviour.**  
-API consumers need to understand what they can expect from each CQM tool: whether a request can be accepted, why it may be rejected, what happens when the requested connectivity performance cannot be supported, and how changes are communicated. Confidence levels, capacity pre-checks or prediction mechanisms may be useful for some scenarios, but they should only be described as available when they are explicitly supported by the API or the CSP offering.
+API consumers need to understand what they can expect from each CQM tool: whether a request can be accepted, why it may be rejected, what happens when the requested connectivity performance cannot be supported, and how changes are communicated.
+Confidence levels, capacity pre-checks or prediction mechanisms may be useful for some scenarios, but they should only be described as available when they are explicitly supported by the API or the CSP offering.
 
 6. **Keep internal CQM mechanics out of external explanations.**  
-1. **Do not assume operator topology.** API consumers work with external abstractions such as QoS profiles, QoS sessions, connectivity bookings, service areas, device assignments and network profiles. They do not need to reason about internal network topology.
-2. **Do not assume universal CSP support.** CAMARA specification availability and CSP availability are not the same thing. API consumers should check which APIs and which capabilities their CSP supports. For example, features that may be expressed in a QoS profile description are not necessarily activated in every CSP offering.
+1. **Do not assume operator topology.** API consumers work with external abstractions such as QoS profiles, QoS sessions, connectivity bookings, service areas, device assignments and network profiles.
+They do not need to reason about internal network topology.
+2. **Do not assume universal CSP support.** CAMARA specification availability and CSP availability are not the same thing.
+API consumers should check which APIs and which capabilities their CSP supports.
+For example, features that may be expressed in a QoS profile description are not necessarily activated in every CSP offering.
 3. **Do not turn the portfolio into a strict decision tree.** The same scenario may be addressed differently depending on CSP capabilities, market maturity and commercial context.
-4. **Match the API tool to the actual need.** Some needs are addressed by an on-demand QoS session, others by a longer-lived assignment, a simple connectivity booking, a booking with device assignment, or a reserved connectivity environment. The relevant API tool depends on the API consumer need, the CSP offering and market availability.
-5. **Be clear on expected system behaviour.** API consumers need clear expectations on acceptance, rejection, reliability and expected system behaviour. Where the CSP exposes mechanisms such as capacity pre-checks or confidence indications, they should be described only when explicitly supported by the API or the CSP offering.
+4. **Match the API tool to the actual need.** Some needs are addressed by an on-demand QoS session, others by a longer-lived assignment, a simple connectivity booking, a booking with device assignment, or a reserved connectivity environment.
+The relevant API tool depends on the API consumer need, the CSP offering and market availability.
+5. **Be clear on expected system behaviour.** API consumers need clear expectations on acceptance, rejection, reliability and expected system behaviour.
+Where the CSP exposes mechanisms such as capacity pre-checks or confidence indications, they should be described only when explicitly supported by the API or the CSP offering.
 
 ### 8.3 Sources and version notes
 
