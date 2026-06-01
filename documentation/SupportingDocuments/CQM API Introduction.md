@@ -307,7 +307,17 @@ The main relationships are:
 | `qos-booking` | Reservation-based | Future time window | Defined service area | One device per booking | One QoS profile per booking |
 | `qos-booking-and-assignment` | Reservation-based | Future time window | Defined service area | Multiple devices via assignment | One QoS profile per reservation |
 | `dedicated-network` | Reservation-based (Dedicated Networks) | Reserved environment lifecycle | Defined service area | Multiple devices via accesses | Potentially multiple QoS profiles via a network profile |
-| `dedicated-network-accesses` | Reservation-based (Dedicated Networks) | Aligned with the reserved environment | Inherited from the reserved environment | Device-level access management | Inherited from the reserved environment |
+| API | Category | Timing | Service area | Device model | QoS / profile model |
+| --- | --- | --- | --- | --- | --- |
+| `qos-profiles` | Discovery / support | n/a | n/a | n/a | Catalogue of QoS profiles |
+| `dedicated-network-profiles` | Discovery / support | n/a | n/a | n/a | Catalogue of network profiles |
+| Service-area discovery (`dedicated-network-areas`, current draft name) | Discovery / support | n/a | Catalogue of eligible service areas | n/a | Associates areas with supported QoS profiles and/or network profiles |
+| `quality-on-demand` | On-demand | Immediate, session duration | Not the primary dimension | Device or application flow | One QoS profile per session |
+| `qos-provisioning` | Longer-lived assignment | Persists until changed or revoked | No explicit service area in the API contract | Device | One QoS profile assignment |
+| `qos-booking` | Reservation-based | Future time window | Defined service area | One device per booking | One QoS profile per booking |
+| `qos-booking-and-assignment` | Reservation-based | Future time window | Defined service area | Multiple devices via assignment | One QoS profile per reservation |
+| `dedicated-network` | Reservation-based | Reserved-environment lifecycle | Defined service area | Multiple devices via accesses | Potentially multiple QoS profiles via a network profile |
+| `dedicated-network-accesses` | Access management | Follows the reserved-environment lifecycle | Inherited from the reserved environment | Device-access management | Inherited from the reserved environment |
 
 This matrix is intended to make portfolio roles visible.
 It is **not** a strict API selection guide and does not guarantee CSP support for any specific combination.
@@ -385,7 +395,6 @@ For example, features that may be expressed in a QoS profile description are not
 4. **Match the API tool to the actual need.** Some needs are addressed by an on-demand QoS session, others by a longer-lived assignment, a simple connectivity booking, a booking with device assignment, or a reserved connectivity environment.
 The relevant API tool depends on the API consumer need, the CSP offering and market availability.
 5. **Be clear on expected system behaviour.** API consumers need clear expectations on acceptance, rejection, reliability and expected system behaviour.
-Where the CSP exposes mechanisms such as capacity pre-checks or confidence indications, they should be described only when explicitly supported by the API or the CSP offering.
 
 ### 7.3 Sources and version notes
 
