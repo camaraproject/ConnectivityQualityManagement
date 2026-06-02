@@ -68,49 +68,6 @@ These concepts are API-facing: they describe what an API consumer sees and works
 
 ## 4. Common Journey: Live Event Connectivity
 
-
-To make the portfolio easier to understand, this document uses one common illustrative journey: **connectivity quality around a live event**.
-Imagine an application provider supporting a live media event. During the event, contributors use mobile devices or professional equipment to send live uplink video and audio. The event takes place in a known venue or outdoor area, and the relevant period may be known in advance.
-The provider may face different connectivity-quality needs:
-
-- discover which QoS profiles are available;
-- request well-defined connectivity performance immediately for a device that is going live now;
-- configure a longer-lived QoS behaviour for a service or device;
-- reserve QoS for a future event window and venue area;
-- manage several devices under a common reservation;
-- use a more advanced dedicated connectivity environment when multilple QoS profiles may be available or managed for a complex production.
-Around this event, the provider may face several different connectivity performance needs. These needs do not all apply to every event, and they are not steps of a single sequence. They are independent illustrations of what different CQM tools are intended for.
-
-
-| Possible needs in a live-event context | API tool / category | Main API or API family |
- | --- | --- | --- |
-| Understand which Connectivity Performance characteristics are available before requesting connectivity treatment | Discovery / support | `qos-profiles`<br>**Editor's Note: the QOS profiles API does not give information, whether the QOS profile is actually supported in the event area.**|
-| Request a well-defined Connectivity Performance on-demand for a device or an App-flow that is going live now. <br>It is acceptable, that the On-Demand request may get rejected. | On-demand connectivity management | `quality-on-demand` |
-| Associate a QoS behaviour with a device, service or subscription more persistently. | Longer-lived QoS assignment | `qos-provisioning` |
-| Ensure that the connectivity performance for a known future time window and service area is reserved ensuring that the connectivity performance is provided, when needed. | Reservation-based connectivity management | `qos-booking`, `qos-booking-and-assignment` and `dedicated-networks` APIs |
-| Reserve connectivity performance first and assign or re-assign several devices later | Reservation and device assignment | `qos-booking-and-assignment` and `dedicated-networks` APIs |
-| Use a reserved connectivity environment where multiple QoS profiles may be available or managed | Dedicated connectivity environment | `dedicated-networks` APIs |
-
-The same logic can also be understood through adjacent examples such as a festival, a pop-up store, event point-of-sale terminals or temporary enterprise connectivity. The value of the journey is not that every scenario uses every API. Its value is that it makes the main CQM dimensions visible.
-
-| ASP need dimension | API tool / category | Why it matters to the API consumer |
-| --- | --- | --- |
-| Understand which connectivity performance options are available | Discovery / support APIs, such as `qos-profiles`, `dedicated-network-profiles` and `dedicated-network-areas` | The ASP needs to know which QoS profiles and/or network profiles can be referenced in the event area before requesting, assigning or reserving connectivity treatment. |
-| Request well-defined connectivity performance for immediate use | On-demand connectivity management, mainly `quality-on-demand` | The ASP needs a QoS session to be accepted for a device or flow that requires the defined performance now. The ASP does not rely on the connectivity performance. |
-| Apply connectivity treatment more persistently | Longer-lived QoS assignment, mainly `qos-provisioning` | The ASP or service provider may need a QoS behaviour to remain associated with a device, service or subscription until changed. |
-| Reserve connectivity performance for a future time and service area | Reservation-based connectivity management, mainly `qos-booking` | The ASP needs to know in advance whether the requested QoS profile can be reserved for a given time window and location. |
-| Manage several devices under a reservation | Reservation plus device assignment, mainly `qos-booking-and-assignment` | The ASP may need to reserve connectivity first and assign or re-assign devices later, especially when the final device list is not known at booking time. |
-| Possible need around the live event | What the API consumer is trying to do | CQM tool category |
-| --- | --- | --- |
-| Find out which QoS profiles or network profiles the CSP exposes | Discovery of capabilities before any request | Discovery / support APIs |
-| Make a single device or flow go live now with defined uplink performance | Get a time-bounded QoS treatment immediately | On-demand connectivity management |
-| Keep a defined QoS behaviour associated with a device, service or subscription beyond a short session | Apply a longer-lived QoS assignment | Longer-lived QoS assignment |
-| Secure defined connectivity performance in advance for a known future window and venue area | Reserve connectivity quality ahead of time | Reservation-based connectivity management |
-| Reserve connectivity for the event and later assign or change the devices that will use it | Combine reservation with device assignment | Reservation-based connectivity management |
-| Operate several devices and traffic types in the same venue under one reserved environment that may expose multiple QoS profiles | Use a reserved connectivity environment | Reservation-based connectivity management (Dedicated Networks family) |
-
-## 4. Common Journey: Live Event Connectivity
-
 **Editor's Note - Start:**
 We can try to connect to the [GSMA Use-Case library](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma-open-gateway-resources/?category=use-cases). 
 
@@ -138,8 +95,8 @@ A live-event context can create different connectivity needs depending on the pr
 
 | Illustrative live-event situation | Concrete API consumer need | Relevant CQM tool(s) | What matters to the API consumer |
 | --- | --- | --- | --- |
-| Before preparing the event | Discover which QoS profiles, network profiles or eligible service areas the CSP exposes | `qos-profiles`, `dedicated-network-profiles` and, where exposed, service-area discovery | Understand which connectivity options can be referenced before requesting or reserving them |
-| A reporter or contributor starts an unplanned live uplink | Request defined connectivity performance immediately for a device or application flow | `quality-on-demand` | Obtain a time-bounded QoS treatment when it is needed; the request may be accepted or rejected depending on current network conditions |
+| Before preparing the event | Discover which QoS profiles, network profiles or eligible service areas the CSP exposes | `qos-profiles`, `dedicated-network-profiles` and, where exposed, service `areas` discovery | Understand which connectivity options can be referenced before requesting or reserving them |
+| A reporter or contributor starts an unplanned live uplink<br>**Editor's Note: Can be spontaneous** | Request defined connectivity performance immediately for a device or application flow | `quality-on-demand` | Obtain a time-bounded QoS treatment when it is needed; the request may be accepted or rejected depending on current network conditions |
 | A broadcaster regularly uses the same field equipment across productions | Keep a QoS profile associated with a device whenever it connects to the access network | `qos-provisioning` | Apply a persistent QoS assignment without creating a new on-demand session for every use |
 | A single-camera contribution is scheduled in advance at a known venue | Reserve one QoS profile for one device during a future time window and service area | `qos-booking` | Secure a planned connectivity commitment for a known time and place |
 | A small outside broadcast uses several cameras and devices that may be replaced during the event | Reserve connectivity first and assign or re-assign devices later | `qos-booking-and-assignment` | Decouple the reservation from the final device list |
