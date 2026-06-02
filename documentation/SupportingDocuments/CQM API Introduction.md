@@ -84,6 +84,7 @@ Consumer / B2C
 - [Reliable network for social media and gaming](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma_resources/reliable-network-for-social-media-and-gaming/)
 - [Immersive large events](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma_resources/immersive-large-events/) Consumer Use Case
 
+Teh business-critical operations of most of the above listed use-cases can be made more robust, when pre-reserving connectivity performance.  
 **Editor's Note - End**
 
 To make the portfolio easier to understand, this document uses one illustrative journey: **connectivity quality around a live event**.
@@ -96,11 +97,11 @@ A live-event context can create different connectivity needs depending on the pr
 | Illustrative live-event situation | Concrete API consumer need | Relevant CQM tool(s) | What matters to the API consumer |
 | --- | --- | --- | --- |
 | Before preparing the event | Discover which QoS profiles, network profiles or eligible service areas the CSP exposes | `qos-profiles`, `dedicated-network-profiles` and, where exposed, service `areas` discovery | Understand which connectivity options can be referenced before requesting or reserving them |
-| A reporter or contributor starts an unplanned live uplink<br>**Editor's Note: Can be spontaneous** | Request defined connectivity performance immediately for a device or application flow | `quality-on-demand` | Obtain a time-bounded QoS treatment when it is needed; the request may be accepted or rejected depending on current network conditions |
-| A broadcaster regularly uses the same field equipment across productions | Keep a QoS profile associated with a device whenever it connects to the access network | `qos-provisioning` | Apply a persistent QoS assignment without creating a new on-demand session for every use |
+| A reporter or contributor starts an unplanned / spontaneous live uplink<br> | Request defined connectivity performance immediately for a device or application flow. | `quality-on-demand` | Obtain a time-bounded QoS treatment when it is needed; the request may be accepted or rejected depending on current network conditions and the current UE location. <br>**Editor's Note: It is unclear, whether a QoS Profile is usable at any location in thenetwork coverage** |
+| A broadcaster regularly uses the same field equipment across productions | Keep a QoS profile associated with a device whenever it connects to the access network | `qos-provisioning` | Apply a persistent QoS assignment without creating a new on-demand session for every use.<br>**Editor's Note: How much can the broadcaster rely on the QoS Profile performance, assuming that other broadcasters with similar equipment configuration may show up at the same event?** |
 | A single-camera contribution is scheduled in advance at a known venue | Reserve one QoS profile for one device during a future time window and service area | `qos-booking` | Secure a planned connectivity commitment for a known time and place |
-| A small outside broadcast uses several cameras and devices that may be replaced during the event | Reserve connectivity first and assign or re-assign devices later | `qos-booking-and-assignment` | Decouple the reservation from the final device list |
-| A complex production uses live video, intercom, preview feeds and operational traffic in the same venue | Use a reserved environment where several QoS profiles and device-access rules may be available | Dedicated Networks family | Manage a richer reserved connectivity environment with multiple QoS profiles and related conditions |
+| A small outside broadcast uses several cameras and devices that may be replaced during the event | Reserve connectivity first and assign or re-assign devices later | `qos-booking-and-assignment` | Decouple the reservation from the final device list<br>**Editor's Note: the DN API with a simple Network Profile can be used here as well.** |
+| A complex production uses live video, intercom, preview feeds and operational traffic in the same venue | Use a reserved environment where several QoS profiles and device-access rules may be available | `Dedicated Networks` API family | Manage a richer reserved connectivity environment with multiple QoS profiles, different device types and related conditions<br>**Editor's Note: Should we clarify, that the QOD API may be used within the reserved connectivity?** |
 
 The same logic can be transposed to adjacent contexts such as a festival, a pop-up store, temporary point-of-sale terminals or short-term enterprise connectivity at a site.
 
