@@ -50,6 +50,7 @@ Further, CQM further helps API consumer to understand the responses to their req
 
 This document explains the CQM API portfolio at product and concept level.
 It is written for non-telco experts, API consumers, developers and technical product people who need to understand what each API is for without digesting the YAML specifications in detail or understanding internal mobile network topology.
+**Editor's Note: Suggestion by hubertp for discussion [PR#7 Line 52](https://github.com/camaraproject/ConnectivityQualityManagement/pull/7/changes#r3348461213)** 
 
 **Editor's Note: We should be clear on API responses, i.e. success cases and non-success cases. Spectrum and cellular capacity is always a limited & scarce resource and the network needs to provide sometimes a Non-Success response. The Non-Success cases are not failure cases from CSP perspective.**
 
@@ -58,6 +59,8 @@ It is written for non-telco experts, API consumers, developers and technical pro
 Before looking at each API, it is useful to understand a small set of CQM concepts.
 These concepts are API-facing: they describe what an API consumer sees and works with, not how the operator implements them internally.
 
+**Editor's Note: Comment by Alberto on Incomplete Table [PR#7 Line 63](https://github.com/camaraproject/ConnectivityQualityManagement/pull/7/changes#r3333414914)**
+**Editor's Note: Comment by Hubert on "Connectivity Performance Definition: I wonder if Connectivity Quality is not a term better understood by ASPs. Looking around I found this summry of difference between the terms quality and performance: "The core difference is that quality defines how well an object, service, or system meets requirements or standards, while performance measures how fast, efficiently, or powerfully it executes its functions." I'd suggest to change to 'quality' when we adress an ASP perspective and keep 'performance' when writing from CSP perspective.**
 | Concept | Plain-language meaning | Why it matters in CQM |
 | --- | --- | --- |
 | Connectivity Performance | Performance of the connectivity, characterized by parameters such as throughput, latency, priority or other network treatment parameters. | API consumers need better than best-effort connectivity quality, depending on the usage scenario and its context. |
