@@ -102,6 +102,32 @@ For business-critical operations, many ASPs prefer having _planed stability_, i.
 
 **Editor's Note - End**
 
+**Editor's Note - Start: Test Table**
+Proposal.
+
+| GSMA Usecase library | QoD | QoS<br>Provisioning | QOS<br>Booking | QOS Booking<br>& Assignment | Dedicated<br>Networks |
+| --- | --- | --- | --- | --- | --- |
+| [Remote Journalist](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma_resources/remote-journalist/) | Yes[^1] | Yes[^2] | Yes | Yes | Yes |
+| [Remote Live Broadcast](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma_resources/remote-live-broadcast/) | Yes[^1] | Yes[^2] | Yes | Yes | Yes |
+| [Enhanced connectivity for retail stores](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma_resources/enhanced-connectivity-for-retail-stores/) | Yes[^1] | Yes[^2] | Yes | Yes | Yes [^3] |
+| [QoD for PoS transactions at events​](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma_resources/qod-for-pos-transactions-at-events/)  | Yes[^1] | Yes[^2] | Yes | Yes | Yes |
+| [Connection of remote venues](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma_resources/connection-of-remote-venues/) | Yes[^1] | Yes[^2] | Yes | Yes | Yes [^3] |
+| [Large Event Planning and Delivery](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma_resources/large-event-planning-and-delivery/)[^4]  | Yes[^1] | Yes[^2] | Yes | Yes | Yes [^3] |
+| [Smart Video Surveillance](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma_resources/smart-video-surveillance/) [^5] | Yes | Yes | Yes | Yes | Yes |
+| [Reliable network for social media and gaming](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma_resources/reliable-network-for-social-media-and-gaming/)[^6] | Yes | ? | Yes | Yes | Yes |
+| [Immersive large events](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma_resources/immersive-large-events/)[^7] | | | | | |
+
+* [^1]: Connectivity Quality only provided when request is accepted.
+* [^2]: Connectivity Quality only provided when there is capacity.
+* [^3]: This use-case seem to need multiple QoS profiles for different devices within the reservation.
+* [^4]: Unclear set of QOS Profiles / usage purposes.
+* [^5]: Unclear use-case descriptions: Surveilance cameras are often permanently mounted, temporary permanent (e.g. construction sites) or even mobile (e.g. tram, drones).
+* [^6]: Unclear use-case descriptions: "Social media" here assumed as "Social media consumption" (not production as by influencers). Gaming Sessions can be spontaneous or planned.
+* [^7]: Unclear use-case descriptions and unclear purpose of connectivity usage. For a successfult event outcome (in densely populated and congested areas), is seems generally better to reserve connectivity than relying on On-Demand availability.  
+
+
+**Editor's Note - End: Test Table**
+
 To make the portfolio easier to understand, this document uses one illustrative journey: **connectivity quality around a live event**.
 
 A live-event context can create different connectivity needs depending on the production setup.
