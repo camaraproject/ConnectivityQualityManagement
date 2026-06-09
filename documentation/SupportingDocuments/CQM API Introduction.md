@@ -27,7 +27,7 @@ The CQM APIs can be summarised as follows:
 - `qos-booking-and-assignment` API extends the booking idea to scenarios where several devices may need to be assigned or re-assigned to a reservation.
 - `dedicated-network` APIs allow manament advanced connectivity performance, specifically when involving multiple different QoS profiles.
 
-From an API consumer perspective, the CQM APIs should be understood as a set of tools or capabilities, exposed by different API for specific connectivity-quality needs.
+From an API consumer perspective, the CQM APIs should be understood as a set of tools or capabilities, exposed by different APIs for specific connectivity-quality needs.
 The relevant capability depends on what the application and its usage needs to achieve: discovering available QoS profiles, applying well-defined connectivity performance immediately or as a long-lived QoS assignment, reserving connectivity performance for a future time and service area, assigning several devices to a reservation, or using a richer reserved connectivity environment with multiple QoS profiles.
 
 ## 2. Introduction — Why Connectivity Quality Management Matters
