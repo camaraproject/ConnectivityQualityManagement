@@ -65,7 +65,6 @@ CQM APIs also need to make non-success outcomes understandable. Mobile connectiv
 Before looking at each API, it is useful to understand a small set of CQM concepts.
 These concepts are API-facing: they describe what an API consumer sees and works with, not how the operator implements them internally.
 
-**Editor's Note: Comment by Alberto on Incomplete Table [PR#7 Line 64](https://github.com/camaraproject/ConnectivityQualityManagement/pull/7/changes#r3333414914)**
 **Editor's Note: Comment by Hubert on "Connectivity Performance Definition: I wonder if Connectivity Quality is not a term better understood by ASPs. Looking around I found this summry of difference between the terms quality and performance: "The core difference is that quality defines how well an object, service, or system meets requirements or standards, while performance measures how fast, efficiently, or powerfully it executes its functions." I'd suggest to change to 'quality' when we adress an ASP perspective and keep 'performance' when writing from CSP perspective.**
 
 | Concept | Plain-language meaning | Why it matters in CQM |
