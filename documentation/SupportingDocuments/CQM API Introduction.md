@@ -39,6 +39,10 @@ For many mobile services, best-effort connectivity is sufficient.
 Users of many standard applications like messaging, browsing, background synchronisation can normally tolerate variable throughput, latency or varying radio conditions.
 Other services need more predictable connectivity performance under specific conditions: a live video application may need stable uplink performance during an media production event, a point-of-sale terminal may need reliable connectivity during the opening hours of a temporary store, a media production team may need several devices to operate in the same venue, or an enterprise may need a specific connectivity behaviour for a limited period or within a defined location.
 
+These services are often business critical and a specific connectivity quality is needed.
+There is likely a business impact, when the request for connectivity quality is not accepted or when the promised connectivity quality is not provided at the required time and place.
+**Editor's Note: Trying to explain, why best-effort connectivity is not good enough and what expectation ASPs have on Connectivity Quality. Many ASPs see Connectivity Quality as essential because of a certain business-criticality. However, ASPs are also concerned about the impact to their businesses, when not-getting the QoS Session at the right time, right place, etc.**
+
 Connectivity Quality Management (CQM) addresses these needs by exposing API-based tools that allow API consumers to discover, request, configure, reserve or manage connectivity quality in a standardised way.
 
 The key concept is that API consumers and application developers do not need a detailed understanding of mobile network implementations.
@@ -49,8 +53,7 @@ In simple terms, CQM helps API consumers understand and request **well-defined c
 Further, CQM further helps API consumer to understand the responses to their requests and the potential changes. 
 
 This document explains the CQM API portfolio at product and concept level.
-It is written for non-telco experts, API consumers, developers and technical product people who need to understand what each API is for without digesting the YAML specifications in detail or understanding internal mobile network topology.
-**Editor's Note: Suggestion by hubertp for discussion [PR#7 Line 52](https://github.com/camaraproject/ConnectivityQualityManagement/pull/7/changes#r3348461213)** 
+It is written for non-telco experts, API consumers, developers and technical product people who need to understand the purpose of each CQM API and the conceptual differences between these APIs, without digesting the YAML specifications in detail or understanding internal mobile network topology.
 
 **Editor's Note: We should be clear on API responses, i.e. success cases and non-success cases. Spectrum and cellular capacity is always a limited & scarce resource and the network needs to provide sometimes a Non-Success response. The Non-Success cases are not failure cases from CSP perspective.**
 
@@ -63,7 +66,8 @@ These concepts are API-facing: they describe what an API consumer sees and works
 **Editor's Note: Comment by Hubert on "Connectivity Performance Definition: I wonder if Connectivity Quality is not a term better understood by ASPs. Looking around I found this summry of difference between the terms quality and performance: "The core difference is that quality defines how well an object, service, or system meets requirements or standards, while performance measures how fast, efficiently, or powerfully it executes its functions." I'd suggest to change to 'quality' when we adress an ASP perspective and keep 'performance' when writing from CSP perspective.**
 | Concept | Plain-language meaning | Why it matters in CQM |
 | --- | --- | --- |
-| Connectivity Performance | Performance of the connectivity, characterized by parameters such as throughput, latency, priority or other network treatment parameters. | API consumers need better than best-effort connectivity quality, depending on the usage scenario and its context. |
+| Connectivity Quality | Stability, reliability and consistency of data transmissions in terms of throughput, latency and jitter characteristics. | Describes the need from ASP perspective, i.e. "what is the perception?" |
+| Connectivity Performance | Performance of the connectivity, characterized by parameters such as throughput, latency, priority or other network treatment parameters. | Describes the connectivity from a CSP perspective, i.e. "what is provided?" |
 | Discovery of capabilities | Discovery allows an API consumer to retrieve available QoS profiles, network profiles or supported connectivity options before requesting, assigning or reserving them. | It lets the API consumer work with abstracted, understandable information rather than guessing what the CSP offers. |
 | Connectivity booking | A reservation of connectivity quality for a future time window, service area and one or more devices. | It explains the reservation-based tools, where the API consumer needs advance commitment for a known future need. |
 | Service area | The geographic area where the requested or reserved connectivity performance is expected to apply. | It is central to booking and reserved connectivity environments, while keeping operator-internal topology hidden. |
@@ -87,15 +91,18 @@ Consumer / B2C
 - [Reliable network for social media and gaming](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma_resources/reliable-network-for-social-media-and-gaming/)
 - [Immersive large events](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma_resources/immersive-large-events/) Consumer Use Case
 
-Teh business-critical operations of most of the above listed use-cases can be made more robust, when pre-reserving connectivity performance.  
+The business-critical operations of most of the above listed use-cases can be made more robust, when pre-reserving connectivity performance.
+For business-critical operations, many ASPs prefer having _planed stability_, i.e. confidence that connectivity quality is provided, when needed. ASPs may be concerned about
+* Impact of **not getting** the connectivity service (e.g. QoS Session) at time of requested.
+* Impact of **not getting** the promised connectivity quality during the QoS service execution.
+
 **Editor's Note - End**
 
 To make the portfolio easier to understand, this document uses one illustrative journey: **connectivity quality around a live event**.
 
-A live-event context can create different connectivity needs depending on the production setup. These needs do not all apply to every event, and they are not steps in a mandatory sequence. The examples below illustrate how different CQM tools may become relevant under different usage conditions.
-
-**Editor's Note: The list above focuses on the success cases. For many API consumers, we also need to clarify the Non-Success cases.**
-
+A live-event context can create different connectivity needs depending on the production setup.
+These needs do not all apply to every event, and they are not steps in a mandatory sequence.
+The examples below illustrate how different CQM tools may become relevant under different usage conditions.
 
 | Illustrative live-event situation | Concrete API consumer need | Relevant CQM tool(s) | What matters to the API consumer |
 | --- | --- | --- | --- |
