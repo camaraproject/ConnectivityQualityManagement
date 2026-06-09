@@ -47,7 +47,8 @@ Connectivity Quality Management (CQM) addresses these needs by exposing API-base
 
 The key concept is that API consumers and application developers do not need a detailed understanding of mobile network implementations.
 API consumers work with external-facing abstractions of network capabilities exposed by the operator, such as QoS profiles, QoS sessions, bookings, service areas, device assignments and dedicated connectivity environments.
-Thus, the mobile network can be handled as a black box and the APIs give sufficient visibility on offered capabilities, operations to interact with capabilities and visibility of capability statuses.   
+
+The mobile network can therefore be treated as a black box. The APIs expose the information that API consumers need: available capabilities, operations to request or manage them, and status information describing the outcome of those operations.
 
 In simple terms, CQM helps API consumers understand and request **well-defined connectivity performance** when ordinary best-effort behaviour is not enough for a specific service, moment, location or group of devices.
 Further, CQM further helps API consumer to understand the responses to their requests and the potential changes. 
