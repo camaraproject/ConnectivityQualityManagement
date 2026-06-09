@@ -37,7 +37,7 @@ This means that the network tries to provide the best possible performance at an
 
 For many mobile services, best-effort connectivity is sufficient.
 Users of many standard applications like messaging, browsing, background synchronisation can normally tolerate variable throughput, latency or varying radio conditions.
-Other services need more predictable connectivity performance under specific conditions: a live video application may need stable uplink performance during an media production event, a point-of-sale terminal may need reliable connectivity during the opening hours of a temporary store, a media production team may need several devices to operate in the same venue, or an enterprise may need a specific connectivity behaviour for a limited period or within a defined location.
+Other services need more predictable connectivity performance under specific conditions: a live video application may need stable uplink performance during a media production event, a point-of-sale terminal may need reliable connectivity during the opening hours of a temporary store, a media production team may need several devices to operate in the same venue, or an enterprise may need a specific connectivity behaviour for a limited period or within a defined location.
 
 These services are often business critical and a specific connectivity quality is needed.
 There is likely a business impact, when the request for connectivity quality is not accepted or when the promised connectivity quality is not provided at the required time and place.
