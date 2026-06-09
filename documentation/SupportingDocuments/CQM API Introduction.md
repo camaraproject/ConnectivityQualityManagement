@@ -118,7 +118,11 @@ The examples below illustrate how different CQM tools may become relevant under 
 
 The same logic can be transposed to adjacent contexts such as a festival, a pop-up store, temporary point-of-sale terminals or short-term enterprise connectivity at a site.
 
-This journey is illustrative. It does **not** imply that every scenario uses every API, that the APIs must be invoked together, or that there is a universal decision tree for selecting an API.
+This journey is illustrative. 
+It does **not** imply that every scenario uses every API, that the APIs must be invoked together, or that there is a universal decision tree for selecting an API.
+The examples above describe the intended use of each tool.
+API consumers should also consider non-success outcomes. 
+Depending on the tool and the CSP offering, a request may be rejected, accepted with a status that evolves over time, or later become unavailable if the requested connectivity quality cannot be fulfilled anymore.
 
 
 ## 5. API Deep Dives
