@@ -8,12 +8,10 @@ In practice, that performance may vary depending on factors such as network depl
 For many usage contexts, this is sufficient.
 In other scenarios, an API consumer, such as an Application Service Provider (ASP), may need more predictable connectivity quality for a specific application, device, user category or enterprise context.
 
-The CAMARA Connectivity Quality Management (CQM) portfolio addresses these needs through a set of tools, made available via APIs.
-These tools are not interchangeable. They differ by **when** connectivity quality is needed, **where** it applies, **how many devices** are involved, and whether the need is covered by a single QoS profile or by a reserved connectivity environment with multiple QoS profiles and related conditions.
+The CAMARA Connectivity Quality Management (CQM) portfolio addresses these needs through a set of tools or capabilities, exposed by different API for specific connectivity quality needs.
 
-At a high level, CQM is based on the idea that some API consumers (representing connectivity users) need well-defined connectivity performance, such as predictable uplink behaviour, latency characteristics, prioritisation, or a minimum throughput.
-These needs may be linked to a specific application, an entire device, a service, a user category, an enterprise usage context, or a specific event scenario.
-In CAMARA, these well-defined connectivity performances are typically described through **QoS profiles**, which can then be discovered, requested, assigned, reserved, or used as part of a richer connectivity environment.
+The CQM tools are not interchangeable.
+They differ by **when** connectivity quality is needed, **where** it applies, **how many devices** are involved, and **what** the application and its usage needs to achieve: discovering available QoS profiles, applying well-defined connectivity performance immediately or as a long-lived QoS assignment, reserving connectivity performance for a future time and service area, assigning several devices to a reservation, or using a richer reserved connectivity environment with multiple QoS profiles.
 
 This document explains the purpose and differences of those tools.
 It is not a normative specification, not a CSP implementation roadmap, and not a strict API selection guide.
@@ -26,9 +24,6 @@ The CQM APIs can be summarised as follows:
 - `qos-booking` API introduces planned QoS: a reservation for a defined future time window and service area.
 - `qos-booking-and-assignment` API extends the booking idea to scenarios where several devices may need to be assigned or re-assigned to a reservation.
 - `dedicated-network` APIs allow manament advanced connectivity performance, specifically when involving multiple different QoS profiles.
-
-From an API consumer perspective, the CQM APIs should be understood as a set of tools or capabilities, exposed by different APIs for specific connectivity-quality needs.
-The relevant capability depends on what the application and its usage needs to achieve: discovering available QoS profiles, applying well-defined connectivity performance immediately or as a long-lived QoS assignment, reserving connectivity performance for a future time and service area, assigning several devices to a reservation, or using a richer reserved connectivity environment with multiple QoS profiles.
 
 ## 2. Introduction — Why Connectivity Quality Management Matters
 
