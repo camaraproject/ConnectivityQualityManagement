@@ -34,7 +34,7 @@ For many mobile services, best-effort connectivity is sufficient.
 Users of many standard applications like messaging, browsing, background synchronisation can normally tolerate variable throughput, latency or varying radio conditions.
 Other services need more predictable connectivity performance under specific conditions: a live video application may need stable uplink performance during a media production event, a point-of-sale terminal may need reliable connectivity during the opening hours of a temporary store, a media production team may need several devices to operate in the same venue, or an enterprise may need a specific connectivity behaviour for a limited period or within a defined location.
 
-These services are often business critical and a specific connectivity quality is needed.
+These services are often business critical and better connectivity quality is needed.
 There is likely a business impact, when the request for connectivity quality is not accepted or when the promised connectivity quality is not provided at the required time and place.
 **Editor's Note: Trying to explain, why best-effort connectivity is not good enough and what expectation ASPs have on Connectivity Quality. Many ASPs see Connectivity Quality as essential because of a certain business-criticality. However, ASPs are also concerned about the impact to their businesses, when not-getting the QoS Session at the right time, right place, etc.**
 
