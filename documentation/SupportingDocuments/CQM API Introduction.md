@@ -52,7 +52,9 @@ Further, CQM further helps API consumer to understand the responses to their req
 This document explains the CQM API portfolio at product and concept level.
 It is written for non-telco experts, API consumers, developers and technical product people who need to understand the purpose of each CQM API and the conceptual differences between these APIs, without digesting the YAML specifications in detail or understanding internal mobile network topology.
 
-CQM APIs also need to make non-success outcomes understandable. Mobile connectivity relies on finite network resources, and a request cannot always be fulfilled under the requested conditions. A non-success outcome or a later status change should therefore not be interpreted as an API failure: it may be an expected business outcome indicating that the requested connectivity quality is not available for the relevant context.
+CQM APIs also need to make non-success outcomes understandable.
+Mobile connectivity relies on finite network resources, and a request cannot always be fulfilled under the requested conditions.
+A non-success outcome or a later status change should therefore not be interpreted as an API failure: it may be an expected business outcome indicating that the requested connectivity quality is not available for the relevant context.
 
 **Editor's Note: We should be clear on API responses, i.e. success cases and non-success cases. Spectrum and cellular capacity is always a limited & scarce resource and the network needs to provide sometimes a Non-Success response. The Non-Success cases are not failure cases from CSP perspective.**
 
