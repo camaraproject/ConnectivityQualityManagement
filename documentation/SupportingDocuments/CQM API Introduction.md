@@ -36,7 +36,6 @@ Other services need more predictable connectivity performance under specific con
 
 These services are often business critical and better connectivity quality is needed.
 There is likely a business impact, when the request for connectivity quality is not accepted or when the promised connectivity quality is not provided at the required time and place.
-**Editor's Note: Trying to explain, why best-effort connectivity is not good enough and what expectation ASPs have on Connectivity Quality. Many ASPs see Connectivity Quality as essential because of a certain business-criticality. However, ASPs are also concerned about the impact to their businesses, when not-getting the QoS Session at the right time, right place, etc.**
 
 Connectivity Quality Management (CQM) addresses these needs by exposing API-based tools that allow API consumers to discover, request, configure, reserve or manage connectivity quality in a standardised way.
 
