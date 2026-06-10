@@ -77,7 +77,7 @@ These concepts are API-facing: they describe what an API consumer sees and works
 | QoS profile | A reusable description of offered connectivity-performance characteristics. | It is the common reference used when requesting, assigning or reserving defined connectivity quality. |
 | On-demand QoS session | A time-bounded application of a QoS profile to a device or, where supported, to a specific application flow. | Explains the on-demand concept of spontaneously requesting an different/additional connectivity quality when it is needed. |
 | Provisioned QoS assignment | A long-lived association of a QoS profile with a device, applied when the device connects to the access network. | More persistent QoS Profile assignment, similar to subscription level QoS profiles. |
-| Network profile | A richer connectivity offering that may include multiple QoS profiles, aggregated capacity, device limits and related conditions. | It explains the Dedicated Networks family. |
+| Network profile<br>**(tbd)** | A richer connectivity offering that may include multiple QoS profiles, aggregated capacity, device limits and related conditions. | It explains the Dedicated Networks family. |
 
 ## 4. Common Journey: Live Event Connectivity
 
@@ -104,8 +104,7 @@ For business-critical operations, many ASPs prefer having _planed stability_, i.
 
 **Editor's Note - End**
 
-**Editor's Note - Start: Test Table**
-Proposal.
+## Usecases from GSMA Usecase library
 
 | GSMA Usecase library | QoD | QoS<br>Provisioning | QOS<br>Booking | QOS Booking<br>& Assignment | Dedicated<br>Networks |
 | --- | --- | --- | --- | --- | --- |
@@ -133,8 +132,7 @@ Proposal.
 
 [^7]: Unclear use-case descriptions and unclear purpose of connectivity usage. For a successfult event outcome (in densely populated and congested areas), is seems generally better to reserve connectivity than relying on On-Demand availability.  
 
-
-**Editor's Note - End: Test Table**
+## Illustrative journey: connectivity quality around a live event
 
 To make the portfolio easier to understand, this document uses one illustrative journey: **connectivity quality around a live event**.
 
