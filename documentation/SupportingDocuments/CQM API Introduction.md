@@ -68,7 +68,7 @@ These concepts are API-facing: they describe what an API consumer sees and works
 | Concept | Plain-language meaning | Why it matters in CQM |
 | --- | --- | --- |
 | Connectivity quality | Stability, reliability and consistency of data transmissions in terms of throughput, latency and jitter characteristics. | Describes the need from ASP perspective, i.e. "what is the perception?" |
-| **Keep?**<br>Connectivity performance | Performance of the connectivity, characterized by parameters such as throughput, latency, priority or other network treatment parameters. | Describes the connectivity from a CSP perspective, i.e. "what is provided?" |
+| Connectivity performance | Performance of the connectivity, characterized by parameters such as throughput, latency, priority or other network treatment parameters. | Describes the connectivity from a CSP perspective, i.e. "what is provided?" |
 | Discovery of capabilities | The ability to retrieve (likely?) available QoS profiles, network profiles or (supported?) eligible service areas before requesting or reserving them. | Allows the API consumer to understand the CSP exposes capabilities and its characteristics. |
 | Connectivity booking | A reservation of defined connectivity quality for a future time window, service area and one or more devices. | Allows reserving of connectivity quality for a future time, either immenent or distant time horizon. |
 | Service area | The geographic area where requested or reserved connectivity quality is expected to apply. | Gives the API consumer an understandable geographic abstraction of the coverage area of the service. |
