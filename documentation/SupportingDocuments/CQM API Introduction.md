@@ -28,7 +28,13 @@ The core APIs within scope are:
 - `qos-provisioning` API supports longer-lived QoS assignment to a device, service or subscription.
 - `qos-booking` API introduces planned QoS: a reservation for a defined future time window and service area.
 - `qos-booking-and-assignment` API extends the booking idea to scenarios where several devices may need to be assigned or re-assigned to a reservation.
-- `dedicated-network` APIs allow manament advanced connectivity performance, specifically when involving multiple different QoS profiles.
+- `qos-profiles`,
+- `quality-on-demand`,
+- `qos-provisioning`,
+- `qos-booking`,
+- `qos-booking-and-assignment`,
+- the Dedicated Networks API family: `dedicated-network`, `dedicated-network-accesses`, and`dedicated-network-profiles`.
+Selected preview capabilities are explicitly identified where relevant.
 
 ## 2. Introduction — Why Connectivity Quality Management Matters
 
