@@ -11,6 +11,8 @@ In other scenarios, an API consumer, such as an Application Service Provider (AS
 The CAMARA Connectivity Quality Management (CQM) portfolio addresses these needs through a set of tools or capabilities, exposed by different API for specific connectivity quality needs.
 
 The CQM tools are not interchangeable.
+The CAMARA Connectivity Quality Management (CQM) portfolio addresses these needs through a set of tools or capabilities, exposed by different API for specific connectivity quality needs.
+The CAMARA Connectivity Quality Management (CQM) portfolio addresses these needs through a set of tools or capabilities, exposed by different API for specific connectivity quality needs. These tools are not interchangeable.
 They differ by **when** connectivity quality is needed, **where** it applies, **how many devices** are involved, and **what** the application and its usage needs to achieve: discovering available QoS profiles, applying well-defined connectivity performance immediately or as a long-lived QoS assignment, reserving connectivity performance for a future time and service area, assigning several devices to a reservation, or using a richer reserved connectivity environment with multiple QoS profiles.
 
 This document explains the purpose and differences of those tools.
