@@ -18,7 +18,10 @@ They differ by **when** connectivity quality is needed, **where** it applies, **
 This document explains the purpose and differences of those tools.
 It is not a normative specification, not a CSP implementation roadmap, and not a strict API selection guide.
 Actual API availability and supported tools vary by CSP and markets, and API consumers should always check what their provider supports.
-The CQM APIs can be summarised as follows:
+This document explains the purpose and conceptual differences of those tools.
+It is not a normative specification, not a CSP implementation roadmap and not a strict API selection guide.
+Actual API availability and supported capabilities vary by CSP and market.
+The core APIs within scope are:
 
 - `qos-profiles` API helps API consumers discover or reference the QoS profiles made available by the operator. The usage of this API for resolving the connectivity characteristics is optional.
 - `quality-on-demand` API enables an application to request an immediate, time-bounded QoS session.
