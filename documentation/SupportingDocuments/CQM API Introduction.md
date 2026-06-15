@@ -23,11 +23,6 @@ It is not a normative specification, not a CSP implementation roadmap and not a 
 Actual API availability and supported capabilities vary by CSP and market.
 The core APIs within scope are:
 
-- `qos-profiles` API helps API consumers discover or reference the QoS profiles made available by the operator. The usage of this API for resolving the connectivity characteristics is optional.
-- `quality-on-demand` API enables an application to request an immediate, time-bounded QoS session.
-- `qos-provisioning` API supports longer-lived QoS assignment to a device, service or subscription.
-- `qos-booking` API introduces planned QoS: a reservation for a defined future time window and service area.
-- `qos-booking-and-assignment` API extends the booking idea to scenarios where several devices may need to be assigned or re-assigned to a reservation.
 - `qos-profiles`,
 - `quality-on-demand`,
 - `qos-provisioning`,
