@@ -616,4 +616,14 @@ Service-area discovery through `dedicated-network-areas` is presented as a previ
 
 The illustrative journey is informed by event, media production, temporary retail and data-boost scenarios. These examples explain portfolio roles; they are not a normative API selection guide.
 
-## Appendix (e.g. change log)
+## Appendix A — Selected GSMA Use-Case References
+
+The live-event journey is informed by selected GSMA Open Gateway use cases, including:
+
+- [Remote Journalist](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma_resources/remote-journalist/)
+- [Remote Live Broadcast](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma_resources/remote-live-broadcast/)
+- [QoD for PoS transactions at events](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma_resources/qod-for-pos-transactions-at-events/)
+- [Large Event Planning and Delivery](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma_resources/large-event-planning-and-delivery/)
+- [Enhanced connectivity for retail stores](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma_resources/enhanced-connectivity-for-retail-stores/)
+
+A detailed mapping between GSMA use cases and potentially applicable CQM APIs may be maintained separately as internal analysis. It is intentionally not included in this external-facing document.
