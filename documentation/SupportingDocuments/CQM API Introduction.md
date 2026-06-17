@@ -53,7 +53,7 @@ The APIs expose the information that API consumers need: available capabilities,
 
 In simple terms, CQM helps API consumers understand and request **well-defined connectivity performance** when ordinary best-effort behaviour is not enough for a specific service, moment, location or group of devices.
 A successfully processed API request does not always mean that the requested connectivity quality is available. 
-Depending on the API and the CSP offering, the resulting resource may indicate that the requested service is available, pending or unavailable.
+Depending on the API and the CSP offering, the resulting resource may indicate that the requested service is `available`, `pending` or `unavailable`.
 A later status change may also indicate that the requested connectivity quality can no longer be fulfilled.
 These service-availability outcomes are distinct from technical API errors.
 
