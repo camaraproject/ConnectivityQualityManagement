@@ -52,7 +52,7 @@ The mobile network can therefore be treated as a black box.
 The APIs expose the information that API consumers need: available capabilities, operations to request or manage them, and status information describing the outcome (success or non-success) of those operations.
 
 In simple terms, CQM helps API consumers understand and request **well-defined connectivity performance** when ordinary best-effort behaviour is not enough for a specific service, moment, location or group of devices.
-Further, CQM further helps API consumer to understand the responses to their requests and the potential changes. 
+A successfully processed API request does not always mean that the requested connectivity quality is available. Depending on the API and the CSP offering, the resulting resource may indicate that the requested service is available, pending or unavailable. A later status change may also indicate that the requested connectivity quality can no longer be fulfilled. These service-availability outcomes are distinct from technical API errors.
 
 This document explains the CQM API portfolio at product and concept level.
 It is written for non-telco experts, API consumers, developers and technical product people who need to understand the purpose of each CQM API and the conceptual differences between these APIs, without digesting the YAML specifications in detail or understanding internal mobile network topology.
