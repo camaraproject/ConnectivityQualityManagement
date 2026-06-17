@@ -13,7 +13,6 @@ The CAMARA Connectivity Quality Management (CQM) portfolio addresses these needs
 These tools are not interchangeable.
 They differ by **when** connectivity quality is needed, **where** it applies, **how many devices** are involved, and **what** the application and its usage needs to achieve: discovering available QoS profiles, applying well-defined connectivity performance immediately or as a long-lived QoS assignment, reserving connectivity performance for a future time and service area, assigning several devices to a reservation, or using a richer reserved connectivity environment with multiple QoS profiles.
 
-Actual API availability and supported tools vary by CSP and markets, and API consumers should always check what their provider supports.
 This document explains the purpose and conceptual differences of those tools.
 It is not a normative specification, not a CSP implementation roadmap and not a strict API selection guide.
 Actual API availability and supported capabilities vary by CSP and market.
