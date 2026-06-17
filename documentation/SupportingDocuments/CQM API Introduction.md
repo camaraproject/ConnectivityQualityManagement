@@ -8,7 +8,6 @@ In practice, that performance may vary depending on factors such as network depl
 For many usage contexts, this is sufficient.
 In other scenarios, an API consumer, such as an Application Service Provider (ASP), may need more predictable connectivity quality for a specific application, device, user category or enterprise context.
 
-The CAMARA Connectivity Quality Management (CQM) portfolio addresses these needs through a set of tools or capabilities, exposed by different API for specific connectivity quality needs.
 
 The CQM tools are not interchangeable.
 The CAMARA Connectivity Quality Management (CQM) portfolio addresses these needs through a set of tools or capabilities, exposed by different API for specific connectivity quality needs.
