@@ -338,7 +338,102 @@ Where the CSP exposes them, mechanisms such as capacity pre-checks or confidence
 | Need addressed | The API consumer needs to identify eligible service areas and understand which QoS profiles and/or network profiles are supported in each area before creating a reservation. |
 | What it exposes | A catalogue of service areas, including their geographic definition and the QoS profiles and/or network profiles supported within each area. |
 | API consumer takeaway | This optional discovery capability helps the API consumer select an eligible service area without needing to understand the operator's internal network topology. |
+## 6. API Deep Dives
+
+### 6.1 Discovery / support APIs
+
+#### `qos-profiles` — Discovering available QoS profiles
+
+| Aspect | Explanation |
+| --- | --- |
+| Need addressed | The API consumer needs to know which QoS profiles are available and how they are identified before requesting, assigning or reserving connectivity quality. |
+| What it exposes | Information about QoS profiles that may be referenced by other CQM APIs. |
+| API consumer takeaway | Treat `qos-profiles` as a supporting catalogue. It does not change connectivity behaviour directly. |
+| Not to be confused with | Activating QoS, reserving QoS, provisioning a device or creating a dedicated network. |
+
+#### `dedicated-network-profiles` — Discovering available network profiles
+
+| Aspect | Explanation |
+| --- | --- |
+| Need addressed | The API consumer needs to understand which network profiles the CSP exposes before requesting a reserved connectivity environment. |
+| What it exposes | A catalogue of network profiles describing supported Dedicated Networks configurations. |
+| API consumer takeaway | This is the discovery API for network profiles within the Dedicated Networks family. |
+| Not to be confused with | Creating a reserved environment or managing device access. |
+
+#### Service-area discovery (`dedicated-network-areas`, preview capability)
+
+| Aspect | Explanation |
+| --- | --- |
+| Need addressed | The API consumer needs to identify eligible service areas and understand which QoS profiles and/or network profiles are supported in each area before creating a reservation. |
+| What it exposes | A catalogue of service areas, including their geographic definition and supported QoS profiles and/or network profiles. |
+| API consumer takeaway | This optional preview capability helps the API consumer select an eligible service area without understanding internal network topology. |
 | Not to be confused with | A generic coverage map, a guarantee that any arbitrary area can support the requested profile, or the creation of a booking or dedicated network. |
+
+### 6.2 On-demand connectivity management
+
+#### `quality-on-demand` — Immediate, time-bounded QoS sessions
+
+| Aspect | Explanation |
+| --- | --- |
+| Need addressed | The API consumer needs defined connectivity quality immediately for one or more application flows. |
+| What it controls | A QoS session associated with a QoS profile and a defined duration. |
+| API consumer takeaway | This is the immediate “apply a QoS profile now, for a bounded duration” tool. |
+| Not to be confused with | Future reservations, persistent QoS assignment, multi-device assignment or reserved connectivity environments. |
+
+A QoS session may not become available, or may later become unavailable, if the network cannot fulfil the requested QoS profile under the current conditions.
+
+### 6.3 Long-lived QoS assignment
+
+#### `qos-provisioning` — Long-lived QoS assignment for a device
+
+| Aspect | Explanation |
+| --- | --- |
+| Need addressed | A device needs to remain associated with a QoS profile beyond a time-bounded session. |
+| What it controls | A QoS-profile assignment configured in advance and applied whenever the device connects to the access network, until the assignment is revoked. |
+| API consumer takeaway | The key distinction from `quality-on-demand` is persistence: the API consumer does not need to create a new QoS session every time the device reconnects. |
+| Not to be confused with | A universal guarantee that identical measured performance will be available at every time and location, or with a future time-and-area reservation. |
+
+### 6.4 Reservation-based connectivity management
+
+#### `qos-booking` — Connectivity booking for a future time window and service area
+
+| Aspect | Explanation |
+| --- | --- |
+| Need addressed | The API consumer knows in advance that defined connectivity quality will be needed at a specific time and place. |
+| What it controls | A connectivity booking for one QoS profile, one future time window, one service area and one device. |
+| API consumer takeaway | The essential difference from `quality-on-demand` is planning. The essential difference from `qos-provisioning` is that the reservation is bounded by time and service area. |
+| Not to be confused with | Multi-device assignment, network profiles or reserved connectivity environments. |
+
+A successfully processed request may still indicate that the requested reservation is unavailable. The API consumer should rely on the booking status to understand the service-availability outcome.
+
+#### `qos-booking-and-assignment` — Connectivity booking with device assignment
+
+| Aspect | Explanation |
+| --- | --- |
+| Need addressed | Connectivity needs to be reserved for a future time window and service area while the devices that will use it are not all known at booking time or may change. |
+| What it controls | A booking for one QoS profile together with the ability to assign and re-assign devices during its lifecycle. |
+| API consumer takeaway | The value is the separation of the reservation from the final device list. |
+| Not to be confused with | A simple per-device booking or a reserved environment that exposes multiple QoS profiles. |
+
+#### `dedicated-network` — Reserved connectivity environment
+
+| Aspect | Explanation |
+| --- | --- |
+| Need addressed | The use case requires a reserved connectivity environment that may expose multiple QoS profiles, a defined service area, a time window and additional conditions. |
+| What it controls | A reserved environment based on a network profile, within which one or more QoS profiles can be made available to devices. |
+| API consumer takeaway | Dedicated Networks are relevant when the CSP offering exposes a broader reserved connectivity environment with multiple QoS profiles, device-access management or related conditions. |
+| Not to be confused with | A single-profile booking or an on-demand QoS session. |
+
+Where supported by the CSP offering, `quality-on-demand` may be used within a Dedicated Network to activate QoS sessions dynamically using the QoS profiles made available by the relevant network profile.
+
+#### `dedicated-network-accesses` — Device-access management for a reserved environment
+
+| Aspect | Explanation |
+| --- | --- |
+| Need addressed | Devices need to be granted, changed or revoked access to a reserved connectivity environment. |
+| What it controls | Device accesses associated with a `dedicated-network`. |
+| API consumer takeaway | This is the device-access companion to `dedicated-network`: it manages which devices may use the reserved environment. |
+| Not to be confused with | Discovering network profiles or creating the reserved environment itself. |
 
 ## 6. Comparative Matrix and Purpose-Oriented Navigation
 
