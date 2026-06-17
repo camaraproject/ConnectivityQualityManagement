@@ -481,7 +481,21 @@ The main relationships are:
 This matrix is intended to make portfolio roles visible.
 It is **not** a strict API selection guide and does not guarantee CSP support for any specific combination.
 
----
+## 7. Comparative Matrix and Purpose-Oriented Navigation
+
+| API or capability | Category | Timing | Service area | Device model | QoS / profile model |
+| --- | --- | --- | --- | --- | --- |
+| `qos-profiles` | Discovery / support | n/a | n/a | Optional device filter | Catalogue of QoS profiles |
+| `dedicated-network-profiles` | Discovery / support | n/a | n/a | n/a | Catalogue of network profiles |
+| Service-area discovery (`dedicated-network-areas`, preview capability) | Discovery / support | n/a | Catalogue of eligible service areas | n/a | Associates areas with supported QoS profiles and/or network profiles |
+| `quality-on-demand` | On-demand | Immediate, session duration | Not an explicit request dimension | Application flows associated with a device | One QoS profile per session |
+| `qos-provisioning` | Long-lived assignment | Persists until revoked | No explicit service area in the API contract | Device | One QoS profile assignment |
+| `qos-booking` | Reservation-based | Future time window | Defined service area | One device per booking | One QoS profile per booking |
+| `qos-booking-and-assignment` | Reservation-based | Future time window | Defined service area | Multiple devices via assignment | One QoS profile per booking |
+| `dedicated-network` | Reservation-based | Reserved-environment lifecycle | Defined service area | Multiple devices via accesses | Potentially multiple QoS profiles via a network profile |
+| `dedicated-network-accesses` | Device-access management | Follows the reserved-environment lifecycle | Inherited from the reserved environment | Device-access management | Inherited from the reserved environment |
+
+This matrix makes portfolio roles visible. It is **not** a strict API selection guide and does not guarantee CSP support for any specific combination.
 
 ## 7. Key Takeaways, Guardrails and Sources
 
