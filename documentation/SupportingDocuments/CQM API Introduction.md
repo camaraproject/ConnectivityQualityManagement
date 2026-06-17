@@ -166,7 +166,30 @@ The examples above describe the intended use of each tool.
 API consumers should also consider non-success outcomes. 
 Depending on the tool and the CSP offering, a request may be rejected, accepted with a status that evolves over time, or later become unavailable if the requested connectivity quality cannot be fulfilled anymore.
 
+## 5. Scope and Portfolio Grouping
 
+The CQM APIs can be grouped by purpose:
+
+- **Discovery / support APIs** — expose information about what the CSP makes available without changing connectivity behaviour:
+  - `qos-profiles`
+  - `dedicated-network-profiles`
+  - service-area discovery (`dedicated-network-areas`, preview capability)
+
+- **On-demand connectivity management** — request a defined QoS session for immediate, time-bounded use:
+  - `quality-on-demand`
+
+- **Long-lived QoS assignment** — associate a QoS profile with a device until the assignment is revoked:
+  - `qos-provisioning`
+
+- **Reservation-based connectivity management** — reserve connectivity quality in advance for a future time and service area:
+  - `qos-booking`
+  - `qos-booking-and-assignment`
+  - `dedicated-network`
+
+- **Device-access management for a reserved environment** — control which devices may use Dedicated Network resources:
+  - `dedicated-network-accesses`
+
+The core portfolio description is based on published CAMARA specifications. Preview capabilities are explicitly labelled and should not be interpreted as generally available CSP offerings.
 ## 5. API Deep Dives
 
 Each API is explained with the same compact structure: the need it addresses, what it controls or exposes, the API consumer takeaway, and what it should not be confused with. 
