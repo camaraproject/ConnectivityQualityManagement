@@ -69,7 +69,8 @@ A non-success outcome or a later status change should therefore not be interpret
 ## 3. Core CQM Concepts in Plain Language
 
 Before looking at each API, it is useful to understand a small set of CQM concepts.
-These concepts are API-facing: they describe what an API consumer sees and works with, not how the operator implements them internally.
+Before looking at each API, it is useful to understand a small set of API-facing CQM concepts.
+They describe what an API consumer sees and works with, not how the operator implements them internally.
 
 **Editor's Note: Comment by Hubert on "Connectivity Performance Definition: I wonder if Connectivity Quality is not a term better understood by ASPs. Looking around I found this summry of difference between the terms quality and performance: "The core difference is that quality defines how well an object, service, or system meets requirements or standards, while performance measures how fast, efficiently, or powerfully it executes its functions." I'd suggest to change to 'quality' when we adress an ASP perspective and keep 'performance' when writing from CSP perspective.**
 
