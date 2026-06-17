@@ -580,6 +580,40 @@ This document should be anchored in:
 
 - the published CAMARA specifications for the in-scope CQM APIs;
 - public CAMARA material related to CQM;
-- use-case-driven CQM explanatory material, especially event, media production, pop-up store and data-boost scenarios.
+## 8. Key Takeaways, Guardrails and Sources
+
+### 8.1 Key takeaways
+
+The CQM portfolio is best understood as a set of API tools for different connectivity-quality needs. The main dimensions that distinguish them are:
+
+- whether the need is immediate, long-lived or planned for a future window;
+- whether a service area is part of the request;
+- whether one device or several devices are involved;
+- whether device assignment must be managed over time;
+- whether one QoS profile is sufficient or the scenario benefits from a reserved environment with multiple QoS profiles and related conditions.
+
+Discovery APIs help API consumers understand what is available. On-demand and long-lived QoS tools apply a QoS profile dynamically or persistently. Reservation-based tools request connectivity quality in advance. The Dedicated Networks family extends this to reserved environments with device-access management and potentially multiple QoS profiles.
+
+### 8.2 Guardrails for external readers
+
+1. **Do not assume operator topology.** API consumers work with external-facing abstractions such as QoS profiles, QoS sessions, connectivity bookings, service areas, device assignments and network profiles. They do not need to reason about internal network topology.
+
+2. **Do not assume universal CSP support.** CAMARA specification availability and CSP availability are not the same thing. API consumers should check which APIs and capabilities their CSP exposes.
+
+3. **Do not turn the portfolio into a strict decision tree.** The same scenario may be addressed differently depending on the API consumer need, CSP offering and market context.
+
+4. **Match the API tool to the actual need.** Some needs require a QoS session; others require a long-lived assignment, a planned booking, device assignment or a reserved multi-profile environment.
+
+5. **Distinguish API processing from service availability.** A successfully processed API request does not necessarily mean that the requested connectivity quality is available. API consumers should rely on resource status and status changes to understand the outcome.
+
+6. **Describe optional mechanisms only when they are explicitly supported.** Capacity pre-checks, confidence indications or prediction mechanisms should not be presented as standard CQM behaviour unless they are explicitly supported by the API or CSP offering.
+
+### 8.3 Sources and version notes
+
+This document is based on the published CAMARA specifications for the in-scope CQM APIs and on public or shareable CQM explanatory material.
+
+Service-area discovery through `dedicated-network-areas` is presented as a preview capability and should not be interpreted as a generally available CSP offering.
+
+The illustrative journey is informed by event, media production, temporary retail and data-boost scenarios. These examples explain portfolio roles; they are not a normative API selection guide.
 
 ## Appendix (e.g. change log)
