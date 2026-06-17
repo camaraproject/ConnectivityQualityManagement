@@ -78,7 +78,7 @@ They describe what an API consumer sees and works with, not how the operator imp
 | Connectivity quality | Stability, reliability and consistency of data transmissions in terms of throughput, latency and jitter characteristics. | Describes the need from ASP perspective, i.e. "what is the perception?" |
 | Connectivity performance | Performance of the connectivity, characterized by parameters such as throughput, latency, priority or other network treatment parameters. | Describes the connectivity from a CSP perspective, i.e. "what is provided?" |
 | Discovery of capabilities | The ability to retrieve (likely?) available QoS profiles, network profiles or (supported?) eligible service areas before requesting or reserving them. | Allows the API consumer to understand the CSP exposes capabilities and its characteristics. |
-| Connectivity booking | A reservation of defined connectivity quality for a future time window, service area and one or more devices. | Allows reserving of connectivity quality for a future time, either immenent or distant time horizon. |
+| Connectivity booking | A reservation of defined connectivity quality for a future time window and service area. | It explains the reservation-based APIs. Device assignment may be included in the booking or managed separately, depending on the API. |
 | Service area | The geographic area where requested or reserved connectivity quality is expected to apply. | Gives the API consumer an understandable geographic abstraction of the coverage area of the service. |
 | Device assignment | The act of linking one or more devices to a booking or reserved connectivity environment. | Explains the distinction between reserving connectivity and determining which devices may use it. |
 ||||
