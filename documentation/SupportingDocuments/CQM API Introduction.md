@@ -68,7 +68,6 @@ A non-success outcome or a later status change should therefore not be interpret
 
 ## 3. Core CQM Concepts in Plain Language
 
-Before looking at each API, it is useful to understand a small set of CQM concepts.
 Before looking at each API, it is useful to understand a small set of API-facing CQM concepts.
 They describe what an API consumer sees and works with, not how the operator implements them internally.
 
