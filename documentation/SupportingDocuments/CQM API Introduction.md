@@ -70,7 +70,7 @@ They describe what an API consumer sees and works with, not how the operator imp
 
 | Concept | Plain-language meaning | Why it matters in CQM |
 | --- | --- | --- |
-| Connectivity quality | Stability, reliability and consistency of data transmissions in terms of throughput, latency and jitter characteristics. | Describes the need from ASP perspective, i.e. "what is the perception?" |
+| Connectivity quality | The level of connectivity experience needed for a given usage context. It may be described through performance characteristics such as throughput, latency, priority or jitter. | It explains why ordinary best-effort connectivity may not be sufficient for some services or usage conditions. |
 | Connectivity performance | Performance of the connectivity, characterized by parameters such as throughput, latency, priority or other network treatment parameters. | Describes the connectivity from a CSP perspective, i.e. "what is provided?" |
 | Discovery of capabilities | The ability to retrieve offered QoS profiles, network profiles or eligible service areas before requesting or reserving them. | It allows the API consumer to understand what the CSP exposes without needing to know internal network topology. |
 | Connectivity booking | A reservation of defined connectivity quality for a future time window and service area. | It explains the reservation-based APIs. Device assignment may be included in the booking or managed separately, depending on the API. |
