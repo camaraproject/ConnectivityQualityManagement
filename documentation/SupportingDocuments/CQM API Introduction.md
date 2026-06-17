@@ -84,7 +84,7 @@ They describe what an API consumer sees and works with, not how the operator imp
 ||||
 | **Double term**<br>Connectivity quality | The level of connectivity experience needed for a given usage context. It may be described through performance characteristics such as throughput, latency, priority or jitter. | It explains why ordinary best-effort connectivity may not be sufficient for some services or usage conditions. |
 | QoS profile | A reusable description of offered connectivity-performance characteristics. | It is the common reference used when requesting, assigning or reserving defined connectivity quality. |
-| On-demand QoS session | A time-bounded application of a QoS profile to a device or, where supported, to a specific application flow. | Explains the on-demand concept of spontaneously requesting an different/additional connectivity quality when it is needed. |
+| QoS session | A time-bounded application of a QoS profile to one or more application flows associated with a device. | It explains temporary QoS treatment. With `quality-on-demand`, the session is requested dynamically when it is needed. |
 | Provisioned QoS assignment | A long-lived association of a QoS profile with a device, applied when the device connects to the access network. | More persistent QoS Profile assignment, similar to subscription level QoS profiles. |
 | Network profile<br>**(tbd)** | A richer connectivity offering that may include multiple QoS profiles, aggregated capacity, device limits and related conditions. | It explains the Dedicated Networks family. |
 
