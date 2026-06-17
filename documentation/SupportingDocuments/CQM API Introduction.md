@@ -80,7 +80,6 @@ They describe what an API consumer sees and works with, not how the operator imp
 | Service area | The geographic area where requested or reserved connectivity quality is expected to apply. | It gives the API consumer an understandable geographic abstraction while keeping operator-internal topology hidden. |
 | Device assignment | The act of linking one or more devices to a booking or reserved connectivity environment. | It explains the distinction between reserving connectivity and determining which devices may use it. |
 ||||
-| **Double term**<br>Connectivity quality | The level of connectivity experience needed for a given usage context. It may be described through performance characteristics such as throughput, latency, priority or jitter. | It explains why ordinary best-effort connectivity may not be sufficient for some services or usage conditions. |
 | QoS profile | A reusable description of offered connectivity-performance characteristics. | It is the common reference used when requesting, assigning or reserving defined connectivity quality. |
 | QoS session | A time-bounded application of a QoS profile to one or more application flows associated with a device. | It explains temporary QoS treatment. With `quality-on-demand`, the session is requested dynamically when it is needed. |
 | Provisioned QoS assignment | A long-lived association of a QoS profile with a device, applied when the device connects to the access network. | More persistent QoS Profile assignment, similar to subscription level QoS profiles. |
