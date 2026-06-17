@@ -37,6 +37,7 @@ Mobile connectivity is today mostly consumed as **best-effort connectivity**.
 This means that the network tries to provide the best possible performance at any given moment, but the actual experience may vary depending on many factors, such as network deployment, coverage conditions, terrain, indoor or outdoor location, mobility, and current network usage.
 
 For many mobile services, best-effort connectivity is sufficient.
+For many mobile services, best-effort connectivity is sufficient.
 Users of many standard applications like messaging, browsing, background synchronisation can normally tolerate variable throughput, latency or varying radio conditions.
 Other services need more predictable connectivity performance under specific conditions: a live video application may need stable uplink performance during a media production event, a point-of-sale terminal may need reliable connectivity during the opening hours of a temporary store, a media production team may need several devices to operate in the same venue, or an enterprise may need a specific connectivity behaviour for a limited period or within a defined location.
 
