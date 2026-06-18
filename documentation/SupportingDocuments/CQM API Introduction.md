@@ -6,6 +6,7 @@ Most applications consume mobile connectivity on a best-effort basis: the networ
 In practice, that performance may vary depending on factors such as network deployment, coverage conditions, location, mobility and current network usage.
 
 For some usage contexts, an API consumer, such as an Application Service Provider (ASP), may need defined connectivity quality for a specific service, device, time or location. The CAMARA Connectivity Quality Management (CQM) portfolio addresses these needs through capabilities exposed through different APIs.
+In other scenarios, an API consumer, such as an Application Service Provider (ASP), may need more predictable connectivity quality for a specific application, device, user category or enterprise context.
 The CAMARA Connectivity Quality Management (CQM) portfolio addresses these needs through a set of tools or capabilities, exposed by different API for specific connectivity quality needs.
 These tools are not interchangeable.
 
