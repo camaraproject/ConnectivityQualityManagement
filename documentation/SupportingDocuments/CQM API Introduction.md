@@ -63,6 +63,13 @@ The following concepts describe what an API consumer sees and works with, rather
 | Service area | The geographic area where requested or reserved connectivity quality is expected to apply. | It gives the API consumer an understandable geographic abstraction while keeping operator-internal topology hidden. |
 | Device assignment | The act of linking one or more devices to a booking or reserved connectivity environment. | It explains the distinction between reserving connectivity and determining which devices may use it. |
 
+The key differences between the three **reservation APIs** are around capabilities like targeted devices and targeted QOS Profiles:
+
+| API | # Devices | # QoS Profile |
+| ---- | ---- | ---- |
+| QOS Booking | One Device | One QoS Profile |
+| QOS Booking and Assignment | One or more Device | One QoS Profile |
+| Dedicated Networks | One or more Device | One or more QoS Profile |
 ## 4. Common Journey: Live Event Connectivity
 
 To make the portfolio easier to understand, this document uses one illustrative journey: **connectivity quality around a live event**.
