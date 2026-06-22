@@ -30,6 +30,8 @@ The core APIs within scope are:
 
 Selected preview capabilities are explicitly identified where relevant.
 
+This document focuses on the CQM APIs listed above. Other CAMARA APIs in the broader Communication Quality area are related to connectivity-quality use cases, but are outside the main scope of this document and are briefly referenced in Appendix B for context.
+
 ## 2. Introduction — Why Connectivity Quality Management Matters
 
 Mobile connectivity is typically delivered on a **best-effort** basis. The network aims to deliver the best performance at a given moment, but the actual connectivity quality experience can fluctuate depending on factors such as coverage conditions, geographical location, device movement and current network usage.
@@ -70,6 +72,7 @@ The key differences between the three **reservation APIs** are around capabiliti
 | QOS Booking | One Device | One QoS Profile |
 | QOS Booking and Assignment | One or more Device | One QoS Profile |
 | Dedicated Networks | One or more Device | One or more QoS Profile |
+
 ## 4. Common Journey: Live Event Connectivity
 
 To make the portfolio easier to understand, this document uses one illustrative journey: **connectivity quality around a live event**.
@@ -263,6 +266,8 @@ Discovery APIs help API consumers understand what is available. On-demand and lo
 
 This document is based on the published CAMARA specifications for the in-scope CQM APIs and on public or shareable CQM explanatory material.
 
+The CAMARA API overview also lists additional APIs under the broader Communication Quality area. These APIs are referenced in Appendix B only to clarify the boundary of this document.
+
 Service-area discovery through `dedicated-network-areas` is presented as a preview capability and should not be interpreted as a generally available CSP offering.
 
 The illustrative journey is informed by event, media production and temporary retail scenarios. These examples explain portfolio roles; they are not a normative mapping or API selection guide.
@@ -314,3 +319,21 @@ ASPs may be concerned about:
 | [Immersive large events](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma_resources/immersive-large-events/) | Dense-event environments can create high demand for predictable connectivity quality. | Service area, planned reservation, possible Dedicated Networks. | The connectivity purpose should be clarified before mapping it to a CQM tool. For highly congested event scenarios, planned reservation may be more appropriate than relying only on on-demand availability. |
 
 A detailed mapping between GSMA use cases and potentially applicable CQM APIs may be maintained separately as internal analysis. It is intentionally not included in this external-facing document.
+
+### Appendix B — Related CAMARA Communication Quality APIs outside this document’s scope
+
+The CAMARA API overview includes additional APIs under the broader **Communication Quality** area. Some of them may be relevant to connectivity-quality use cases, but they are not part of the CQM portfolio explained in this document.
+
+This appendix provides a short contextual reference only. It is **not** intended to extend the scope of the document, compare all Communication Quality APIs, or provide a selection guide.
+
+| Related API | Relationship with CQM | Why it is outside the main scope of this document |
+| --- | --- | --- |
+| [Application Profiles](https://camaraproject.org/application-profiles/) | Describes application-level requirements or thresholds that may help other APIs understand what an application needs. | It supports application requirement description, but it is not itself a CQM control, assignment or reservation API. |
+| [Connectivity Insights](https://camaraproject.org/connectivity-insights/) | Provides visibility into whether an application’s network requirements can be met for a given user session. | It is primarily an insight / assessment API, not an API for requesting, assigning or reserving connectivity quality. |
+| [Connectivity Insights Subscriptions](https://camaraproject.org/connectivity-insights-subscriptions/) | Provides event-based updates when network quality changes or when requirements may no longer be met. | It supports monitoring and notifications, not direct connectivity-quality control or reservation. |
+| [Predictive Connectivity Data](https://camaraproject.org/predictive-connectivity-data/) | Provides estimated future connectivity information for a geographic area or volume. | It supports planning and prediction, but does not reserve or assign QoS resources. |
+| [Session Insights](https://camaraproject.org/session-insights/) | Allows application KPIs such as latency, jitter, packet loss and bitrate to be shared and assessed for a session. | It is focused on session monitoring and insight, not on CQM reservation or QoS assignment. |
+| [Network Slice Booking](https://camaraproject.org/network-slice-booking/) | Allows reservation and management of network slice resources for designated areas and time periods. | It is related to reservation-based communication quality, but follows a network-slice-specific model rather than the CQM QoS / Dedicated Networks portfolio described in this document. |
+| [Network Slice Assignment](https://camaraproject.org/network-slice-assignment/) | Allows devices or end users to be allocated to pre-applied network slice resources. | It is related to device allocation for slice resources, but remains part of the network-slice-specific API model rather than the CQM portfolio covered here. |
+
+These APIs may be considered in broader Communication Quality discussions. However, the main body of this document remains focused on the CQM APIs: `qos-profiles`, `quality-on-demand`, `qos-provisioning`, `qos-booking`, `qos-booking-and-assignment`, and the Dedicated Networks API family.
