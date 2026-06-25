@@ -79,6 +79,9 @@ To make the portfolio easier to understand, this document uses one illustrative 
 
 A live-event context can create different connectivity needs depending on the production setup. These needs do not all apply to every event, and they are not steps in a mandatory sequence. The examples below illustrate potentially applicable CQM tools under different usage conditions. They are not exhaustive.
 
+![CQM Live Event Journey](../images/section4_live_event_journey.svg)
+*Figure 1 — Illustrative live-event situations and applicable CQM tools. This diagram is not a strict API selection guide; applicable tools depend on CSP offering and market context.*
+
 | Illustrative live-event situation | Concrete API consumer need | Illustrative applicable CQM tool(s) | What matters to the API consumer |
 | --- | --- | --- | --- |
 | Before the event | Planning of needed connectivity quality, i.e. which QoS profiles, network profiles or eligible service areas the CSP exposes | `qos-profiles`, `dedicated-network-profiles` and, where exposed, service-area discovery | Understand and decide which connectivity options can be referenced before requesting or reserving them, reducing the risk for errors or rejections. |
@@ -95,6 +98,9 @@ This journey is illustrative. It does **not** imply that every scenario uses eve
 ## 5. Scope and Portfolio Grouping
 
 The CQM APIs can be grouped by purpose:
+
+![CQM Portfolio Grouping by Purpose](../images/section5_portfolio_grouping.svg)
+*Figure 2 — CQM APIs grouped by purpose. Preview capabilities are explicitly labelled. Actual API availability depends on CSP offering and market context.*
 
 - **Discovery / support APIs** — expose information about what the CSP makes available without changing connectivity behaviour:
   - `qos-profiles`
