@@ -274,7 +274,7 @@ The illustrative journey is informed by event, media production and temporary re
 
 ## Appendix
 
-### Appedinx A — Selected GSMA Use-Case References
+### Appendix A — Selected GSMA Use-Case References
 
 The live-event journey is informed by selected GSMA Open Gateway use cases. These references are used only as explanatory anchors for the CQM portfolio. They are **not** a normative mapping between use cases and CQM APIs, and they should not be read as a strict API selection guide.
 
