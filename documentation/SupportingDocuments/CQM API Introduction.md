@@ -62,11 +62,11 @@ The following concepts describe what an API consumer sees and works with, rather
 
 The key differences between the three **connectivity quality booking APIs** are around capabilities like targeted devices and targeted QoS profiles:
 
-| Devices | QoS profiles | `qos-booking` | `qos-booking-and-assignment` | `dedicated-network` |
-| ---- | ---- | ---- | ---- | ---- |
-| Single | Single | Yes | Yes | Yes |
-| Multiple | Single | No | Yes | Yes |
-| Multiple | Multiple | No | No | Yes |
+| API | # Devices | # QoS Profile |
+| ---- | ---- | ---- |
+| QOS Booking | One Device | One QoS Profile |
+| QOS Booking and Assignment | One or more Devices | One QoS Profiles |
+| Dedicated Networks | One or more Devices | One or more QoS Profiles |
 
 ## 4. Common Journey: Live Event Connectivity
 
