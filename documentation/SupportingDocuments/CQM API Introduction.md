@@ -23,7 +23,7 @@ The core APIs within scope are from three families within the **Communication Qu
   - `dedicated-network-profiles`
   - `dedicated-network-areas` *(preview capability)*
 
-Selected preview capabilities are explicitly identified where relevant.
+NOTE: Selected preview capabilities (e.g. `dedicated-network-areas`) are explicitly identified where relevant.
 
 This document focuses on the CQM APIs listed above. Other CAMARA APIs in the broader Communication Quality area are related to connectivity-quality use cases, but are currently outside the main scope of this document and are briefly referenced in Appendix B for context.
 
