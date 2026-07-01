@@ -8,7 +8,7 @@ For some usage contexts, an API consumer — such as an Application Service Prov
 
 This document explains those differences at product and concept level; it is not a normative specification, a CSP implementation roadmap or a strict API selection guide, and actual API availability and supported capabilities vary by CSP and market.
 
-The core APIs within scope are from three families within the **Communication Quality** domain:
+The APIs within the **Communication Quality Management** domain are:
 
   - `qos-profiles`
   - `quality-on-demand`
