@@ -202,7 +202,7 @@ In the Dedicated Networks family, a network profile describes the capabilities f
 | Aspect | Explanation |
 | --- | --- |
 | Need addressed | The API consumer needs to book connectivity quality — for immediate or future use — without binding devices at the time of the booking. This can be done for a scenario that may require one or multiple QoS profiles. |
-| What it controls | A connectivity booking based on a network profile, within which one or more QoS profiles can be made available. Device assignment is managed separately via `dedicated-network-accesses`. |
+| What it controls | A connectivity booking based on a network profile, within which one or more QoS profiles can be made available. Device assignment is managed separately via the `dedicated-network-accesses` API. |
 | API consumer takeaway | Like other booking APIs, `dedicated-network` allows to get confidence that the QoS Profile is usable by the requesting API consumer before the QoS session is established. It is relevant when the scenario requires not to bind devices at booking time — allowing separation between the connectivity booking and the devices that will use it — and when the scenario may require one or multiple QoS profiles within a single booking. |
 | Not to be confused with | A single-profile booking or an on-demand QoS session. |
 
