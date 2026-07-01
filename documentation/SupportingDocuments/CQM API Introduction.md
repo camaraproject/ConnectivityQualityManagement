@@ -197,7 +197,7 @@ A successfully processed request may still indicate that the requested reservati
 
 #### `dedicated-network` — Reserved connectivity environment
 
-In the Dedicated Networks family, a network profile describes the reserved connectivity environment offered by the CSP, potentially including multiple QoS profiles and related limits.
+In the Dedicated Networks family, a network profile describes the capabilities for the reserved connectivity environment offered by the CSP, potentially including multiple QoS profiles and related limits. The booking of the connectivity environment is done using the `dedicated-network` API.
 
 | Aspect | Explanation |
 | --- | --- |
