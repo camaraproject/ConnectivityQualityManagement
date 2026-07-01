@@ -10,14 +10,11 @@ This document explains those differences at product and concept level; it is not
 
 The core APIs within scope are from three families within the **Communication Quality** domain:
 
-- the **Quality on Demand** family:
   - `qos-profiles`
   - `quality-on-demand`
   - `qos-provisioning`
-- the **QoS Booking** family:
   - `qos-booking`
   - `qos-booking-and-assignment`
-- the **Dedicated Networks** family:
   - `dedicated-network`
   - `dedicated-network-accesses`
   - `dedicated-network-profiles`
