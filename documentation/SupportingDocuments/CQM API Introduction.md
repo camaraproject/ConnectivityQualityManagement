@@ -155,7 +155,7 @@ Each API is explained through the need it addresses, what it controls or exposes
 
 | Aspect | Explanation |
 | --- | --- |
-| Need addressed | The API consumer needs defined connectivity quality immediately for one or more application data flows between a device and an application server. |
+| Need addressed | The API consumer needs defined connectivity quality immediately for one or more application data flows between a device and application server(s). |
 | What it controls | A QoS session associated with a QoS profile and a defined duration. |
 | API consumer takeaway | This is the immediate “apply a QoS profile now, for a bounded duration” tool. |
 | Not to be confused with | Future reservations, persistent QoS assignment, multi-device assignment or reserved connectivity environments. |
