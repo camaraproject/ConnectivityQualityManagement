@@ -208,14 +208,14 @@ In the Dedicated Networks family, a network profile describes the capabilities f
 
 Where supported by the CSP offering, `quality-on-demand` may be used once the dedicated network is active to create QoS sessions dynamically using the QoS profiles made available by the relevant network profile.
 
-#### `dedicated-network-accesses` — Device-access management for a dedicated network
+#### `dedicated-network-accesses` — Device-access management for a reserved connectivity environment
 
 | Aspect | Explanation |
 | --- | --- |
-| Need addressed | Devices need to be granted, changed or revoked access to a dedicated network booking. |
+| Need addressed | Devices need to be granted, changed or revoked access to a reserved connectivity environment. |
 | What it controls | Device accesses associated with a `dedicated-network`. |
-| API consumer takeaway | This is the device-access companion to `dedicated-network`: it manages which devices may use the booked connectivity, independently of when the booking was made. |
-| Not to be confused with | Discovering network profiles, creating a connectivity booking or creating the `dedicated-network` booking itself. |
+| API consumer takeaway | This is the device-access companion to `dedicated-network`: it manages which devices may use the reserved connectivity environment. |
+| Not to be confused with | Discovering network profiles, creating a connectivity booking or creating the reserved connectivity environment itself. |
 
 ## 7. Comparative Matrix and Purpose-Oriented Navigation
 
