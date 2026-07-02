@@ -105,7 +105,7 @@ The CQM APIs can be grouped by purpose:
 - **Provisioned QoS assignment** — associate a QoS profile with a device and apply it to all its traffic whenever the device connects, until the assignment is revoked:
   - `qos-provisioning`
 
-- **Connectivity quality booking** — express the intention to use a QoS profile for a given time window, which can start immediately or at a future point, and where the API allows, a defined service area:
+- **Connectivity quality booking** — to get confidence that the QoS Profile is usable for a given time window, which can start immediately or at a future point, and where the API allows, a defined service area:
   - `qos-booking`
   - `qos-booking-and-assignment`
   - `dedicated-network`
