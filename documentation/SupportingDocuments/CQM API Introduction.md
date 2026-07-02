@@ -38,7 +38,7 @@ API consumers work with simplified abstractions of the network connectivity such
 
 The mobile network can therefore be seen as a black box which provides sufficient information and offers relevant controls. The APIs expose the information that API consumers need: available capabilities, operations to request or manage them, and status information describing the outcome of those operations.
 
-A successfully processed API request does not always mean that the requested connectivity quality is available. Depending on the API, the CSP offering, the device location and potentially the currently network utilization, the resulting resource may indicate that the requested service is available, pending or unavailable. A later status change may also indicate that the requested connectivity quality cannot or no longer be fulfilled. These service-availability outcomes are distinct from technical API errors.
+A successfully processed API request does not always mean that the requested connectivity quality is available. Depending on the API, the CSP offering, the device location and potentially the current network utilization, the resulting resource may indicate that the requested service is available, pending or unavailable. A later status change may also indicate that the requested connectivity quality cannot or no longer be fulfilled. These service-availability outcomes are distinct from technical API errors.
 
 This document is intended for API consumers, developers, technical product people and non-telco readers who need to understand the purpose of each CQM API without examining endpoint-level specifications or internal mobile network architecture.
 
