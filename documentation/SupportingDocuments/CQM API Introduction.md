@@ -80,7 +80,7 @@ To make the portfolio easier to understand, this document uses one illustrative 
 A live-event context can create different connectivity needs depending on the production setup. These needs do not all apply to every event, and they are not steps in a mandatory sequence. The examples below illustrate potentially applicable CQM tools under different usage conditions. They are not exhaustive.
 
 ![CQM Live Event Journey](../images/section4_live_event_journey.svg)
-*Figure 1 — Illustrative live-event situations and applicable CQM tools. This diagram is not a strict API selection guide; applicable tools depend on CSP offering and market context.*
+*Figure 1 — Illustrative CQM API usage across a live event timeline. This diagram is not a strict API selection guide; applicable tools depend on CSP offering and market context.*
 
 | Illustrative live-event situation | Concrete API consumer need | Illustrative applicable CQM tool(s) | What matters to the API consumer |
 | --- | --- | --- | --- |
