@@ -53,9 +53,11 @@ The following concepts describe what an API consumer sees and works with, rather
 | Discovery of capabilities | The ability to retrieve information about the offered QoS profiles, network profiles or eligible service areas before requesting or reserving them. | It allows the CSP to make its available capabilities visible to API consumers, who can then use them without needing to know internal network topology. |
 | QoS session | A time-bounded instantiation of a QoS profile to one or more application flows associated with a device. | It explains temporary QoS treatment, either requested On-Demand (using the `quality-on-demand` API) or in-future (using one of the reservation APIs). |
 | Provisioned QoS assignment | A QoS profile associated with a device and applied to all its traffic whenever the device connects to the access network, until the assignment is revoked. | It explains `qos-provisioning`: persistent device-level configuration (like a _premium subscription_) rather than a time-bounded session requested at the moment of use. |
-| Connectivity quality booking | A request to get confidence that the QoS Profile is usable by the requesting API consumer for a given time window — which can start immediately or at a future point — and, where the API allows, a defined service area. | It explains `qos-booking`, `qos-booking-and-assignment` and `dedicated-network`. Through the booking, the API consumer gets confidence that the QoS Profile is usable; the CSP decides whether it can be confirmed. Device assignment may be included in the booking or managed separately, depending on the API. |
+| Connectivity quality booking | A request to get confidence that the QoS Profile is usable by the requesting API consumer for a given time window — which can start immediately or at a future point — and, where the API allows, a defined service area. | It explains `qos-booking`, `qos-booking-and-assignment` and `dedicated-network`. Through the booking, the API consumer gets confidence that the QoS Profile is usable. The CSP decides whether it can be confirmed. The minimum time between a reservation request and its confirmation/activation is defined by the CSP. Device assignment may be included in the booking or managed separately, depending on the API. |
 | Service area | The geographic area where requested or booked connectivity quality is expected to apply. | It gives the API consumer an understandable geographic abstraction while keeping operator-internal topology hidden. |
 | Device assignment | The act of linking one or more devices for the actual usage of the connectivity quality capabilities. | It explains the distinction between booking connectivity quality and determining which devices may use it. Depending on the API, device assignment can be done in the same step as the booking, or managed separately — first booking connectivity quality without binding devices, then assigning them later. |
+
+The minimum time between a connectivity quality booking request and its confirmation or activation is defined by the CSP. In practice, this may reflect the time needed to assess whether the requested connectivity quality can be supported for the given conditions, and the time needed to prepare the network for activation. API consumers should account for this when planning their connectivity quality needs. The API documentation of the network provider will clarify details.
 
 The key differences between the three **connectivity quality booking APIs** are around capabilities like targeted devices and targeted QoS profiles:
 
@@ -110,7 +112,7 @@ The CQM APIs can be grouped by purpose:
   - `qos-booking-and-assignment`
   - `dedicated-network`
 
-- **Device assignment** — link one or more devices to booked connectivity quality, either as part of the booking or managed separately:
+- **Device assignment** — link one or more devices to booked connectivity quality. For `qos-booking-and-assignment` and `dedicated-network` (via `dedicated-network-accesses`), device assignment can be managed in separate steps after the booking.
   - `qos-booking-and-assignment`
   - `dedicated-network-accesses`
 
@@ -231,7 +233,7 @@ Where supported by the CSP offering, `quality-on-demand` may be used once the de
 | `dedicated-network` | Reservation-based | Time window (immediate or future) | Defined service area | Devices managed separately via `dedicated-network-accesses` | One or multiple QoS profiles per booking |
 | `dedicated-network-accesses` | Device-access management | Follows the dedicated network booking lifecycle | Inherited from the dedicated network | Device-access management | Inherited from the dedicated network |
 
-For reservation-based APIs (`qos-booking`, `qos-booking-and-assignment`, `dedicated-network`), the booking expresses get confidence that the QoS Profile is usable by the requesting API consumer to use a QoS profile and obtains CSP confirmation. The QoS session is a separate, later step — typically established via `quality-on-demand` once the booking is confirmed.
+For reservation-based APIs (qos-booking, qos-booking-and-assignment, dedicated-network), the booking allows the API consumer to get confidence that the QoS Profile is usable, and to obtain confirmation from the CSP.
 
 This matrix makes portfolio roles visible. It is **not** a strict API selection guide and does not guarantee CSP support for any specific combination.
 
@@ -257,7 +259,7 @@ Discovery APIs help API consumers understand what is available. On-demand and lo
 
 3. **Do not turn the portfolio into a strict decision tree.** The same scenario may be addressed differently depending on the API consumer need, CSP offering and market context.
 
-4. **Match the API tool to the actual need.** In general, the CQM APIs ultimately aim to facilitate enabling a QoS session. The distinction is whether the need is to request it directly — without prior confirmation of availability — or to first express the intention via a booking and confirm with the CSP whether it can be supported, before the QoS session is established.
+4. Match the API tool to the actual need. Some needs require a QoS session; others require a long-lived assignment, a planned booking, device assignment or a reserved multi-profile environment.
 
 5. **Distinguish API processing from service availability.** A successfully processed API request does not necessarily mean that the requested connectivity quality is available. API consumers should rely on resource status and status changes to understand the outcome.
 
