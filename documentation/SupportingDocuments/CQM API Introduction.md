@@ -8,7 +8,7 @@ For some usage contexts, an API consumer — such as an Application Service Prov
 
 This document explains those differences at product and concept level; it is not a normative specification, a CSP implementation roadmap or a strict API selection guide, and actual API availability and supported capabilities vary by CSP and market.
 
-The APIs within the **Communication Quality Management** domain are:
+The APIs within the **Connectivity Quality Management** domain are:
 
   - `qos-profiles`
   - `quality-on-demand`
@@ -336,7 +336,7 @@ This appendix provides a short contextual reference only. It is **not** intended
 | [Connectivity Insights Subscriptions](https://camaraproject.org/connectivity-insights-subscriptions/) | Provides event-based updates when network quality changes or when requirements may no longer be met. | It supports monitoring and notifications, not direct connectivity-quality control or reservation. |
 | [Predictive Connectivity Data](https://camaraproject.org/predictive-connectivity-data/) | Provides estimated future connectivity information for a geographic area or volume. | It supports planning and prediction, but does not reserve or assign QoS resources. |
 | [Session Insights](https://camaraproject.org/session-insights/) | Allows application KPIs such as latency, jitter, packet loss and bitrate to be shared and assessed for a session. | It is focused on session monitoring and insight, not on CQM reservation or QoS assignment. |
-| [Network Slice Booking](https://camaraproject.org/network-slice-booking/) | Allows reservation and management of network slice resources for designated areas and time periods. | It is related to reservation-based communication quality, but follows a network-slice-specific model rather than the CQM QoS / Dedicated Networks portfolio described in this document. |
+| [Network Slice Booking](https://camaraproject.org/network-slice-booking/) | Allows reservation and management of network slice resources for designated areas and time periods. | It is related to reservation-based connectivity quality, but follows a network-slice-specific model rather than the CQM QoS / Dedicated Networks portfolio described in this document. |
 | [Network Slice Assignment](https://camaraproject.org/network-slice-assignment/) | Allows devices or end users to be allocated to pre-applied network slice resources. | It is related to device allocation for slice resources, but remains part of the network-slice-specific API model rather than the CQM portfolio covered here. |
 
-These APIs may be considered in broader Communication Quality discussions. However, the main body of this document remains focused on the APIs within the Communication Quality Management domain (`qos-profiles`, `quality-on-demand`, `qos-provisioning`, `qos-booking`, `qos-booking-and-assignment`, `dedicated-network`, `dedicated-network-accesses`, `dedicated-network-profiles`, `dedicated-network-areas`).
+These APIs may be considered in broader Communication Quality discussions. However, the main body of this document remains focused on the APIs within the Connectivity Quality Management domain (`qos-profiles`, `quality-on-demand`, `qos-provisioning`, `qos-booking`, `qos-booking-and-assignment`, `dedicated-network`, `dedicated-network-accesses`, `dedicated-network-profiles`, `dedicated-network-areas`).
