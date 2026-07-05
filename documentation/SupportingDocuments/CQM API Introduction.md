@@ -64,7 +64,7 @@ The key differences between the three **connectivity quality booking APIs** are 
 | API | # Devices | # QoS Profile |
 | ---- | ---- | ---- |
 | QOS Booking | One Device | One QoS Profile |
-| QOS Booking and Assignment | One or more Devices | One QoS Profiles |
+| QOS Booking and Assignment | One or more Devices | One QoS Profile |
 | Dedicated Networks | One or more Devices | One or more QoS Profiles |
 
 ## 4. Common Journey: Live Event Connectivity
@@ -120,7 +120,7 @@ The core portfolio description is based on published CAMARA specifications. Prev
 
 ## 6. API Deep Dives
 
-Each API is explained through the need it addresses, what it controls or exposes, the API consumer takeaway, and what it should not be confused with. For a more detailed description on API Endpoint- and schema-level, please be referred to the individual API descriptions and / or definitions.
+Each API is explained through the need it addresses, what it controls or exposes, the API consumer takeaway, and what it should not be confused with. For a more detailed description on API Endpoint- and schema-level, please refer to the individual API descriptions and / or definitions.
 
 ### 6.1 Discovery / support APIs
 
@@ -183,7 +183,7 @@ A QoS session may not become available, or may later become unavailable, if the 
 | --- | --- |
 | Need addressed | The API consumer needs defined connectivity quality for a specific time window — which can start immediately or at a future point — and a defined service area. |
 | What it controls | A connectivity booking for one QoS profile, one time window, one service area and one device. |
-| API consumer takeaway | The essential difference from `quality-on-demand` is that the booking allows to get confidence that the QoS Profile is usable by the requesting API consumer, which obtains CSP confirmation before the QoS session is established. The essential difference from `qos-provisioning` is that the booking is bounded by a time window and service area. |
+| API consumer takeaway | The essential difference from `quality-on-demand` is that the booking provides confidence that the QoS Profile is usable by the requesting API consumer, which obtains CSP confirmation before the QoS session is established. The essential difference from `qos-provisioning` is that the booking is bounded by a time window and service area. |
 | Not to be confused with | Multi-device assignment, network profiles or reserved connectivity environments. |
 
 A successfully processed request may still indicate that the requested reservation is unavailable. The API consumer should rely on the booking status to understand the service-availability outcome.
@@ -205,7 +205,7 @@ In the Dedicated Networks family, a network profile describes the capabilities f
 | --- | --- |
 | Need addressed | The API consumer needs to book connectivity quality — for immediate or future use — without binding devices at the time of the booking. This can be done for a scenario that may require one or multiple QoS profiles. |
 | What it controls | A connectivity booking based on a network profile, within which one or more QoS profiles can be made available. Device assignment is managed separately via the `dedicated-network-accesses` API. |
-| API consumer takeaway | Like other booking APIs, `dedicated-network` allows to get confidence that the QoS Profile is usable by the requesting API consumer before the QoS session is established. It is relevant when the scenario requires not to bind devices at booking time — allowing separation between the connectivity booking and the devices that will use it — and when the scenario may require one or multiple QoS profiles within a single booking. |
+| API consumer takeaway | Like other booking APIs, `dedicated-network` provides confidence that the QoS Profile is usable by the requesting API consumer before the QoS session is established. It is relevant when the scenario requires not to bind devices at booking time — allowing separation between the connectivity booking and the devices that will use it — and when the scenario may require one or multiple QoS profiles within a single booking. |
 | Not to be confused with | A single-profile booking or an on-demand QoS session. |
 
 Where supported by the CSP offering, `quality-on-demand` may be used once the dedicated network is active to create QoS sessions dynamically using the QoS profiles made available by the relevant network profile.
