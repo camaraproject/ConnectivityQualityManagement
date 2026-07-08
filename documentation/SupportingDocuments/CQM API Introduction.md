@@ -233,7 +233,7 @@ Where supported by the CSP offering, `quality-on-demand` may be used once the de
 | `dedicated-network` | Reservation-based | Time window (immediate or future) | Defined service area | Devices managed separately via `dedicated-network-accesses` | One or multiple QoS profiles per booking |
 | `dedicated-network-accesses` | Device-access management | Follows the dedicated network booking lifecycle | Inherited from the dedicated network | Device-access management | Inherited from the dedicated network |
 
-For reservation-based APIs (qos-booking, qos-booking-and-assignment, dedicated-network), the booking allows the API consumer to get confidence that the QoS Profile is usable, and to obtain confirmation from the CSP.
+For reservation-based APIs (`qos-booking`, `qos-booking-and-assignment`, `dedicated-network`), the booking allows the API consumer to get confidence that the QoS Profile is usable, and to obtain confirmation from the CSP.
 
 This matrix makes portfolio roles visible. It is **not** a strict API selection guide and does not guarantee CSP support for any specific combination.
 
