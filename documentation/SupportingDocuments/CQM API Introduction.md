@@ -183,7 +183,7 @@ A QoS session may not become available, or may later become unavailable, if the 
 | --- | --- |
 | Need addressed | The API consumer needs defined connectivity quality for a specific time window — which can start immediately or at a future point — and a defined service area. |
 | What it controls | A connectivity booking for one QoS profile, one time window, one service area and one device. |
-| API consumer takeaway | The essential difference from `quality-on-demand` is that the booking provides confidence that the QoS Profile is usable by the requesting API consumer, which obtains CSP confirmation before the QoS session is established. The essential difference from `qos-provisioning` is that the booking is bounded by a time window and service area. |
+| API consumer takeaway | The essential difference from `quality-on-demand` is that the booking provides confidence that the QoS Profile is usable by the requesting API consumer, which obtains CSP confirmation. The essential difference from `qos-provisioning` is that the booking is bounded by a time window and service area. |
 | Not to be confused with | Multi-device assignment, network profiles or reserved connectivity environments. |
 
 A successfully processed request may still indicate that the requested reservation is unavailable. The API consumer should rely on the booking status to understand the service-availability outcome.
