@@ -194,7 +194,7 @@ A successfully processed request may still indicate that the requested reservati
 | --- | --- |
 | Need addressed | Connectivity needs to be booked for a time window — which can start immediately or at a future point — and a service area, while the devices that will use it are not all known at booking time or may change. |
 | What it controls | A booking for one QoS profile across one or more devices, together with the ability to assign and release device assignments during its lifecycle. |
-| API consumer takeaway | The booking confirmation gives the API consumer confidence that the QoS Profile will be usable for the requested number of devices, not just for the QoS profile itself. The additional value is separating the booking from the final device list, allowing devices to be added, removed or replaced without recreating the booking. As with `qos-booking`, this confidence is strongest when the booking targets a future start time.|
+| API consumer takeaway | The booking confirmation gives the API consumer confidence that the QoS Profile will be usable for the requested number of devices, not just for the QoS profile itself. The additional value is separating the booking from the final device list, allowing devices to be added, removed or replaced without recreating the booking. As with `qos-booking`, this confidence is strongest when the booking targets a future start time. |
 | Not to be confused with | A simple per-device booking or a reserved connectivity environment that exposes multiple QoS profiles. |
 
 #### `dedicated-network` — Reserved connectivity environment
@@ -249,7 +249,7 @@ The CQM portfolio is best understood as a set of API tools for different connect
 - whether device assignment must be managed over time
 - whether one QoS profile per booking is sufficient or the scenario requires multiple QoS profiles within a single booking / booking of a reserved connectivity environment
 
-Discovery APIs help API consumers understand what is available. On-demand and long-lived QoS tools apply a QoS profile dynamically or persistently. Reservation-based connectivity quality tools allow the API consumer to obtain confidence for the needed connectivity quality for a defined time window. This confidence is most meaningful for a future-dated booking, where the CSP can confirm availability ahead of use; a booking requested for immediate use has less lead time for confirmation and behaves more like an on-demand request. The QoS Booking and Assignment API extends this with the ability to manage multiple device assignments within a booking, and the Dedicated Networks family further extends this with multiple QoS profiles within a reserved environment
+Discovery APIs help API consumers understand what is available. On-demand and long-lived QoS tools apply a QoS profile dynamically or persistently. Reservation-based connectivity quality tools allow the API consumer to obtain confidence for the needed connectivity quality for a defined time window. This confidence is most meaningful for a future-dated booking, where the CSP can confirm availability ahead of use; a booking requested for immediate use has less lead time for confirmation and behaves more like an on-demand request. The QoS Booking and Assignment API extends this with the ability to manage multiple device assignments within a booking, and the Dedicated Networks family further extends this with multiple QoS profiles within a reserved environment.
 
 ### 8.2 Guardrails for external readers
 
