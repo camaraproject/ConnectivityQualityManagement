@@ -2,7 +2,7 @@
 
 ## 1. Executive Summary
 
-Most applications consume mobile connectivity on a best-effort basis: the network tries to deliver the best possible performance at a given moment without application explicitly requesting a defined connectivity quality. In practice, that performance may vary depending on factors such as network deployment, coverage conditions, location, mobility and current network usage.
+Most applications consume mobile connectivity on a best-effort basis: the network tries to deliver the best possible performance at a given moment without an application explicitly requesting a defined connectivity quality. In practice, that performance may vary depending on factors such as network deployment, coverage conditions, location, mobility and current network usage.
 
 For some usage contexts, an API consumer — such as an Application Service Provider (ASP) — may need defined connectivity quality for a specific service, device, time or location. The CAMARA Connectivity Quality Management (CQM) portfolio addresses these needs through a set of specialised APIs. These tools address overlapping but distinct needs.
 
@@ -13,7 +13,7 @@ The APIs within the **Connectivity Quality Management** domain are:
 | API Name | API Family | Description | Preview Only |
 | --- | --- | --- | --- |
 | `qos-profiles` | Quality On Demand | Discovery API that exposes the catalogue of QoS profiles (throughput, latency, priority) a CSP offers, including which profiles apply to a given device, so the right profile can be selected and referenced by the other CQM APIs. |  |
-| `quality-on-demand` | Quality On Demand | Requests that a QoS profile be applied immediately, for a bounded duration, to one or more application data flows tied to a device — the "apply now, for a limited time" tool. |  |
+| `quality-on-demand` | Quality On Demand | Requests that a QoD Session (with a QoS profile) be created and applied immediately, for a bounded duration, to one or more application data flows tied to a device — the "apply now, for a limited time" tool. |  |
 | `qos-provisioning` | Quality On Demand | Assigns a QoS profile to a device on a persistent basis, applied automatically whenever that device connects, until the assignment is explicitly removed. |  |
 | `qos-booking` | QoS Booking | Reserves one QoS profile for one device over a defined time window (immediate or future) and service area, giving confidence — pending CSP confirmation — that the requested quality will be usable. |  |
 | `qos-booking-and-assignment` | QoS Booking | Books connectivity for a time window, profile and service area while keeping device assignment separate, so devices can be added, removed, or swapped over the booking's lifetime. |  |
