@@ -22,7 +22,7 @@ The APIs within the **Connectivity Quality Management** domain are:
 
 A detailed description and grouping of the CQM APIs is provided in [Section 5. Scope and Portfolio Grouping](#5-scope-and-portfolio-grouping).
 
-NOTE: Selected preview capabilities (e.g. `dedicated-network-areas`) are explicitly identified where relevant.
+NOTE: APIs or features marked as *(preview capability)* are still under development and may change in future releases. Availability depends on CSP support.
 
 This document focuses on the CQM APIs listed above. Other CAMARA APIs in the broader [Communication Quality](https://camaraproject.org/api-overview/) area are related to connectivity-quality use cases, but are currently outside the main scope of this document and are briefly referenced in Appendix B for context.
 
