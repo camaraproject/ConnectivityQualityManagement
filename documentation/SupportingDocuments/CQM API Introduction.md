@@ -97,7 +97,7 @@ This journey is illustrative. It does **not** imply that every scenario uses eve
 
 | API Name | Repository | Description | Preview Only |
 | --- | --- | --- | --- |
-| `qos-profiles` | Quality On Demand | Discovery API that exposes the catalogue of QoS profiles (throughput, latency, priority) a CSP offers, including which profiles apply to a given device, so the right profile can be selected and referenced by the other CQM APIs. |  |
+| `qos-profiles` | QoSProfiles | Discovery API that exposes the catalogue of QoS profiles (throughput, latency, priority) a CSP offers, including which profiles apply to a given device, so the right profile can be selected and referenced by the other CQM APIs. |  |
 | `quality-on-demand` | Quality On Demand | Requests that a QoS session (with a QoS profile) be created and applied immediately, for a bounded duration, to one or more application data flows tied to a device — the "apply now, for a limited time" tool. |  |
 | `qos-provisioning` | Quality On Demand | Assigns a QoS profile to a device on a persistent basis, applied automatically whenever that device connects, until the assignment is explicitly removed. |  |
 | `qos-booking` | QoS Booking | Reserves one QoS profile for one device over a defined time window (immediate or future) and service area, giving confidence — pending CSP confirmation — that the requested quality will be usable. |  |
