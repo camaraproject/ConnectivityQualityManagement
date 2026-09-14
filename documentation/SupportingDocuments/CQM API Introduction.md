@@ -95,7 +95,7 @@ This journey is illustrative. It does **not** imply that every scenario uses eve
 
 *Table 1 — Overview of the CQM APIs*
 
-| API Name | API Family | Description | Preview Only |
+| API Name | Repository | Description | Preview Only |
 | --- | --- | --- | --- |
 | `qos-profiles` | Quality On Demand | Discovery API that exposes the catalogue of QoS profiles (throughput, latency, priority) a CSP offers, including which profiles apply to a given device, so the right profile can be selected and referenced by the other CQM APIs. |  |
 | `quality-on-demand` | Quality On Demand | Requests that a QoS session (with a QoS profile) be created and applied immediately, for a bounded duration, to one or more application data flows tied to a device — the "apply now, for a limited time" tool. |  |
