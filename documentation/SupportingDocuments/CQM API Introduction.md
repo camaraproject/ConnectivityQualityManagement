@@ -105,7 +105,7 @@ This journey is illustrative. It does **not** imply that every scenario uses eve
 | `dedicated-network` | Dedicated Networks | Reserves a connectivity environment — based on a network profile that may span multiple QoS profiles, or on a single QoS profile — for a time window and service area, without binding devices at booking time; device access is managed separately. |  |
 | `dedicated-network-accesses` | Dedicated Networks | Companion API to `dedicated-network` that grants, changes, or revokes which devices may use a reserved connectivity environment. |  |
 | `dedicated-network-profiles` | Dedicated Networks | Discovery API for the catalogue of network profiles (predefined Dedicated Networks configurations) a CSP offers. | |
-| `dedicated-network-areas` | Dedicated Networks | Discovery API that exposes eligible service areas and the QoS/network profiles supported within each, so a consumer can select a valid area before reserving. | Yes |
+| `dedicated-network-areas` | Dedicated Networks | Discovery API that exposes eligible service areas and the QoS/network profiles supported within each, so an API consumer can select a valid area before requesting a dedicated network. | Yes |
 
 
 The CQM APIs can be grouped by purpose:
