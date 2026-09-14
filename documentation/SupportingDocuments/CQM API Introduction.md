@@ -91,7 +91,7 @@ The same logic can be transposed to adjacent scenarios such as a festival, a pop
 
 This journey is illustrative. It does **not** imply that every scenario uses every API, that the APIs must be invoked together, or that there is a universal decision tree for selecting an API.
 
-## 5. Scope and Portfolio Grouping
+## 5. CQM API Introduction and Grouping
 
 *Table 1 — Overview of the CQM APIs*
 
