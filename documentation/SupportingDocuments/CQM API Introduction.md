@@ -24,9 +24,7 @@ A detailed description and grouping of the CQM APIs is provided in Section [5. S
 
 NOTE: Selected preview capabilities (e.g. `dedicated-network-areas`) are explicitly identified where relevant.
 
-This document focuses on the CQM APIs listed above. Other CAMARA APIs in the broader Communication Quality area are related to connectivity-quality use cases, but are currently outside the main scope of this document and are briefly referenced in Appendix B for context.
-
-This document focuses on the CQM APIs listed above. Other CAMARA APIs in the broader [Communication Quality](https://camaraproject.org/api-overview/)  area are related to connectivity-quality use cases, but are currently outside the main scope of this document and are briefly referenced in Appendix B for context.
+This document focuses on the CQM APIs listed above. Other CAMARA APIs in the broader [Communication Quality](https://camaraproject.org/api-overview/) area are related to connectivity-quality use cases, but are currently outside the main scope of this document and are briefly referenced in Appendix B for context.
 
 ## 2. Introduction — Why Connectivity Quality Management Matters
 
