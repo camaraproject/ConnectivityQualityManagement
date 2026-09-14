@@ -93,7 +93,7 @@ This journey is illustrative. It does **not** imply that every scenario uses eve
 
 ## 5. Scope and Portfolio Grouping
 
-Table: Overview of the CQM APIs
+*Table 1 — Overview of the CQM APIs*
 
 | API Name | API Family | Description | Preview Only |
 | --- | --- | --- | --- |
