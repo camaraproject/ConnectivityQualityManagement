@@ -6,7 +6,7 @@ Most applications consume mobile connectivity on a best-effort basis: the networ
 
 For some usage contexts, an API consumer — such as an Application Service Provider (ASP) — may need defined connectivity quality for a specific service, device, time or location. The CAMARA Connectivity Quality Management (CQM) portfolio addresses these needs through a set of specialised APIs.
 
-This document explains differences of these APIs at product and concept level; it is not a normative specification, a Connectivity Service Provider (CSP) implementation roadmap or a strict API selection guide, and actual API availability and supported capabilities vary by CSP and market.
+This document explains the differences between these APIs at product and concept level; it is not a normative specification, a Connectivity Service Provider (CSP) implementation roadmap or a strict API selection guide, and actual API availability and supported capabilities vary by CSP and market.
 
 The APIs within the **Connectivity Quality Management** domain are:
 
