@@ -20,7 +20,7 @@ The APIs within the **Connectivity Quality Management** domain are:
   - `dedicated-network-profiles`
   - `dedicated-network-areas` *(preview capability)*
 
-A detailed description and grouping of the CQM APIs is provided in Section [5. Scope and Portfolio Grouping](#5-Scope-and-Portfolio-Grouping)
+A detailed description and grouping of the CQM APIs is provided in [Section 5. Scope and Portfolio Grouping](#5-scope-and-portfolio-grouping).
 
 NOTE: Selected preview capabilities (e.g. `dedicated-network-areas`) are explicitly identified where relevant.
 
