@@ -53,7 +53,7 @@ The following concepts describe what an API consumer sees and works with, rather
 | Connectivity quality | The level of connectivity experience needed for a given usage context. It may be described through connectivity-performance characteristics such as throughput, latency, priority or jitter. | It is the API consumer-facing concept that explains what the consumer wants to obtain when best-effort connectivity is not sufficient. In CQM, such connectivity-performance characteristics are typically defined as part of a `qos-profile`. |
 | QoS profile | A reusable description of offered connectivity-performance characteristics. | It is the common reference used across all CQM APIs when requesting, assigning or reserving defined connectivity quality. The timing of its activation — immediately or at a future point — depends on which API family is used. |
 | Discovery of capabilities | The ability to retrieve information about the offered QoS profiles, network profiles or eligible service areas before requesting or reserving them. | It allows the CSP to make its available capabilities visible to API consumers, who can then use them without needing to know internal network topology. |
-| QoS session | A time-bounded instantiation of a QoS profile to one or more application flows associated with a device. | It explains temporary QoS treatment, either requested On-Demand (using the `quality-on-demand` API) or in-future (using one of the reservation APIs). |
+| QoS session | A time-bounded instantiation of a QoS profile for one or more application flows associated with a device. | It explains temporary QoS treatment, either requested on demand (using the `quality-on-demand` API) or in-future (using one of the reservation APIs). |
 | Provisioned QoS assignment | A QoS profile associated with a device and applied to all its traffic whenever the device connects to the access network, until the assignment is revoked. | It explains `qos-provisioning`: persistent device-level configuration (like a _premium subscription_) rather than a time-bounded session requested at the moment of use. |
 | Connectivity quality booking | Provides confidence that the QoS Profile is usable by the requesting API consumer for a given time window and, where the API allows, a defined service area. This confidence is strongest for a future-dated booking, where the CSP has lead time to confirm availability ahead of use; a booking requested for immediate start has little or no such lead time and behaves closer to an on-demand request. | It explains `qos-booking`, `qos-booking-and-assignment` and `dedicated-network`. Through the booking, the API consumer gets confidence that the QoS Profile is usable. The CSP decides whether it can be confirmed. The minimum time between a reservation request and its confirmation/activation is defined by the CSP. Device assignment may be included in the booking or managed separately, depending on the API. |
 | Service area | The geographic area where requested or booked connectivity quality is expected to apply. | It gives the API consumer an understandable geographic abstraction while keeping operator-internal topology hidden. |
@@ -61,12 +61,12 @@ The following concepts describe what an API consumer sees and works with, rather
 
 The minimum time between a connectivity quality booking request and its confirmation or activation is defined by the CSP. In practice, this may reflect the time needed to assess whether the requested connectivity quality can be supported for the given conditions, and the time needed to prepare the network for activation. For an immediate-start booking, this minimum time may be effectively zero, in which case the confidence benefit over an on-demand request is limited. API consumers should account for these aspects when planning their connectivity quality needs. The API documentation of the network provider will clarify details.
 
-The key differences between the three **connectivity quality booking APIs** are around capabilities like targeted devices and targeted QoS profiles:
+The key differences between the three **connectivity quality booking APIs** concern capabilities such as targeted devices and targeted QoS profiles:
 
-| API | # Devices | # QoS Profile |
+| API | # Devices | # QoS Profiles |
 | ---- | ---- | ---- |
-| QOS Booking | One Device | One QoS Profile |
-| QOS Booking and Assignment | One or more Devices | One QoS Profile |
+| QoS Booking | One Device | One QoS Profile |
+| QoS Booking and Assignment | One or more Devices | One QoS Profile |
 | Dedicated Networks | One or more Devices | One or more QoS Profiles |
 
 ## 4. Common Journey: Live Event Connectivity
@@ -128,7 +128,7 @@ The CQM APIs can be grouped by purpose:
   - `qos-booking-and-assignment`
   - `dedicated-network`
 
-- **Device assignment** — link one or more devices to booked connectivity quality. For `qos-booking-and-assignment` and `dedicated-network` (via `dedicated-network-accesses`), device assignment can be managed in separate steps after the booking.
+- **Device assignment** — link one or more devices to booked connectivity quality. For `qos-booking-and-assignment` and `dedicated-network` (via `dedicated-network-accesses`), device assignment can be managed in separate steps after the booking:
   - `qos-booking-and-assignment`
   - `dedicated-network-accesses`
 
@@ -136,7 +136,7 @@ The core portfolio description is based on published CAMARA specifications. Prev
 
 ## 6. API Deep Dives
 
-Each API is explained through the need it addresses, what it controls or exposes, the API consumer takeaway, and what it should not be confused with. For a more detailed description on API Endpoint- and schema-level, please refer to the individual API descriptions and / or definitions.
+Each API is explained through the need it addresses, what it controls or exposes, the API consumer takeaway, and what it should not be confused with. For a more detailed description at API endpoint and schema level, please refer to the individual API descriptions and / or definitions.
 
 ### 6.1 Discovery / support APIs
 
@@ -158,11 +158,11 @@ Each API is explained through the need it addresses, what it controls or exposes
 | API consumer takeaway | This is the discovery API for network profiles within the Dedicated Networks family. |
 | Not to be confused with | Creating a dedicated network booking or managing device access. |
 
-#### Service-area discovery (`dedicated-network-areas`, preview capability)
+#### `dedicated-network-areas` — Discovering eligible service areas *(preview capability)*
 
 | Aspect | Explanation |
 | --- | --- |
-| Need addressed | The API consumer needs to identify eligible service areas and understand which QoS profiles and/or network profiles are supported in each area before creating a reservation. |
+| Need addressed | The API consumer needs to identify eligible service areas and understand which QoS profiles and/or network profiles are supported in each area before requesting a dedicated network. |
 | What it exposes | A catalogue of service areas, including their geographic definition and supported QoS profiles and/or network profiles. |
 | API consumer takeaway | This optional preview capability helps the API consumer select an eligible service area without understanding internal network topology. |
 | Not to be confused with | A generic coverage map, a guarantee that any arbitrary area can support the requested profile, or the creation of a booking or dedicated network. |
@@ -291,9 +291,7 @@ Service-area discovery through `dedicated-network-areas` is presented as a previ
 
 The illustrative journey is informed by event, media production and temporary retail scenarios. These examples explain portfolio roles; they are not a normative mapping or API selection guide.
 
-## Appendix
-
-### Appendix A — Selected GSMA Use-Case References
+## Appendix A — Selected GSMA Use-Case References
 
 The live-event journey is informed by selected GSMA Open Gateway use cases. These references are used only as explanatory anchors for the CQM portfolio. They are **not** a normative mapping between use cases and CQM APIs, and they should not be read as a strict API selection guide.
 
@@ -339,7 +337,7 @@ ASPs may be concerned about:
 
 A detailed mapping between GSMA use cases and potentially applicable CQM APIs may be maintained separately as internal analysis. It is intentionally not included in this external-facing document.
 
-### Appendix B — Related CAMARA Communication Quality APIs outside this document’s scope
+## Appendix B — Related CAMARA Communication Quality APIs outside this document’s scope
 
 The CAMARA API overview includes additional APIs under the broader **Communication Quality** area. Some of them may be relevant to connectivity-quality use cases, but they are not part of the CQM portfolio explained in this document.
 
