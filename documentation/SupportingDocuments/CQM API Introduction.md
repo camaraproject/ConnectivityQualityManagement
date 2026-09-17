@@ -8,23 +8,27 @@ For some usage contexts, an API consumer — such as an Application Service Prov
 
 This document explains the differences between these APIs at product and concept level; it is not a normative specification, a Connectivity Service Provider (CSP) implementation roadmap or a strict API selection guide, and actual API availability and supported capabilities vary by CSP and market.
 
-The APIs within the **Connectivity Quality Management** domain are:
+### API Repositories and Versions
 
-  - `qos-profiles`
-  - `quality-on-demand`
-  - `qos-provisioning`
-  - `qos-booking`
-  - `qos-booking-and-assignment`
-  - `dedicated-network`
-  - `dedicated-network-accesses`
-  - `dedicated-network-profiles`
-  - `dedicated-network-areas` *(preview capability)*
+This whitepaper describes the Connectivity Quality Management APIs as defined in the CAMARA **Sync26 meta-release**. The APIs are published across the following repositories:
+
+| API | Repository | Status | Version Target |
+|-----|------------|--------|-----------------|
+| QoS Profiles | [QoSProfiles](https://github.com/camaraproject/QoSProfiles) | Stable | 1.x |
+| Quality on Demand | [QualityOnDemand](https://github.com/camaraproject/QualityOnDemand) | Stable | 1.x |
+| QoS Provisioning | [QualityOnDemand](https://github.com/camaraproject/QualityOnDemand) | Stable | 1.x |
+| QoS Booking | [QoSBooking](https://github.com/camaraproject/QoSBooking) | Initial | 0.y.z |
+| QoS Booking and Assignment | [QoSBooking](https://github.com/camaraproject/QoSBooking) | Initial | 0.y.z |
+| Dedicated Network | [DedicatedNetworks](https://github.com/camaraproject/DedicatedNetworks) | Initial | 0.y.z |
+| Dedicated Network Accesses | [DedicatedNetworks](https://github.com/camaraproject/DedicatedNetworks) | Initial | 0.y.z |
+| Dedicated Network Profiles | [DedicatedNetworks](https://github.com/camaraproject/DedicatedNetworks) | Initial | 0.y.z |
+| Dedicated Network Areas | [network-service-areas](https://github.com/camaraproject/NetworkServiceAreas) | Initial | 0.y.z |
+
+**Note:** `Dedicated Network Areas` is transitioning to a dedicated `network-service-areas` repository to align with CAMARA's capability-focused portfolio structure. API status definitions follow [CAMARA API Overview](https://camaraproject.org/api-overview/).
 
 A detailed description and grouping of the CQM APIs is provided in [Section 5. Scope and Portfolio Grouping](#5-scope-and-portfolio-grouping).
 
-NOTE: APIs or features marked as *(preview capability)* are still under development and may change in future releases. Availability depends on CSP support.
-
-This document focuses on the CQM APIs listed above. Other CAMARA APIs in the broader [Communication Quality](https://camaraproject.org/api-overview/) area are related to connectivity-quality use cases, but are currently outside the main scope of this document and are briefly referenced in Appendix B for context.
+This document focuses on the CQM APIs listed above. Other CAMARA APIs in the broader Communication Quality area are related to connectivity-quality use cases, but are currently outside the main scope of this document and are briefly referenced in Appendix B for context.
 
 ## 2. Introduction — Why Connectivity Quality Management Matters
 
@@ -99,7 +103,7 @@ This journey is illustrative. It does **not** imply that every scenario uses eve
 | --- | --- | --- | --- | --- | --- |
 | `qos-profiles` | Discovery / support | n/a | n/a | Optional device filter | Catalogue of QoS profiles |
 | `dedicated-network-profiles` | Discovery / support | n/a | n/a | n/a | Catalogue of network profiles |
-| Service-area discovery (`dedicated-network-areas` *(preview capability)*) | Discovery / support | n/a | Catalogue of eligible service areas | n/a | Associates areas with supported QoS profiles and/or network profiles |
+| Service-area discovery (`dedicated-network-areas`) | Discovery / support | n/a | Catalogue of eligible service areas | n/a | Associates areas with supported QoS profiles and/or network profiles |
 | `quality-on-demand` | On-demand QoS session | Immediate, session duration | Not an explicit request dimension | Application flows associated with a device | One QoS profile per session |
 | `qos-provisioning` | Provisioned QoS assignment | Persists until revoked | No explicit service area in the API contract | Device | One QoS profile assignment |
 | `qos-booking` | Reservation-based | Time window (immediate or future) | Defined service area | One device per booking | One QoS profile per booking |
@@ -115,7 +119,7 @@ The CQM APIs can be grouped by purpose:
 - **Discovery / support APIs** — expose information about what the CSP makes available without changing connectivity behaviour:
   - `qos-profiles`
   - `dedicated-network-profiles`
-  - service-area discovery (`dedicated-network-areas`, preview capability)
+  - service-area discovery (`dedicated-network-areas`)
 
 - **On-demand QoS session establishment** — request a defined QoS session for immediate, time-bounded use:
   - `quality-on-demand`
@@ -158,13 +162,13 @@ Each API is explained through the need it addresses, what it controls or exposes
 | API consumer takeaway | This is the discovery API for network profiles within the Dedicated Networks family. |
 | Not to be confused with | Creating a dedicated network booking or managing device access. |
 
-#### `dedicated-network-areas` — Discovering eligible service areas *(preview capability)*
+#### `dedicated-network-areas` — Discovering eligible service areas
 
 | Aspect | Explanation |
 | --- | --- |
 | Need addressed | The API consumer needs to identify eligible service areas and understand which QoS profiles and/or network profiles are supported in each area before requesting a dedicated network. |
 | What it exposes | A catalogue of service areas, including their geographic definition and supported QoS profiles and/or network profiles. |
-| API consumer takeaway | This optional preview capability helps the API consumer select an eligible service area without understanding internal network topology. |
+| API consumer takeaway | This optional capability helps the API consumer select an eligible service area without understanding internal network topology. |
 | Not to be confused with | A generic coverage map, a guarantee that any arbitrary area can support the requested profile, or the creation of a booking or dedicated network. |
 
 ### 6.2 On-demand QoS session establishment
@@ -241,7 +245,7 @@ Where supported by the CSP offering, `quality-on-demand` may be used once the de
 | --- | --- | --- | --- | --- | --- |
 | `qos-profiles` | Discovery / support | n/a | n/a | Optional device filter | Catalogue of QoS profiles |
 | `dedicated-network-profiles` | Discovery / support | n/a | n/a | n/a | Catalogue of network profiles |
-| Service-area discovery (`dedicated-network-areas`, preview capability) | Discovery / support | n/a | Catalogue of eligible service areas | n/a | Associates areas with supported QoS profiles and/or network profiles |
+| Service-area discovery (`dedicated-network-areas`) | Discovery / support | n/a | Catalogue of eligible service areas | n/a | Associates areas with supported QoS profiles and/or network profiles |
 | `quality-on-demand` | On-demand QoS session | Immediate, session duration | Not an explicit request dimension | Application flows associated with a device | One QoS profile per session |
 | `qos-provisioning` | Provisioned QoS assignment | Persists until revoked | No explicit service area in the API contract | Device | One QoS profile assignment |
 | `qos-booking` | Reservation-based | Time window (immediate or future)* | Defined service area | One device per booking | One QoS profile per booking |
@@ -283,11 +287,13 @@ Discovery APIs help API consumers understand what is available. On-demand and lo
 
 ### 8.3 Sources and version notes
 
-This document is based on the published CAMARA specifications for the in-scope CQM APIs and on public or shareable CQM explanatory material.
+This whitepaper describes the Connectivity Quality Management APIs as published in the CAMARA **Sync26 meta-release** (September 2026).
+
+Each API's repository, version target and maturity status are documented in the [API Repositories and Versions](#api-repositories-and-versions) table in Section 1.
+
+Authoritative API specifications are maintained in the [CAMARA GitHub organization](https://github.com/camaraproject).
 
 The CAMARA API overview also lists additional APIs under the broader Communication Quality area. These APIs are referenced in Appendix B only to clarify the boundary of this document.
-
-Service-area discovery through `dedicated-network-areas` is presented as a preview capability and should not be interpreted as a generally available CSP offering.
 
 The illustrative journey is informed by event, media production and temporary retail scenarios. These examples explain portfolio roles; they are not a normative mapping or API selection guide.
 
