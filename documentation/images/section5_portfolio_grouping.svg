@@ -2,7 +2,7 @@
 
   <rect width="960" height="580" fill="#f8f9fb" rx="12"/>
 
-  <text x="480" y="42" text-anchor="middle" font-size="11" fill="#6b7280">APIs grouped by the type of connectivity need they address. Dashed border indicates a preview capability.</text>
+  <text x="480" y="42" text-anchor="middle" font-size="11" fill="#6b7280">APIs grouped by the type of connectivity need they address.</text>
 
   <!-- GROUP 1 — DISCOVERY -->
   <rect x="20" y="68" width="172" height="400" rx="10" fill="#eef2ff" stroke="#3b5bdb" stroke-width="1.8"/>
@@ -21,9 +21,8 @@
   <rect x="36" y="204" width="140" height="28" rx="6" fill="white" stroke="#3b5bdb" stroke-width="1.2"/>
   <text x="106" y="223" text-anchor="middle" font-size="9.5" font-weight="600" fill="#3b5bdb">dedicated-network-profiles</text>
 
-  <rect x="36" y="240" width="140" height="36" rx="6" fill="#f0f3ff" stroke="#3b5bdb" stroke-width="1.2" stroke-dasharray="5,3"/>
-  <text x="106" y="255" text-anchor="middle" font-size="9.5" font-weight="600" fill="#3b5bdb">dedicated-network-areas</text>
-  <text x="106" y="269" text-anchor="middle" font-size="8.5" fill="#9ca3af" font-style="italic">preview capability</text>
+  <rect x="36" y="240" width="140" height="28" rx="6" fill="white" stroke="#3b5bdb" stroke-width="1.2"/>
+  <text x="106" y="259" text-anchor="middle" font-size="9.5" font-weight="600" fill="#3b5bdb">dedicated-network-areas</text>
 
   <rect x="36" y="372" width="60" height="20" rx="4" fill="#dbe4ff"/>
   <text x="66" y="386" text-anchor="middle" font-size="8.5" fill="#3b5bdb">No timing</text>
@@ -159,5 +158,5 @@
   <rect x="20" y="490" width="920" height="70" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1.2"/>
   <text x="480" y="510" text-anchor="middle" font-size="9.5" fill="#6b7280" font-style="italic">Discovery APIs do not change connectivity behaviour. On-demand and long-lived tools apply a QoS profile dynamically or persistently.</text>
   <text x="480" y="525" text-anchor="middle" font-size="9.5" fill="#6b7280" font-style="italic">Reservation-based tools allow planning connectivity quality in advance — via booking or via a reserved multi-profile environment.</text>
-  <text x="480" y="545" text-anchor="middle" font-size="9.5" fill="#6b7280" font-style="italic">Actual API availability depends on CSP offering and market context. Dashed border = preview capability. This grouping is illustrative, not prescriptive.</text>
+  <text x="480" y="545" text-anchor="middle" font-size="9.5" fill="#6b7280" font-style="italic">Actual API availability depends on CSP offering and market context. This grouping is illustrative, not prescriptive.</text>
 </svg>
