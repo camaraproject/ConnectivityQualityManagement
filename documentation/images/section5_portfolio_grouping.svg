@@ -119,16 +119,16 @@
   <text x="656" y="367" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">on network operator</text>
 
   <!-- LINE 1: Tags describing the scope -->
-  <rect x="574" y="372" width="88" height="20" rx="4" fill="#fde68a"/>
-  <text x="618" y="386" text-anchor="middle" font-size="8.5" fill="#92400e">1-N devices</text>
-  <rect x="668" y="372" width="68" height="20" rx="4" fill="#fde68a"/>
-  <text x="702" y="386" text-anchor="middle" font-size="8.5" fill="#92400e">1 profile</text>
+  <rect x="584" y="382" width="72" height="20" rx="4" fill="#fde68a"/>
+  <text x="620" y="396" text-anchor="middle" font-size="8.5" fill="#92400e">1-N devices</text>
+  <rect x="660" y="382" width="72" height="20" rx="4" fill="#fde68a"/>
+  <text x="696" y="396" text-anchor="middle" font-size="8.5" fill="#92400e">1 profile</text>
 
   <!-- LINE 2: New tags -->
-  <rect x="574" y="396" width="88" height="20" rx="4" fill="#fde68a"/>
-  <text x="618" y="410" text-anchor="middle" font-size="8.5" fill="#92400e">Immediate / future</text>
-  <rect x="668" y="396" width="68" height="20" rx="4" fill="#fde68a"/>
-  <text x="702" y="410" text-anchor="middle" font-size="8.5" fill="#92400e">Service area</text>
+  <rect x="584" y="404" width="72" height="20" rx="4" fill="#fde68a"/>
+  <text x="620" y="418" text-anchor="middle" font-size="8.5" fill="#92400e">Immediate / future</text>
+  <rect x="660" y="404" width="72" height="20" rx="4" fill="#fde68a"/>
+  <text x="696" y="418" text-anchor="middle" font-size="8.5" fill="#92400e">Service area</text>
 
   <!-- SUB-GROUP B — RESERVED ENVIRONMENT -->
   <rect x="754" y="108" width="180" height="354" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="1.2"/>
@@ -157,16 +157,16 @@
   <text x="844" y="373" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">where CSP supports it</text>
 
   <!-- Line 1: Original tags -->
-  <rect x="764" y="372" width="68" height="20" rx="4" fill="#a7f3d0"/>
-  <text x="798" y="386" text-anchor="middle" font-size="8.5" fill="#065f46">N devices</text>
-  <rect x="840" y="372" width="68" height="20" rx="4" fill="#a7f3d0"/>
-  <text x="874" y="386" text-anchor="middle" font-size="8.5" fill="#065f46">N profiles</text>
+  <rect x="772" y="390" width="72" height="20" rx="4" fill="#a7f3d0"/>
+  <text x="808" y="404" text-anchor="middle" font-size="8.5" fill="#065f46">N devices</text>
+  <rect x="848" y="390" width="72" height="20" rx="4" fill="#a7f3d0"/>
+  <text x="884" y="404" text-anchor="middle" font-size="8.5" fill="#065f46">N profiles</text>
 
   <!-- Line 2: New tags -->
-  <rect x="764" y="396" width="88" height="20" rx="4" fill="#a7f3d0"/>
-  <text x="808" y="410" text-anchor="middle" font-size="8.5" fill="#065f46">Immediate / future</text>
-  <rect x="860" y="396" width="68" height="20" rx="4" fill="#a7f3d0"/>
-  <text x="894" y="410" text-anchor="middle" font-size="8.5" fill="#065f46">Service area</text>
+  <rect x="772" y="412" width="72" height="20" rx="4" fill="#a7f3d0"/>
+  <text x="808" y="426" text-anchor="middle" font-size="8.5" fill="#065f46">Immediate / future</text>
+  <rect x="848" y="412" width="72" height="20" rx="4" fill="#a7f3d0"/>
+  <text x="884" y="426" text-anchor="middle" font-size="8.5" fill="#065f46">Service area</text>
 
   <!-- Bottom note -->
   <rect x="20" y="490" width="920" height="70" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1.2"/>
