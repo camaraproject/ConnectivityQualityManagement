@@ -27,7 +27,7 @@
 
   <rect x="392" y="56" width="166" height="72" rx="4" fill="#E1F5EE" stroke="#0F6E56" stroke-width="0.5"/>
   <text x="475" y="85" text-anchor="middle" font-size="14" font-weight="500" fill="#085041">QoD API</text>
-  <text x="475" y="105" text-anchor="middle" font-size="12" fill="#0F6E56">QoS session active</text>
+  <text x="475" y="105" text-anchor="middle" font-size="12" fill="#0F6E56">QoS Session active</text>
 
   <!-- Row 2: Long-lived -->
   <rect x="142" y="142" width="120" height="72" rx="4" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>

@@ -35,11 +35,11 @@
   <rect x="200" y="68" width="172" height="44" rx="10" fill="#0ea5e9"/>
   <rect x="200" y="98" width="172" height="14" fill="#0ea5e9"/>
   <text x="286" y="88" text-anchor="middle" font-size="11" font-weight="700" fill="white">ON-DEMAND</text>
-  <text x="286" y="102" text-anchor="middle" font-size="9" fill="#bae6fd">Immediate QoS session</text>
+  <text x="286" y="102" text-anchor="middle" font-size="9" fill="#bae6fd">Immediate QoS Session</text>
 
   <rect x="216" y="124" width="140" height="34" rx="6" fill="white" stroke="#7dd3fc" stroke-width="1"/>
   <text x="286" y="138" text-anchor="middle" font-size="9" fill="#0369a1">Request a time-bounded</text>
-  <text x="286" y="151" text-anchor="middle" font-size="9" fill="#0369a1">QoS session immediately</text>
+  <text x="286" y="151" text-anchor="middle" font-size="9" fill="#0369a1">QoS Session immediately</text>
 
   <rect x="216" y="168" width="140" height="28" rx="6" fill="white" stroke="#0ea5e9" stroke-width="1.2"/>
   <text x="286" y="187" text-anchor="middle" font-size="10" font-weight="600" fill="#0369a1">quality-on-demand</text>

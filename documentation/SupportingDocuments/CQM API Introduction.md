@@ -53,7 +53,7 @@ The following concepts describe what an API consumer sees and works with, rather
 | Connectivity quality | The level of connectivity experience needed for a given usage context. It may be described through connectivity-performance characteristics such as throughput, latency, priority or jitter. | It is the API consumer-facing concept that explains what the consumer wants to obtain when best-effort connectivity is not sufficient. In CQM, such connectivity-performance characteristics are typically defined as part of a `qos-profile`. |
 | QoS Profile | A reusable description of offered connectivity-performance characteristics. | It is the common reference used across all CQM APIs when requesting, assigning or reserving defined connectivity quality. The timing of its activation — immediately or at a future point — depends on which API family is used. |
 | Discovery of capabilities | The ability to retrieve information about the offered QoS Profiles, network profiles or eligible service areas before requesting or reserving them. | It allows the CSP to make its available capabilities visible to API consumers, who can then use them without needing to know internal network topology. |
-| QoS session | A time-bounded instantiation of a QoS Profile for one or more application flows associated with a device. | It explains temporary QoS treatment, either requested on demand (using the `quality-on-demand` API) or in-future (using one of the reservation APIs). |
+| QoS Session | A time-bounded instantiation of a QoS Profile for one or more application flows associated with a device. | It explains temporary QoS treatment, either requested on demand (using the `quality-on-demand` API) or in-future (using one of the reservation APIs). |
 | Provisioned QoS assignment | A QoS Profile associated with a device and applied to all its traffic whenever the device connects to the access network, until the assignment is revoked. | It explains `qos-provisioning`: persistent device-level configuration (like a _premium subscription_) rather than a time-bounded session requested at the moment of use. |
 | Connectivity quality booking | Provides confidence that the QoS Profile is usable by the requesting API consumer for a given time window and, where the API allows, a defined service area. This confidence is strongest for a future-dated booking, where the CSP has lead time to confirm availability ahead of use; a booking requested for immediate start has little or no such lead time and behaves closer to an on-demand request. | It explains `qos-booking`, `qos-booking-and-assignment` and `dedicated-network`. Through the booking, the API consumer gets confidence that the QoS Profile is usable. The CSP decides whether it can be confirmed. The minimum time between a reservation request and its confirmation/activation is defined by the CSP. Device assignment may be included in the booking or managed separately, depending on the API. |
 | Service area | The geographic area where requested or booked connectivity quality is expected to apply. | It gives the API consumer an understandable geographic abstraction while keeping operator-internal topology hidden. |
@@ -81,10 +81,10 @@ A live-event context can create different connectivity needs depending on the pr
 | Illustrative live-event situation | Concrete API consumer need | Illustrative applicable CQM tool(s) | What matters to the API consumer |
 | --- | --- | --- | --- |
 | Before the event | Planning of needed connectivity quality, i.e. which QoS Profiles, network profiles or eligible service areas the CSP exposes | `qos-profiles`, `dedicated-network-profiles` and, where exposed, service-area discovery | Understand and decide which connectivity options can be referenced before requesting or reserving them, reducing the risk for errors or rejections. |
-| A reporter or contributor starts an unplanned live uplink | Request defined connectivity quality immediately, or obtain immediate / near-term visibility that the needed QoS Profile can be supported at the current device location | `quality-on-demand` for an immediate time-bounded QoS session bound to specific application data flows; `qos-provisioning` if the device already has a persistent QoS assignment in place; `qos-booking` or `qos-booking-and-assignment` where the CSP supports an immediate booking, followed by QoS session establishment; `dedicated-network` by creating a network with an available profile and granting device access immediately, followed by QoS session establishment | Obtain a QoS session or a confirmed immediate booking for the selected QoS Profile under the current conditions. The request may not succeed, or may later be withdrawn, if the network cannot fulfil the requested quality. |
+| A reporter or contributor starts an unplanned live uplink | Request defined connectivity quality immediately, or obtain immediate / near-term visibility that the needed QoS Profile can be supported at the current device location | `quality-on-demand` for an immediate time-bounded QoS Session bound to specific application data flows; `qos-provisioning` if the device already has a persistent QoS assignment in place; `qos-booking` or `qos-booking-and-assignment` where the CSP supports an immediate booking, followed by QoS Session establishment; `dedicated-network` by creating a network with an available profile and granting device access immediately, followed by QoS Session establishment | Obtain a QoS Session or a confirmed immediate booking for the selected QoS Profile under the current conditions. The request may not succeed, or may later be withdrawn, if the network cannot fulfil the requested quality. |
 | A broadcaster regularly uses the same field equipment across productions | Keep a QoS Profile associated with a device whenever it connects to the access network | `qos-provisioning` for a persistent device-level QoS assignment active whenever the device connects; `dedicated-network` with `dedicated-network-accesses` where the broadcaster operates within a dedicated network environment; `qos-booking` or `qos-booking-and-assignment` where connectivity is pre-booked per production rather than persistently assigned; `quality-on-demand` where a new time-bounded session per use is acceptable | Apply a persistent device-level QoS assignment without creating a new time-bounded session for every use. Persistence of the assignment is not a universal guarantee that identical measured performance will be available at every time and location. |
-| A single-camera contribution is scheduled in advance at a known venue | Planning of the needed connectivity quality for the one device during a future time window and service area | `qos-booking`, `qos-booking-and-assignment` or `dedicated-network` to book the QoS Profile for a specific time window and service area in advance; `quality-on-demand`, where supported by the CSP offering, to establish the QoS session on the day once the booking is confirmed | Confidence that the connectivity quality for a known time and place is available. |
-| A small outside broadcast uses several devices that may be replaced during the event | Reserve connectivity first and assign or re-assign devices later | `qos-booking-and-assignment` to book connectivity for a time window and service area and manage device assignment or re-assignment within the booking; `dedicated-network` with `dedicated-network-accesses` to book connectivity for a time window and service area and grant or revoke device access as devices are replaced; `quality-on-demand`, where supported by the CSP offering, to establish the QoS session between each assigned or re-assigned device and the application server | Decouple the reservation from the final device list. The relevant tool depends on whether the scenario requires device assignment only or the management of multiple devices and/or QoS Profiles. |
+| A single-camera contribution is scheduled in advance at a known venue | Planning of the needed connectivity quality for the one device during a future time window and service area | `qos-booking`, `qos-booking-and-assignment` or `dedicated-network` to book the QoS Profile for a specific time window and service area in advance; `quality-on-demand`, where supported by the CSP offering, to establish the QoS Session on the day once the booking is confirmed | Confidence that the connectivity quality for a known time and place is available. |
+| A small outside broadcast uses several devices that may be replaced during the event | Reserve connectivity first and assign or re-assign devices later | `qos-booking-and-assignment` to book connectivity for a time window and service area and manage device assignment or re-assignment within the booking; `dedicated-network` with `dedicated-network-accesses` to book connectivity for a time window and service area and grant or revoke device access as devices are replaced; `quality-on-demand`, where supported by the CSP offering, to establish the QoS Session between each assigned or re-assigned device and the application server | Decouple the reservation from the final device list. The relevant tool depends on whether the scenario requires device assignment only or the management of multiple devices and/or QoS Profiles. |
 | A complex production uses live video, intercom, preview feeds and operational traffic in the same venue | Use a reserved connectivity environment where several QoS Profiles and device-access rules may be available | `dedicated-network` with `dedicated-network-profiles` and `dedicated-network-accesses` to reserve a multi-profile connectivity environment and manage device access; `dedicated-network-areas` where service area management within the venue is needed; `quality-on-demand` to activate QoS sessions per device and application flow within the environment | Manage a reserved connectivity environment with multiple QoS Profiles and related conditions. Where supported by the CSP offering, `quality-on-demand` may activate QoS sessions dynamically within that environment. |
 
 The same logic can be transposed to adjacent scenarios such as a festival, a pop-up store, temporary point-of-sale terminals or short-term enterprise connectivity at a site.
@@ -100,7 +100,7 @@ This journey is illustrative. It does **not** imply that every scenario uses eve
 | `qos-profiles` | Discovery / support | n/a | n/a | Optional device filter | Catalogue of QoS Profiles |
 | `dedicated-network-profiles` | Discovery / support | n/a | n/a | n/a | Catalogue of network profiles |
 | Service-area discovery (`dedicated-network-areas` *(preview capability)*) | Discovery / support | n/a | Catalogue of eligible service areas | n/a | Associates areas with supported QoS Profiles and/or network profiles |
-| `quality-on-demand` | On-demand QoS session | Immediate, session duration | Not an explicit request dimension | Application flows associated with a device | One QoS Profile per session |
+| `quality-on-demand` | On-demand QoS Session | Immediate, session duration | Not an explicit request dimension | Application flows associated with a device | One QoS Profile per session |
 | `qos-provisioning` | Provisioned QoS assignment | Persists until revoked | No explicit service area in the API contract | Device | One QoS Profile assignment |
 | `qos-booking` | Reservation-based | Time window (immediate or future) | Defined service area | One device per booking | One QoS Profile per booking |
 | `qos-booking-and-assignment` | Reservation-based | Time window (immediate or future) | Defined service area | Devices managed separately via assignment | One QoS Profile per booking |
@@ -117,7 +117,7 @@ The CQM APIs can be grouped by purpose:
   - `dedicated-network-profiles`
   - service-area discovery (`dedicated-network-areas`, preview capability)
 
-- **On-demand QoS session establishment** — request a defined QoS session for immediate, time-bounded use:
+- **On-demand QoS Session establishment** — request a defined QoS Session for immediate, time-bounded use:
   - `quality-on-demand`
 
 - **Provisioned QoS assignment** — associate a QoS Profile with a device and apply it to all its traffic whenever the device connects, until the assignment is revoked:
@@ -167,18 +167,18 @@ Each API is explained through the need it addresses, what it controls or exposes
 | API consumer takeaway | This optional preview capability helps the API consumer select an eligible service area without understanding internal network topology. |
 | Not to be confused with | A generic coverage map, a guarantee that any arbitrary area can support the requested profile, or the creation of a booking or dedicated network. |
 
-### 6.2 On-demand QoS session establishment
+### 6.2 On-demand QoS Session establishment
 
 #### `quality-on-demand` — Immediate, time-bounded QoS sessions
 
 | Aspect | Explanation |
 | --- | --- |
 | Need addressed | The API consumer needs defined connectivity quality immediately for one or more application data flows between a device and application server(s). |
-| What it controls | A QoS session associated with a QoS Profile and a defined duration. |
+| What it controls | A QoS Session associated with a QoS Profile and a defined duration. |
 | API consumer takeaway | This is the immediate “apply a QoS Profile now, for a bounded duration” tool. |
 | Not to be confused with | Future reservations, persistent QoS assignment, multi-device assignment or reserved connectivity environments. |
 
-A QoS session may not become available, or may later become unavailable, if the network cannot fulfil the requested QoS Profile under the current conditions.
+A QoS Session may not become available, or may later become unavailable, if the network cannot fulfil the requested QoS Profile under the current conditions.
 
 ### 6.3 Provisioned QoS assignment
 
@@ -188,7 +188,7 @@ A QoS session may not become available, or may later become unavailable, if the 
 | --- | --- |
 | Need addressed | A device needs to remain associated with a QoS Profile beyond a time-bounded session. |
 | What it controls | A QoS-profile assignment configured in advance and applied whenever the device connects to the access network, until the assignment is revoked. |
-| API consumer takeaway | The key distinction from `quality-on-demand` is persistence: the API consumer does not need to create a new QoS session every time the device reconnects. |
+| API consumer takeaway | The key distinction from `quality-on-demand` is persistence: the API consumer does not need to create a new QoS Session every time the device reconnects. |
 | Not to be confused with | A universal guarantee that identical measured performance will be available at every time and location, or with a future time-and-area reservation. |
 
 ### 6.4 Reservation-based connectivity quality
@@ -222,7 +222,7 @@ In the Dedicated Networks family, a network profile describes the capabilities f
 | Need addressed | The API consumer needs to book connectivity quality — for immediate or future use — without binding devices at the time of the booking. This can be done for a scenario that may require one or multiple QoS Profiles. |
 | What it controls | A connectivity booking based on a network profile, within which one or more QoS Profiles can be made available. Device assignment is managed separately via the `dedicated-network-accesses` API. |
 | API consumer takeaway | Like other booking APIs, `dedicated-network` provides confidence that the QoS Profile is usable by the requesting API consumer. It is relevant when the scenario requires not to bind devices at booking time — allowing separation between the connectivity booking and the devices that will use it — and when the scenario may require one or multiple QoS Profiles within a single booking. As with `qos-booking`, this confidence is strongest when the booking targets a future start time.|
-| Not to be confused with | A booking that binds devices at booking time, or an on-demand QoS session. |
+| Not to be confused with | A booking that binds devices at booking time, or an on-demand QoS Session. |
 
 Where supported by the CSP offering, `quality-on-demand` may be used once the dedicated network is active to create QoS sessions dynamically using the QoS Profiles made available by the relevant network profile.
 
@@ -242,7 +242,7 @@ Where supported by the CSP offering, `quality-on-demand` may be used once the de
 | `qos-profiles` | Discovery / support | n/a | n/a | Optional device filter | Catalogue of QoS Profiles |
 | `dedicated-network-profiles` | Discovery / support | n/a | n/a | n/a | Catalogue of network profiles |
 | Service-area discovery (`dedicated-network-areas`, preview capability) | Discovery / support | n/a | Catalogue of eligible service areas | n/a | Associates areas with supported QoS Profiles and/or network profiles |
-| `quality-on-demand` | On-demand QoS session | Immediate, session duration | Not an explicit request dimension | Application flows associated with a device | One QoS Profile per session |
+| `quality-on-demand` | On-demand QoS Session | Immediate, session duration | Not an explicit request dimension | Application flows associated with a device | One QoS Profile per session |
 | `qos-provisioning` | Provisioned QoS assignment | Persists until revoked | No explicit service area in the API contract | Device | One QoS Profile assignment |
 | `qos-booking` | Reservation-based | Time window (immediate or future)* | Defined service area | One device per booking | One QoS Profile per booking |
 | `qos-booking-and-assignment` | Reservation-based | Time window (immediate or future)* | Defined service area | Requested number of devices assigned to or released from a booking | One QoS Profile per booking |
@@ -275,7 +275,7 @@ Discovery APIs help API consumers understand what is available. On-demand and lo
 
 3. **Do not turn the portfolio into a strict decision tree.** The same scenario may be addressed differently depending on the API consumer need, CSP offering and market context.
 
-4. **Match the API tool to the actual need**. Some needs require a QoS session; others require a long-lived assignment, a planned booking, device assignment or a reserved multi-profile environment.
+4. **Match the API tool to the actual need**. Some needs require a QoS Session; others require a long-lived assignment, a planned booking, device assignment or a reserved multi-profile environment.
 
 5. **Distinguish API processing from service availability.** A successfully processed API request does not necessarily mean that the requested connectivity quality is available. API consumers should rely on resource status and status changes to understand the outcome.
 
@@ -318,7 +318,7 @@ For business-critical operations, many ASPs prefer **planned stability**: a prac
 
 ASPs may be concerned about:
 
-- the impact of **not obtaining** the requested connectivity service, such as a QoS session, booking or reserved connectivity environment, at the required time and place;
+- the impact of **not obtaining** the requested connectivity service, such as a QoS Session, booking or reserved connectivity environment, at the required time and place;
 - the impact of **not maintaining** the requested connectivity quality during the execution of the service.
 
 ### Use-case references and CQM aspects illustrated
