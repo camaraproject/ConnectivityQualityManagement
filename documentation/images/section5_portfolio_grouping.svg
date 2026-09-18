@@ -120,7 +120,7 @@
 
   <!-- LINE 1: Tags describing the scope -->
   <rect x="584" y="382" width="72" height="20" rx="4" fill="#fde68a"/>
-  <text x="620" y="396" text-anchor="middle" font-size="8.5" fill="#92400e">1-N devices</text>
+  <text x="620" y="396" text-anchor="middle" font-size="8.5" fill="#92400e">1 or N devices</text>
   <rect x="660" y="382" width="72" height="20" rx="4" fill="#fde68a"/>
   <text x="696" y="396" text-anchor="middle" font-size="8.5" fill="#92400e">1 profile</text>
 
