@@ -35,11 +35,11 @@
   <rect x="200" y="68" width="172" height="44" rx="10" fill="#0ea5e9"/>
   <rect x="200" y="98" width="172" height="14" fill="#0ea5e9"/>
   <text x="286" y="88" text-anchor="middle" font-size="11" font-weight="700" fill="white">ON-DEMAND</text>
-  <text x="286" y="102" text-anchor="middle" font-size="9" fill="#bae6fd">Immediate QoS session</text>
+  <text x="286" y="102" text-anchor="middle" font-size="9" fill="#bae6fd">Immediate QoS Session</text>
 
   <rect x="216" y="124" width="140" height="34" rx="6" fill="white" stroke="#7dd3fc" stroke-width="1"/>
   <text x="286" y="138" text-anchor="middle" font-size="9" fill="#0369a1">Request a time-bounded</text>
-  <text x="286" y="151" text-anchor="middle" font-size="9" fill="#0369a1">QoS session immediately</text>
+  <text x="286" y="151" text-anchor="middle" font-size="9" fill="#0369a1">QoS Session immediately</text>
 
   <rect x="216" y="168" width="140" height="28" rx="6" fill="white" stroke="#0ea5e9" stroke-width="1.2"/>
   <text x="286" y="187" text-anchor="middle" font-size="10" font-weight="600" fill="#0369a1">quality-on-demand</text>
@@ -47,7 +47,7 @@
   <text x="286" y="228" text-anchor="middle" font-size="9" fill="#374151">Immediate activation</text>
   <text x="286" y="243" text-anchor="middle" font-size="9" fill="#374151">Bounded duration</text>
   <text x="286" y="258" text-anchor="middle" font-size="9" fill="#374151">Per application flow / device</text>
-  <text x="286" y="273" text-anchor="middle" font-size="9" fill="#374151">One QoS profile per session</text>
+  <text x="286" y="273" text-anchor="middle" font-size="9" fill="#374151">One QoS Profile per session</text>
 
   <rect x="216" y="316" width="140" height="44" rx="6" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1"/>
   <text x="286" y="331" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">Session may not become</text>
@@ -76,7 +76,7 @@
   <text x="466" y="228" text-anchor="middle" font-size="9" fill="#374151">Configured in advance</text>
   <text x="466" y="243" text-anchor="middle" font-size="9" fill="#374151">Applied when device connects</text>
   <text x="466" y="258" text-anchor="middle" font-size="9" fill="#374151">Persists until revoked</text>
-  <text x="466" y="273" text-anchor="middle" font-size="9" fill="#374151">One QoS profile</text>
+  <text x="466" y="273" text-anchor="middle" font-size="9" fill="#374151">One QoS Profile</text>
 
   <rect x="396" y="316" width="140" height="44" rx="6" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1"/>
   <text x="466" y="331" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">No guarantee for identical</text>
@@ -113,7 +113,7 @@
 
   <text x="656" y="278" text-anchor="middle" font-size="9" fill="#374151">Immediate or future</text>
   <text x="656" y="293" text-anchor="middle" font-size="9" fill="#374151">Defined service area</text>
-  <text x="656" y="308" text-anchor="middle" font-size="9" fill="#374151">One QoS profile</text>
+  <text x="656" y="308" text-anchor="middle" font-size="9" fill="#374151">One QoS Profile</text>
   <text x="656" y="323" text-anchor="middle" font-size="9" fill="#374151">1 device or N devices</text>
 
   <rect x="574" y="340" width="164" height="34" rx="6" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
@@ -143,7 +143,7 @@
 
   <text x="844" y="270" text-anchor="middle" font-size="9" fill="#374151">Immediate or future</text>
   <text x="844" y="285" text-anchor="middle" font-size="9" fill="#374151">Defined service area</text>
-  <text x="844" y="300" text-anchor="middle" font-size="9" fill="#374151">Multiple QoS profiles</text>
+  <text x="844" y="300" text-anchor="middle" font-size="9" fill="#374151">Multiple QoS Profiles</text>
   <text x="844" y="315" text-anchor="middle" font-size="9" fill="#374151">Multiple devices</text>
   <text x="844" y="330" text-anchor="middle" font-size="9" fill="#374151">Device-access control</text>
 
@@ -158,7 +158,7 @@
 
   <!-- Bottom note -->
   <rect x="20" y="490" width="920" height="70" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1.2"/>
-  <text x="480" y="510" text-anchor="middle" font-size="9.5" fill="#6b7280" font-style="italic">Discovery APIs do not change connectivity behaviour. On-demand and long-lived tools apply a QoS profile dynamically or persistently.</text>
+  <text x="480" y="510" text-anchor="middle" font-size="9.5" fill="#6b7280" font-style="italic">Discovery APIs do not change connectivity behaviour. On-demand and long-lived tools apply a QoS Profile dynamically or persistently.</text>
   <text x="480" y="525" text-anchor="middle" font-size="9.5" fill="#6b7280" font-style="italic">Reservation-based tools allow planning connectivity quality in advance — via booking or via a reserved multi-profile environment.</text>
   <text x="480" y="545" text-anchor="middle" font-size="9.5" fill="#6b7280" font-style="italic">Actual API availability depends on CSP offering and market context. Dashed border = preview capability. This grouping is illustrative, not prescriptive.</text>
 </svg>
