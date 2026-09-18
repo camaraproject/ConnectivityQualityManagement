@@ -61,7 +61,7 @@ The following concepts describe what an API consumer sees and works with, rather
 
 The minimum time between a connectivity quality booking request and its confirmation or activation is defined by the CSP. In practice, this may reflect the time needed to assess whether the requested connectivity quality can be supported for the given conditions, and the time needed to prepare the network for activation. For an immediate-start booking, this minimum time may be effectively zero, in which case the confidence benefit over an on-demand request is limited. API consumers should account for these aspects when planning their connectivity quality needs. The API documentation of the network provider will clarify details.
 
-The key differences between the three **connectivity quality booking APIs** concern capabilities such as targeted devices and targeted QoS profiles:
+The key differences between the three **connectivity quality booking APIs** concern capabilities such as targeted devices and targeted QoS Profiles:
 
 | API | # Devices | # QoS Profiles |
 | ---- | ---- | ---- |
@@ -144,8 +144,8 @@ Each API is explained through the need it addresses, what it controls or exposes
 
 | Aspect | Explanation |
 | --- | --- |
-| Need addressed | The API consumer needs to know which QoS profiles are available and how they are identified before requesting, assigning or reserving connectivity quality. |
-| What it exposes | Information about QoS profiles and the expected connectivity performance. |
+| Need addressed | The API consumer needs to know which QoS Profiles are available and how they are identified before requesting, assigning or reserving connectivity quality. |
+| What it exposes | Information about QoS Profiles and the expected connectivity performance. |
 | API consumer takeaway | Treat `qos-profiles` as a supporting catalogue. It does not change connectivity behaviour directly. |
 | Not to be confused with | Activating a QoS Session, reserving QoS, provisioning a device or creating a dedicated network. |
 
