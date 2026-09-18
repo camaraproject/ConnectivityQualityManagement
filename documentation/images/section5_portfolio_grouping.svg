@@ -158,9 +158,9 @@
 
   <!-- Line 1: Original tags -->
   <rect x="764" y="372" width="68" height="20" rx="4" fill="#a7f3d0"/>
-  <text x="798" y="386" text-anchor="middle" font-size="8.5" fill="#065f46">N profiles</text>
+  <text x="798" y="386" text-anchor="middle" font-size="8.5" fill="#065f46">N devices</text>
   <rect x="840" y="372" width="68" height="20" rx="4" fill="#a7f3d0"/>
-  <text x="874" y="386" text-anchor="middle" font-size="8.5" fill="#065f46">N devices</text>
+  <text x="874" y="386" text-anchor="middle" font-size="8.5" fill="#065f46">N profiles</text>
 
   <!-- Line 2: New tags -->
   <rect x="764" y="396" width="88" height="20" rx="4" fill="#a7f3d0"/>
