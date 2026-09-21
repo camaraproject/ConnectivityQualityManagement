@@ -12,17 +12,17 @@ This document explains the differences between these APIs at product and concept
 
 This whitepaper describes the Connectivity Quality Management APIs as defined in the CAMARA **Sync26 meta-release**. The APIs are published across the following repositories:
 
-| API | Repository | Status | Version Target |
-|-----|------------|--------|-----------------|
-| QoS Profiles | [QoSProfiles](https://github.com/camaraproject/QoSProfiles) | Stable | 1.x |
-| Quality on Demand | [QualityOnDemand](https://github.com/camaraproject/QualityOnDemand) | Stable | 1.x |
-| QoS Provisioning | [QualityOnDemand](https://github.com/camaraproject/QualityOnDemand) | Initial | 0.y.z |
-| QoS Booking | [QoSBooking](https://github.com/camaraproject/QoSBooking) | Initial | 0.y.z |
-| QoS Booking and Assignment | [QoSBooking](https://github.com/camaraproject/QoSBooking) | Initial | 0.y.z |
-| Dedicated Network | [DedicatedNetworks](https://github.com/camaraproject/DedicatedNetworks) | Initial | 0.y.z |
-| Dedicated Network Accesses | [DedicatedNetworks](https://github.com/camaraproject/DedicatedNetworks) | Initial | 0.y.z |
-| Dedicated Network Profiles | [DedicatedNetworks](https://github.com/camaraproject/DedicatedNetworks) | Initial | 0.y.z |
-| Dedicated Network Areas | [network-service-areas](https://github.com/camaraproject/NetworkServiceAreas) | Initial | 0.y.z |
+| API | Repository | Status |
+|-----|------------|--------|
+| QoS Profiles | [QoSProfiles](https://github.com/camaraproject/QoSProfiles) | Stable |
+| Quality on Demand | [QualityOnDemand](https://github.com/camaraproject/QualityOnDemand) | Stable |
+| QoS Provisioning | [QualityOnDemand](https://github.com/camaraproject/QualityOnDemand) | Initial |
+| QoS Booking | [QoSBooking](https://github.com/camaraproject/QoSBooking) | Initial |
+| QoS Booking and Assignment | [QoSBooking](https://github.com/camaraproject/QoSBooking) | Initial |
+| Dedicated Network | [DedicatedNetworks](https://github.com/camaraproject/DedicatedNetworks) | Initial |
+| Dedicated Network Accesses | [DedicatedNetworks](https://github.com/camaraproject/DedicatedNetworks) | Initial |
+| Dedicated Network Profiles | [DedicatedNetworks](https://github.com/camaraproject/DedicatedNetworks) | Initial |
+| Dedicated Network Areas | [network-service-areas](https://github.com/camaraproject/NetworkServiceAreas) | Initial |
 
 **Note:** `Dedicated Network Areas` is transitioning to a dedicated `network-service-areas` repository to align with CAMARA's capability-focused portfolio structure. API status definitions follow [CAMARA API Overview](https://camaraproject.org/api-overview/).
 
