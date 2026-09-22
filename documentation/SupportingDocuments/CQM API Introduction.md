@@ -81,7 +81,7 @@ While all three reservation-based APIs require or reference a service area, they
 
 **Why this matters:** The request format, data model, validation rules, and capabilities differ across these APIs. When selecting a reservation API, verify which service area model matches your operational needs. The CSP offering and market context determine which service area models are supported. Refer to each API's technical specification for detailed service-area requirements and supported geometries.
 
-**Note on `qos-booking` and `qos-booking-and-assignment` divergence:** `qos-booking` supports the `AREANAME` geometry type, but `qos-booking-and-assignment` does not. This difference may warrant clarification or alignment review within the QoSBooking working group, as it impacts API consumer selection and implementation choices between these closely related booking APIs.
+**Implementation note on service area models:** `qos-booking` supports the `AREANAME` geometry type, while `qos-booking-and-assignment` does not. In continued efforts for alignment across the CQM APIs, the [Network Service Areas](https://github.com/camaraproject/NetworkServiceAreas) repository is established to serve as a coordination point for service-area work, including the evolution of `dedicated-network-areas` and related alignment across the CQM portfolio.
 
 ## 4. Common Journey: Live Event Connectivity
 
