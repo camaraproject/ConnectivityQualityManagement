@@ -73,20 +73,6 @@ The key differences between the three **connectivity quality booking APIs** conc
 | QoS Booking and Assignment | One or more Devices | One QoS Profile |
 | Dedicated Networks | One or more Devices | One or more QoS Profiles |
 
-### Service Area Models Across Reservation APIs
-
-While all three reservation-based APIs require or reference a service area, they implement service area selection differently. An API consumer must understand that each API uses a different service area model:
-
-| API | Service Area Model |
-| --- | --- |
-| `qos-booking` | Consumer-provided geometry: CIRCLE, POLYGON, or AREANAME |
-| `qos-booking-and-assignment` | Consumer-provided geometry: CIRCLE or POLYGON only (no AREANAME) |
-| `dedicated-network` | Provider catalogue: `serviceAreaId` (UUID selected from CSP's pre-defined areas) |
-
-**Why this matters:** The request format, data model, validation rules, and capabilities differ across these APIs. When selecting a reservation API, verify which service area model matches your operational needs. The CSP offering and market context determine which service area models are supported. Refer to each API's technical specification for detailed service-area requirements and supported geometries.
-
-**Implementation note on service area models:** `qos-booking` supports the `AREANAME` geometry type, while `qos-booking-and-assignment` does not. In continued efforts for alignment across the CQM APIs, the [Network Service Areas](https://github.com/camaraproject/NetworkServiceAreas) repository is established to serve as a coordination point for service-area work, including the evolution of `dedicated-network-areas` and related alignment across the CQM portfolio.
-
 ## 4. Common Journey: Live Event Connectivity
 
 To make the portfolio easier to understand, this document uses one illustrative journey: **connectivity quality around a live event**.
