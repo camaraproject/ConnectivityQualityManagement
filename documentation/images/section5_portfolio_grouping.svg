@@ -24,10 +24,10 @@
   <rect x="36" y="240" width="140" height="28" rx="6" fill="white" stroke="#3b5bdb" stroke-width="1.2"/>
   <text x="106" y="259" text-anchor="middle" font-size="9.5" font-weight="600" fill="#3b5bdb">dedicated-network-areas</text>
 
-  <rect x="36" y="372" width="60" height="20" rx="4" fill="#dbe4ff"/>
-  <text x="66" y="386" text-anchor="middle" font-size="8.5" fill="#3b5bdb">No timing</text>
-  <rect x="106" y="372" width="56" height="20" rx="4" fill="#dbe4ff"/>
-  <text x="134" y="386" text-anchor="middle" font-size="8.5" fill="#3b5bdb">Catalog</text>
+  <rect x="36" y="429" width="60" height="20" rx="4" fill="#dbe4ff"/>
+  <text x="66" y="443" text-anchor="middle" font-size="8.5" fill="#3b5bdb">No timing</text>
+  <rect x="106" y="429" width="56" height="20" rx="4" fill="#dbe4ff"/>
+  <text x="134" y="443" text-anchor="middle" font-size="8.5" fill="#3b5bdb">Catalog</text>
 
   <!-- GROUP 2 — ON-DEMAND -->
   <rect x="200" y="68" width="172" height="400" rx="10" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="1.8"/>
@@ -43,20 +43,20 @@
   <rect x="216" y="168" width="140" height="28" rx="6" fill="white" stroke="#0ea5e9" stroke-width="1.2"/>
   <text x="286" y="187" text-anchor="middle" font-size="10" font-weight="600" fill="#0369a1">quality-on-demand</text>
 
-  <text x="286" y="228" text-anchor="middle" font-size="9" fill="#374151">Immediate activation</text>
-  <text x="286" y="243" text-anchor="middle" font-size="9" fill="#374151">Bounded duration</text>
-  <text x="286" y="258" text-anchor="middle" font-size="9" fill="#374151">Per application flow / device</text>
-  <text x="286" y="273" text-anchor="middle" font-size="9" fill="#374151">One QoS Profile per session</text>
+  <text x="286" y="287" text-anchor="middle" font-size="9" fill="#374151">Immediate activation</text>
+  <text x="286" y="302" text-anchor="middle" font-size="9" fill="#374151">Bounded duration</text>
+  <text x="286" y="332" text-anchor="middle" font-size="9" fill="#374151">Per application flow / device</text>
+  <text x="286" y="317" text-anchor="middle" font-size="9" fill="#374151">One QoS Profile per session</text>
 
-  <rect x="216" y="316" width="140" height="44" rx="6" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1"/>
-  <text x="286" y="331" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">Session may not become</text>
-  <text x="286" y="344" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">available or may get dropped,</text>
-  <text x="286" y="357" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">depending on conditions</text>
+  <rect x="216" y="363" width="140" height="44" rx="6" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1"/>
+  <text x="286" y="377" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">Session may not become</text>
+  <text x="286" y="390" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">available or may get dropped,</text>
+  <text x="286" y="403" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">depending on conditions</text>
 
-  <rect x="216" y="372" width="64" height="20" rx="4" fill="#bae6fd"/>
-  <text x="248" y="386" text-anchor="middle" font-size="8.5" fill="#0369a1">Immediate</text>
-  <rect x="288" y="372" width="56" height="20" rx="4" fill="#bae6fd"/>
-  <text x="316" y="386" text-anchor="middle" font-size="8.5" fill="#0369a1">1 device</text>
+  <rect x="216" y="429" width="64" height="20" rx="4" fill="#bae6fd"/>
+  <text x="248" y="443" text-anchor="middle" font-size="8.5" fill="#0369a1">Immediate</text>
+  <rect x="288" y="429" width="56" height="20" rx="4" fill="#bae6fd"/>
+  <text x="316" y="443" text-anchor="middle" font-size="8.5" fill="#0369a1">1 device</text>
 
   <!-- GROUP 3 — LONG-LIVED -->
   <rect x="380" y="68" width="172" height="400" rx="10" fill="#ede9fe" stroke="#8b5cf6" stroke-width="1.8"/>
@@ -72,20 +72,20 @@
   <rect x="396" y="168" width="140" height="28" rx="6" fill="white" stroke="#8b5cf6" stroke-width="1.2"/>
   <text x="466" y="187" text-anchor="middle" font-size="10" font-weight="600" fill="#6d28d9">qos-provisioning</text>
 
-  <text x="466" y="228" text-anchor="middle" font-size="9" fill="#374151">Configured in advance</text>
-  <text x="466" y="243" text-anchor="middle" font-size="9" fill="#374151">Applied when device connects</text>
-  <text x="466" y="258" text-anchor="middle" font-size="9" fill="#374151">Persists until revoked</text>
-  <text x="466" y="273" text-anchor="middle" font-size="9" fill="#374151">One QoS Profile</text>
+  <text x="466" y="287" text-anchor="middle" font-size="9" fill="#374151">Configured in advance</text>
+  <text x="466" y="302" text-anchor="middle" font-size="9" fill="#374151">Applied when device connects</text>
+  <text x="466" y="332" text-anchor="middle" font-size="9" fill="#374151">Persists until revoked</text>
+  <text x="466" y="317" text-anchor="middle" font-size="9" fill="#374151">One QoS Profile</text>
 
-  <rect x="396" y="316" width="140" height="44" rx="6" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1"/>
-  <text x="466" y="331" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">No guarantee for identical</text>
-  <text x="466" y="344" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">performance at all locations</text>
-  <text x="466" y="357" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">and all times</text>
+  <rect x="396" y="363" width="140" height="44" rx="6" fill="#f5f3ff" stroke="#c4b5fd" stroke-width="1"/>
+  <text x="466" y="377" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">No guarantee for identical</text>
+  <text x="466" y="390" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">performance at all locations</text>
+  <text x="466" y="403" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">and all times</text>
 
-  <rect x="396" y="372" width="64" height="20" rx="4" fill="#ddd6fe"/>
-  <text x="428" y="386" text-anchor="middle" font-size="8.5" fill="#6d28d9">Persistent</text>
-  <rect x="468" y="372" width="56" height="20" rx="4" fill="#ddd6fe"/>
-  <text x="496" y="386" text-anchor="middle" font-size="8.5" fill="#6d28d9">1 device</text>
+  <rect x="396" y="429" width="64" height="20" rx="4" fill="#ddd6fe"/>
+  <text x="428" y="443" text-anchor="middle" font-size="8.5" fill="#6d28d9">Persistent</text>
+  <rect x="468" y="429" width="56" height="20" rx="4" fill="#ddd6fe"/>
+  <text x="496" y="443" text-anchor="middle" font-size="8.5" fill="#6d28d9">1 device</text>
 
   <!-- RESERVATION-BASED SUPER-GROUP (x=558, w=382) -->
   <rect x="558" y="68" width="382" height="400" rx="10" fill="#fafaf9" stroke="#57534e" stroke-width="1.4"/>
@@ -103,32 +103,32 @@
   <text x="656" y="158" text-anchor="middle" font-size="9" fill="#92400e">Reserve connectivity quality</text>
   <text x="656" y="171" text-anchor="middle" font-size="9" fill="#92400e">for a defined time and area</text>
 
-  <rect x="574" y="186" width="164" height="28" rx="6" fill="white" stroke="#f59e0b" stroke-width="1.2"/>
-  <text x="656" y="205" text-anchor="middle" font-size="10" font-weight="600" fill="#92400e">qos-booking</text>
+  <rect x="574" y="203" width="164" height="28" rx="6" fill="white" stroke="#f59e0b" stroke-width="1.2"/>
+  <text x="656" y="222" text-anchor="middle" font-size="10" font-weight="600" fill="#92400e">qos-booking</text>
 
-  <rect x="574" y="220" width="164" height="28" rx="6" fill="white" stroke="#f59e0b" stroke-width="1.2"/>
-  <text x="656" y="239" text-anchor="middle" font-size="9.5" font-weight="600" fill="#92400e">qos-booking-and-assignment</text>
+  <rect x="574" y="237" width="164" height="28" rx="6" fill="white" stroke="#f59e0b" stroke-width="1.2"/>
+  <text x="656" y="256" text-anchor="middle" font-size="9.5" font-weight="600" fill="#92400e">qos-booking-and-assignment</text>
 
-  <text x="656" y="278" text-anchor="middle" font-size="9" fill="#374151">Immediate or future</text>
-  <text x="656" y="293" text-anchor="middle" font-size="9" fill="#374151">Defined service area</text>
-  <text x="656" y="308" text-anchor="middle" font-size="9" fill="#374151">One QoS Profile</text>
-  <text x="656" y="323" text-anchor="middle" font-size="9" fill="#374151">1 device or N devices</text>
+  <text x="656" y="287" text-anchor="middle" font-size="9" fill="#374151">Immediate or future</text>
+  <text x="656" y="302" text-anchor="middle" font-size="9" fill="#374151">Defined service area</text>
+  <text x="656" y="317" text-anchor="middle" font-size="9" fill="#374151">One QoS Profile</text>
+  <text x="656" y="332" text-anchor="middle" font-size="9" fill="#374151">1 device or N devices</text>
 
-  <rect x="574" y="340" width="164" height="34" rx="6" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
-  <text x="656" y="354" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">Activation timing depends</text>
-  <text x="656" y="367" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">on network operator</text>
+  <rect x="574" y="363" width="164" height="34" rx="6" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
+  <text x="656" y="377" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">Activation timing depends</text>
+  <text x="656" y="390" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">on network operator</text>
 
   <!-- LINE 1: Tags describing the scope -->
-  <rect x="584" y="382" width="72" height="20" rx="4" fill="#fde68a"/>
-  <text x="620" y="396" text-anchor="middle" font-size="8.5" fill="#92400e">1 or N devices</text>
-  <rect x="660" y="382" width="72" height="20" rx="4" fill="#fde68a"/>
-  <text x="696" y="396" text-anchor="middle" font-size="8.5" fill="#92400e">1 profile</text>
+  <rect x="584" y="407" width="72" height="20" rx="4" fill="#fde68a"/>
+  <text x="620" y="421" text-anchor="middle" font-size="8.5" fill="#92400e">1 or N devices</text>
+  <rect x="660" y="407" width="72" height="20" rx="4" fill="#fde68a"/>
+  <text x="696" y="421" text-anchor="middle" font-size="8.5" fill="#92400e">1 profile</text>
 
   <!-- LINE 2: New tags -->
-  <rect x="584" y="404" width="72" height="20" rx="4" fill="#fde68a"/>
-  <text x="620" y="418" text-anchor="middle" font-size="8.5" fill="#92400e">Immediate / future</text>
-  <rect x="660" y="404" width="72" height="20" rx="4" fill="#fde68a"/>
-  <text x="696" y="418" text-anchor="middle" font-size="8.5" fill="#92400e">Service area</text>
+  <rect x="584" y="429" width="72" height="20" rx="4" fill="#fde68a"/>
+  <text x="620" y="443" text-anchor="middle" font-size="8.5" fill="#92400e">Immediate / future</text>
+  <rect x="660" y="429" width="72" height="20" rx="4" fill="#fde68a"/>
+  <text x="696" y="443" text-anchor="middle" font-size="8.5" fill="#92400e">Service area</text>
 
   <!-- SUB-GROUP B — RESERVED ENVIRONMENT -->
   <rect x="754" y="108" width="180" height="354" rx="8" fill="#d1fae5" stroke="#059669" stroke-width="1.2"/>
@@ -136,37 +136,38 @@
   <rect x="754" y="128" width="180" height="8" fill="#059669"/>
   <text x="844" y="126" text-anchor="middle" font-size="9.5" font-weight="700" fill="white">RESERVED ENVIRONMENT</text>
 
-  <rect x="764" y="144" width="160" height="34" rx="6" fill="white" stroke="#6ee7b7" stroke-width="1"/>
-  <text x="844" y="158" text-anchor="middle" font-size="9" fill="#065f46">Multi-profile connectivity</text>
-  <text x="844" y="171" text-anchor="middle" font-size="9" fill="#065f46">environment with access control</text>
+  <rect x="764" y="144" width="160" height="51" rx="6" fill="white" stroke="#6ee7b7" stroke-width="1"/>
+  <text x="844" y="158" text-anchor="middle" font-size="9" fill="#065f46">Reserve connectivity quality</text>
+  <text x="844" y="171" text-anchor="middle" font-size="9" fill="#065f46">in single- and multi-profile</text>
+  <text x="844" y="184" text-anchor="middle" font-size="9" fill="#065f46">environment with access control</text>
 
-  <rect x="764" y="186" width="160" height="28" rx="6" fill="white" stroke="#059669" stroke-width="1.2"/>
-  <text x="844" y="205" text-anchor="middle" font-size="10" font-weight="600" fill="#065f46">dedicated-network</text>
+  <rect x="764" y="203" width="160" height="28" rx="6" fill="white" stroke="#059669" stroke-width="1.2"/>
+  <text x="844" y="222" text-anchor="middle" font-size="10" font-weight="600" fill="#065f46">dedicated-network</text>
 
-  <rect x="764" y="220" width="160" height="28" rx="6" fill="white" stroke="#059669" stroke-width="1.2"/>
-  <text x="844" y="239" text-anchor="middle" font-size="9.5" font-weight="600" fill="#065f46">dedicated-network-accesses</text>
+  <rect x="764" y="237" width="160" height="28" rx="6" fill="white" stroke="#059669" stroke-width="1.2"/>
+  <text x="844" y="256" text-anchor="middle" font-size="9.5" font-weight="600" fill="#065f46">dedicated-network-accesses</text>
 
-  <text x="844" y="270" text-anchor="middle" font-size="9" fill="#374151">Immediate or future</text>
-  <text x="844" y="285" text-anchor="middle" font-size="9" fill="#374151">Defined service area</text>
-  <text x="844" y="300" text-anchor="middle" font-size="9" fill="#374151">Multiple QoS Profiles</text>
-  <text x="844" y="315" text-anchor="middle" font-size="9" fill="#374151">Multiple devices</text>
-  <text x="844" y="330" text-anchor="middle" font-size="9" fill="#374151">Device-access control</text>
+  <text x="844" y="287" text-anchor="middle" font-size="9" fill="#374151">Immediate or future</text>
+  <text x="844" y="302" text-anchor="middle" font-size="9" fill="#374151">Defined service area</text>
+  <text x="844" y="317" text-anchor="middle" font-size="9" fill="#374151">Multiple QoS Profiles</text>
+  <text x="844" y="332" text-anchor="middle" font-size="9" fill="#374151">Multiple devices</text>
+  <text x="844" y="347" text-anchor="middle" font-size="9" fill="#374151">Device-access control</text>
 
-  <rect x="764" y="346" width="160" height="34" rx="6" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1"/>
-  <text x="844" y="360" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">May compose with QoD</text>
-  <text x="844" y="373" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">where CSP supports it</text>
+  <rect x="764" y="363" width="160" height="34" rx="6" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1"/>
+  <text x="844" y="377" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">May compose with QoD</text>
+  <text x="844" y="390" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">where CSP supports it</text>
 
   <!-- Line 1: Original tags -->
-  <rect x="772" y="390" width="72" height="20" rx="4" fill="#a7f3d0"/>
-  <text x="808" y="404" text-anchor="middle" font-size="8.5" fill="#065f46">N devices</text>
-  <rect x="848" y="390" width="72" height="20" rx="4" fill="#a7f3d0"/>
-  <text x="884" y="404" text-anchor="middle" font-size="8.5" fill="#065f46">N profiles</text>
+  <rect x="772" y="407" width="72" height="20" rx="4" fill="#a7f3d0"/>
+  <text x="808" y="421" text-anchor="middle" font-size="8.5" fill="#065f46">N devices</text>
+  <rect x="848" y="407" width="72" height="20" rx="4" fill="#a7f3d0"/>
+  <text x="884" y="421" text-anchor="middle" font-size="8.5" fill="#065f46">N profiles</text>
 
   <!-- Line 2: New tags -->
-  <rect x="772" y="412" width="72" height="20" rx="4" fill="#a7f3d0"/>
-  <text x="808" y="426" text-anchor="middle" font-size="8.5" fill="#065f46">Immediate / future</text>
-  <rect x="848" y="412" width="72" height="20" rx="4" fill="#a7f3d0"/>
-  <text x="884" y="426" text-anchor="middle" font-size="8.5" fill="#065f46">Service area</text>
+  <rect x="772" y="429" width="72" height="20" rx="4" fill="#a7f3d0"/>
+  <text x="808" y="443" text-anchor="middle" font-size="8.5" fill="#065f46">Immediate / future</text>
+  <rect x="848" y="429" width="72" height="20" rx="4" fill="#a7f3d0"/>
+  <text x="884" y="443" text-anchor="middle" font-size="8.5" fill="#065f46">Service area</text>
 
   <!-- Bottom note -->
   <rect x="20" y="490" width="920" height="70" rx="8" fill="white" stroke="#e2e8f0" stroke-width="1.2"/>
