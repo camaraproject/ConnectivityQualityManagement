@@ -110,7 +110,7 @@ This journey is illustrative. It does **not** imply that every scenario uses eve
 | `quality-on-demand` | On-demand QoS session | Immediate, session duration | Not an explicit request dimension | Application flows associated with a device | One QoS Profile per session |
 | `qos-provisioning` | Provisioned QoS assignment | Persists until revoked | No explicit service area in the API contract | Device | One QoS Profile assignment |
 | `qos-booking` | Reservation-based | Time window (immediate or future) | Defined service area | One device and identified application flows per booking | One QoS Profile per booking |
-| `qos-booking-and-assignment` | Reservation-based | Time window (immediate or future) | Defined service area | Requested number of devices assigned to or released from a booking; all device traffic | One QoS Profile per booking |
+| `qos-booking-and-assignment` | Reservation-based | Time window (immediate or future) | Defined service area | Requested number of devices assigned to or released from a booking | One QoS Profile per booking |
 | `dedicated-network` | Reservation-based | Time window (immediate or future) | Defined service area | Devices managed separately via `dedicated-network-accesses` | One or multiple QoS Profiles per booking |
 | `dedicated-network-accesses` | Device-access management | Follows the dedicated network booking lifecycle | Inherited from the dedicated network | Device-access management | Subset of network's QoS Profiles, with its own default |
 
