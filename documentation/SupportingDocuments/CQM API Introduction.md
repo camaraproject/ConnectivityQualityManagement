@@ -72,8 +72,6 @@ The key differences between the three **connectivity quality booking APIs** conc
 
 | API | # Devices | # QoS Profiles |
 | ---- | ---- | ---- |
-| QoS Booking | One Device | One QoS Profile |
-| QoS Booking and Assignment | One or more Devices | One QoS Profile |
 | `qos-booking` | One device | One QoS Profile |
 | `qos-booking-and-assignment` | One or more devices | One QoS Profile |
 | `dedicated-network` | One or more devices | One or more QoS Profiles |
