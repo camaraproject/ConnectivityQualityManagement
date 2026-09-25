@@ -270,7 +270,7 @@ The CQM portfolio is best understood as a set of API tools for different connect
 - whether a service area is part of the request
 - whether one device or several devices are involved
 - whether device assignment must be managed over time
-- whether one QoS Profile per booking is sufficient or the scenario requires multiple QoS Profiles within a single booking / booking of a reserved connectivity environment
+- whether one QoS Profile per booking is sufficient, or the scenario requires multiple QoS Profiles within one reserved connectivity environment
 
 Discovery APIs help API consumers understand what is available. On-demand and long-lived QoS tools apply a QoS Profile dynamically or persistently. Reservation-based connectivity quality tools allow the API consumer to obtain confidence for the needed connectivity quality for a defined time window. This confidence is most meaningful for a future-dated booking, where the CSP can confirm availability ahead of use; a booking requested for immediate use has less lead time for confirmation and behaves more like an on-demand request. The QoS Booking and Assignment API extends this with the ability to manage multiple device assignments within a booking, and the Dedicated Networks family further extends this with multiple QoS Profiles within a reserved environment.
 
