@@ -217,7 +217,7 @@ A successfully processed request may still indicate that the requested reservati
 | --- | --- |
 | Need addressed | Connectivity needs to be booked for a time window — which can start immediately or at a future point — and a service area, while the devices that will use it are not all known at booking time or may change. |
 | What it controls | A booking for one QoS Profile across one or more devices, together with the ability to assign and release device assignments during its lifecycle. |
-| API consumer takeaway | The booking confirmation gives the API consumer confidence that the QoS Profile will be usable for the requested number of devices, not just for the QoS Profile itself. The additional value is separating the booking from the final device list, allowing devices to be added, removed or replaced without recreating the booking. As with `qos-booking`, this confidence is strongest when the booking targets a future start time. |
+| API consumer takeaway | The booking confirmation gives the API consumer confidence that the QoS Profile will be usable for the requested number of devices. The additional value is separating the booking from the final device list, allowing devices to be added, removed or replaced without recreating the booking. As with `qos-booking`, this confidence is strongest when the booking targets a future start time. |
 | Not to be confused with | A simple per-device booking or a reserved connectivity environment that exposes multiple QoS Profiles. |
 
 #### `dedicated-network` — Reserved connectivity environment
