@@ -139,7 +139,6 @@ The CQM APIs can be grouped by purpose:
   - `qos-booking-and-assignment`
   - `dedicated-network-accesses`
 
-The core portfolio description is based on published CAMARA specifications.
 
 ## 6. API Deep Dives
 
