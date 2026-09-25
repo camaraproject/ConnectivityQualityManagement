@@ -231,7 +231,7 @@ In the Dedicated Networks family, a network profile describes the capabilities f
 | API consumer takeaway | Like other booking APIs, `dedicated-network` provides confidence that the QoS Profile is usable by the requesting API consumer. It is relevant when the scenario does not require binding devices at booking time — allowing separation between the connectivity booking and the devices that will use it — and when the scenario may require one or multiple QoS Profiles within a single booking. As with `qos-booking`, this confidence is strongest when the booking targets a future start time. |
 | Not to be confused with | A booking that binds devices at booking time, or an on-demand QoS session. |
 
-Once the dedicated network is activated, devices with granted access are served by the default QoS Profile defined in the network profile (or overridden at access level). Where supported by the CSP offering, `quality-on-demand` may be used to create QoS sessions dynamically for a different QoS Profile from those made available by the relevant network profile.
+Once the dedicated network is activated, devices with granted access are served by the default QoS Profile defined in the network profile (or overridden at access level). Where supported by the CSP offering, `quality-on-demand` may be used to create QoS sessions dynamically for another of the QoS Profiles made available by the relevant network profile.
 
 #### `dedicated-network-accesses` — Device-access management for a reserved connectivity environment
 
