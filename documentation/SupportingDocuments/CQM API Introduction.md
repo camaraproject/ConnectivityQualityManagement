@@ -17,12 +17,14 @@ This whitepaper describes the Connectivity Quality Management APIs as defined in
 | `qos-profiles` | [QoSProfiles](https://github.com/camaraproject/QoSProfiles) | Stable |
 | Quality on Demand | [QualityOnDemand](https://github.com/camaraproject/QualityOnDemand) | Stable |
 | QoS Provisioning | [QualityOnDemand](https://github.com/camaraproject/QualityOnDemand) | Initial |
-| QoS Booking | [QoSBooking](https://github.com/camaraproject/QoSBooking) | Initial |
-| QoS Booking and Assignment | [QoSBooking](https://github.com/camaraproject/QoSBooking) | Initial |
-| Dedicated Network | [DedicatedNetworks](https://github.com/camaraproject/DedicatedNetworks) | Initial |
-| Dedicated Network Accesses | [DedicatedNetworks](https://github.com/camaraproject/DedicatedNetworks) | Initial |
-| Dedicated Network Profiles | [DedicatedNetworks](https://github.com/camaraproject/DedicatedNetworks) | Initial |
-| Dedicated Network Areas | [DedicatedNetworks](https://github.com/camaraproject/DedicatedNetworks) | Initial |
+| `quality-on-demand` | [QualityOnDemand](https://github.com/camaraproject/QualityOnDemand) | Stable |
+| `qos-provisioning` | [QualityOnDemand](https://github.com/camaraproject/QualityOnDemand) | Initial |
+| `qos-booking` | [QoSBooking](https://github.com/camaraproject/QoSBooking) | Initial |
+| `qos-booking-and-assignment` | [QoSBooking](https://github.com/camaraproject/QoSBooking) | Initial |
+| `dedicated-network` | [DedicatedNetworks](https://github.com/camaraproject/DedicatedNetworks) | Initial |
+| `dedicated-network-accesses` | [DedicatedNetworks](https://github.com/camaraproject/DedicatedNetworks) | Initial |
+| `dedicated-network-profiles` | [DedicatedNetworks](https://github.com/camaraproject/DedicatedNetworks) | Initial |
+| `dedicated-network-areas` | [DedicatedNetworks](https://github.com/camaraproject/DedicatedNetworks) | Initial |
 
 **Note:** dedicated-network-areas will move to the separate [NetworkServiceAreas](https://github.com/camaraproject/NetworkServiceAreas) repository in a future release.
 
