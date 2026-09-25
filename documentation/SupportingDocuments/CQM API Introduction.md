@@ -291,7 +291,7 @@ Discovery APIs help API consumers understand what is available. On-demand and lo
 
 This whitepaper describes the Connectivity Quality Management APIs as published in the CAMARA **Sync26 meta-release** (September 2026).
 
-Each API's repository and maturity status are documented in the [API Repositories and Versions](#api-repositories-and-versions) table in Section 1.
+Each API's repository and maturity status are documented in the [The APIs within Connectivity Quality Management subproject](#the-apis-within-connectivity-quality-management-subproject) table in Section 1.
 
 Authoritative API specifications are maintained in the [CAMARA GitHub organization](https://github.com/camaraproject).
 
