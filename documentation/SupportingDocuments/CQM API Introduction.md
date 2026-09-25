@@ -24,7 +24,7 @@ This whitepaper describes the Connectivity Quality Management APIs as defined in
 | Dedicated Network Profiles | [DedicatedNetworks](https://github.com/camaraproject/DedicatedNetworks) | Initial |
 | Dedicated Network Areas | [DedicatedNetworks](https://github.com/camaraproject/DedicatedNetworks) | Initial |
 
-**Note:** `Dedicated Network Areas` is transitioning to a dedicated [`network-service-areas`](https://github.com/camaraproject/NetworkServiceAreas) repository to align with CAMARA's capability-focused portfolio structure. API status definitions follow [CAMARA API Overview](https://camaraproject.org/api-overview/).
+**Note:** dedicated-network-areas will move to the separate [NetworkServiceAreas](https://github.com/camaraproject/NetworkServiceAreas) repository in a future release.
 
 A detailed description and grouping of the CQM APIs is provided in [Section 5. CQM API Introduction and Grouping](#5-cqm-api-introduction-and-grouping).
 
