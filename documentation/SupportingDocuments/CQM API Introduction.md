@@ -8,7 +8,7 @@ For some usage contexts, an API consumer — such as an Application Service Prov
 
 This document explains the differences between these APIs at product and concept level; it is not a normative specification, a Connectivity Service Provider (CSP) implementation roadmap or a strict API selection guide, and actual API availability and supported capabilities vary by CSP and market.
 
-### The APIs within Connectivity Quality Management subproject
+### The APIs within the Connectivity Quality Management subproject
 
 This whitepaper describes the Connectivity Quality Management APIs as defined in the CAMARA **Sync26 meta-release**. The APIs are published across the following repositories:
 
@@ -24,7 +24,7 @@ This whitepaper describes the Connectivity Quality Management APIs as defined in
 | `dedicated-network-profiles` | [DedicatedNetworks](https://github.com/camaraproject/DedicatedNetworks) | Initial |
 | `dedicated-network-areas` | [DedicatedNetworks](https://github.com/camaraproject/DedicatedNetworks) | Initial |
 
-**Note:** dedicated-network-areas will move to the separate [NetworkServiceAreas](https://github.com/camaraproject/NetworkServiceAreas) repository in a future release.
+**Note:** `dedicated-network-areas` will move to the separate [NetworkServiceAreas](https://github.com/camaraproject/NetworkServiceAreas) repository in a future release. API status definitions follow the [CAMARA API Overview](https://camaraproject.org/api-overview/).
 
 A detailed description and grouping of the CQM APIs is provided in [Section 5. CQM API Introduction and Grouping](#5-cqm-api-introduction-and-grouping).
 
@@ -64,7 +64,7 @@ The following concepts describe what an API consumer sees and works with, rather
 | Service area | The geographic area where requested or booked connectivity quality is expected to apply. | It gives the API consumer an understandable geographic abstraction while keeping operator-internal topology hidden. **Note:** While there are currently some differences in how the reservation APIs implement the concept, alignment is ongoing across the CQM APIs to make the [Network Service Areas](https://github.com/camaraproject/NetworkServiceAreas) API a common solution. |
 | Device assignment | The act of linking one or more devices for the actual usage of the connectivity quality capabilities. | It explains the distinction between booking connectivity quality and determining which devices may use it. Depending on the API, device assignment can be done in the same step as the booking, or managed separately — first booking connectivity quality without binding devices, then assigning them later. |
 
-**Note on terminology:** This document uses "RESERVED" as the unified term for committed-but-not-activated states. However, the underlying CAMARA API specifications may use slightly different terms.
+**Note on terminology:** This document describes the reservation lifecycle states in plain language. The state names in the API specifications differ, for example `RESERVED` in `dedicated-network` and `SCHEDULED` in `qos-booking`.
 
 The minimum time between a connectivity quality booking request and its confirmation or activation is defined by the CSP. In practice, this may reflect the time needed to assess whether the requested connectivity quality can be supported for the given conditions, and the time needed to prepare the network for activation. For an immediate-start booking, this minimum time may be effectively zero, in which case the confidence benefit over an on-demand request is limited. API consumers should account for these aspects when planning their connectivity quality needs. The API documentation of the network provider will clarify details.
 
@@ -87,7 +87,7 @@ A live-event context can create different connectivity needs depending on the pr
 
 | Illustrative live-event situation | Concrete API consumer need | Illustrative applicable CQM tool(s) | What matters to the API consumer |
 | --- | --- | --- | --- |
-| Before the event | Planning of needed connectivity quality, i.e. which QoS Profiles, network profiles or eligible service areas the CSP exposes | `qos-profiles`, `dedicated-network-profiles` and, where exposed, service-area discovery | Understand and decide which connectivity options can be referenced before requesting or reserving them, reducing the risk for errors or rejections. |
+| Before the event | Planning of needed connectivity quality, i.e. which QoS Profiles, network profiles or eligible service areas the CSP exposes | `qos-profiles`, `dedicated-network-profiles` and, for `dedicated-network`, `dedicated-network-areas` | Understand and decide which connectivity options can be referenced before requesting or reserving them, reducing the risk for errors or rejections. |
 | A reporter or contributor starts an unplanned live uplink | Request defined connectivity quality immediately, or obtain immediate / near-term visibility that the needed QoS Profile can be supported at the current device location | `quality-on-demand` for an immediate time-bounded QoS session bound to specific application data flows; `qos-provisioning` if the device already has a persistent QoS assignment in place; `qos-booking` or `qos-booking-and-assignment` where the CSP supports an immediate booking; `dedicated-network` by creating a network with an available profile and granting device access immediately, with `quality-on-demand` if a non-default QoS Profile is needed | Obtain defined connectivity quality for the selected QoS Profile under the current conditions. The request may not succeed, or may later be withdrawn, if the network cannot fulfil the requested quality. |
 | A broadcaster regularly uses the same field equipment across productions | Keep a QoS Profile associated with a device whenever it connects to the access network | `qos-provisioning` for a persistent device-level QoS assignment active whenever the device connects; `dedicated-network` with `dedicated-network-accesses` where the broadcaster operates within a dedicated network environment; `qos-booking` or `qos-booking-and-assignment` where connectivity is pre-booked per production rather than persistently assigned; `quality-on-demand` where a new time-bounded session per use is acceptable | Apply a persistent device-level QoS assignment without creating a new time-bounded session for every use. Persistence of the assignment is not a universal guarantee that identical measured performance will be available at every time and location. |
 | A single-camera contribution is scheduled in advance at a known venue | Planning of the needed connectivity quality for the one device during a future time window and service area | `qos-booking`, `qos-booking-and-assignment` or `dedicated-network` to book the QoS Profile for a specific time window and service area in advance | Confidence that the connectivity quality for a known time and place is available. |
@@ -109,7 +109,7 @@ This journey is illustrative. It does **not** imply that every scenario uses eve
 | Service-area discovery (`dedicated-network-areas`) | Discovery / support | n/a | Catalogue of eligible service areas | n/a | Associates areas with supported QoS Profiles and/or network profiles |
 | `quality-on-demand` | On-demand QoS session | Immediate, session duration | Not an explicit request dimension | Application flows associated with a device | One QoS Profile per session |
 | `qos-provisioning` | Provisioned QoS assignment | Persists until revoked | No explicit service area in the API contract | Device | One QoS Profile assignment |
-| `qos-booking` | Reservation-based | Time window (immediate or future) | Defined service area | One device and identified application flows per booking | One QoS Profile per booking |
+| `qos-booking` | Reservation-based | Time window (immediate or future) | Defined service area | One device per booking; optionally limited to identified application flows | One QoS Profile per booking |
 | `qos-booking-and-assignment` | Reservation-based | Time window (immediate or future) | Defined service area | Requested number of devices assigned to or released from a booking | One QoS Profile per booking |
 | `dedicated-network` | Reservation-based | Time window (immediate or future) | Defined service area | Devices managed separately via `dedicated-network-accesses` | One or multiple QoS Profiles per booking |
 | `dedicated-network-accesses` | Device-access management | Follows the dedicated network booking lifecycle | Inherited from the dedicated network | Device-access management | Subset of network's QoS Profiles, with its own default |
@@ -195,7 +195,7 @@ A QoS session may not become available, or may later become unavailable, if the 
 | Need addressed | A device needs to remain associated with a QoS Profile beyond a time-bounded session. |
 | What it controls | A QoS Profile assignment configured in advance and applied whenever the device connects to the access network, until the assignment is revoked. |
 | API consumer takeaway | The key distinction from `quality-on-demand` is persistence: the API consumer does not need to create a new QoS session every time the device reconnects. |
-| Not to be confused with | A universal guarantee that identical measured performance will be available at every time and location, or with a future time-and-area reservation. |
+| Not to be confused with | A universal guarantee that identical measured performance will be available at every time and location, or a reservation for a future time window and service area. |
 
 ### 6.4 Reservation-based connectivity quality
 
@@ -250,7 +250,7 @@ Once the dedicated network is activated, devices with granted access are served 
 | Service-area discovery (`dedicated-network-areas`) | Discovery / support | n/a | Catalogue of eligible service areas | n/a | Associates areas with supported QoS Profiles and/or network profiles |
 | `quality-on-demand` | On-demand QoS session | Immediate, session duration | Not an explicit request dimension | Application flows associated with a device | One QoS Profile per session |
 | `qos-provisioning` | Provisioned QoS assignment | Persists until revoked | No explicit service area in the API contract | Device | One QoS Profile assignment |
-| `qos-booking` | Reservation-based | Time window (immediate or future)* | Defined service area | One device and identified application flows per booking | One QoS Profile per booking |
+| `qos-booking` | Reservation-based | Time window (immediate or future)* | Defined service area | One device per booking; optionally limited to identified application flows | One QoS Profile per booking |
 | `qos-booking-and-assignment` | Reservation-based | Time window (immediate or future)* | Defined service area | Requested number of devices assigned to or released from a booking | One QoS Profile per booking |
 | `dedicated-network` | Reservation-based | Time window (immediate or future)* | Defined service area | Devices managed separately via `dedicated-network-accesses` | One or multiple QoS Profiles per booking |
 | `dedicated-network-accesses` | Device-access management | Follows the dedicated network booking lifecycle | Inherited from the dedicated network | Device-access management | Subset of network's QoS Profiles, with its own default |
@@ -287,11 +287,11 @@ Discovery APIs help API consumers understand what is available. On-demand and lo
 
 6. **Describe optional mechanisms only when they are explicitly supported.** Capacity pre-checks, confidence indications or prediction mechanisms should not be presented as standard CQM behaviour unless they are explicitly supported by the API or CSP offering.
 
-### 8.3 Sources and version notes
+### 8.3 Sources and meta-release reference
 
-This whitepaper describes the Connectivity Quality Management APIs as published in the CAMARA **Sync26 meta-release** (Q4 / 2026).
+This whitepaper describes the Connectivity Quality Management APIs as published in the CAMARA **Sync26 meta-release** (Q4 2026).
 
-Each API's repository and maturity status are documented in the [The APIs within Connectivity Quality Management subproject](#the-apis-within-connectivity-quality-management-subproject) table in Section 1.
+Each API's repository and maturity status are documented in the table in [Section 1](#the-apis-within-the-connectivity-quality-management-subproject).
 
 Authoritative API specifications are maintained in the [CAMARA GitHub organization](https://github.com/camaraproject).
 
@@ -322,7 +322,7 @@ The live-event journey is informed by selected GSMA Open Gateway use cases. Thes
 
 The business-critical operations of many of the use cases listed above can be made more robust when connectivity quality is planned or reserved in advance.
 
-For business-critical operations, many ASPs prefer **planned stability**: a practical expectation that the requested connectivity quality can be available when and where it is needed. This should not be interpreted as a standardised confidence-level feature or as an unconditional guarantee. It simply reflects the API consumer’s need to understand the expected service-availability outcome.
+For business-critical operations, many ASPs prefer **planned stability**: a practical expectation that the requested connectivity quality can be available when and where it is needed. This should not be interpreted as a standardised confidence-level feature or as an unconditional guarantee. It simply reflects the API consumer's need to understand the expected service-availability outcome.
 
 ASPs may be concerned about:
 
@@ -343,7 +343,7 @@ ASPs may be concerned about:
 | [Reliable network for social media and gaming](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma_resources/reliable-network-for-social-media-and-gaming/) | Consumer or creator scenarios may require better connectivity quality under specific usage conditions. | Immediate QoS, possible planned reservation, service-availability outcomes. | The use case is broad. Social media consumption, creator live streaming and gaming sessions may lead to different CQM needs. |
 | [Immersive large events](https://www.gsma.com/solutions-and-impact/gsma-open-gateway/gsma_resources/immersive-large-events/) | Dense-event environments can create high demand for predictable connectivity quality. | Service area, planned reservation, possible Dedicated Networks. | The connectivity purpose should be clarified before mapping it to a CQM tool. For highly congested event scenarios, planned reservation may be more appropriate than relying only on on-demand availability. |
 
-## Appendix B — Related CAMARA Communication Quality APIs outside this document’s scope
+## Appendix B — Related CAMARA Communication Quality APIs outside this document's scope
 
 The CAMARA API overview includes additional APIs under the broader **Communication Quality** area. Some of them may be relevant to connectivity-quality use cases, but they are not part of the CQM portfolio explained in this document.
 
@@ -352,7 +352,7 @@ This appendix provides a short contextual reference only. It is **not** intended
 | Related API | Relationship with CQM | Why it is outside the main scope of this document |
 | --- | --- | --- |
 | [Application Profiles](https://camaraproject.org/application-profiles/) | Describes application-level requirements or thresholds that may help other APIs understand what an application needs. | It supports application requirement description, but it is not itself a CQM control, assignment or reservation API. |
-| [Connectivity Insights](https://camaraproject.org/connectivity-insights/) | Provides visibility into whether an application’s network requirements can be met for a given user session. | It is primarily an insight / assessment API, not an API for requesting, assigning or reserving connectivity quality. |
+| [Connectivity Insights](https://camaraproject.org/connectivity-insights/) | Provides visibility into whether an application's network requirements can be met for a given user session. | It is primarily an insight / assessment API, not an API for requesting, assigning or reserving connectivity quality. |
 | [Connectivity Insights Subscriptions](https://camaraproject.org/connectivity-insights-subscriptions/) | Provides event-based updates when network quality changes or when requirements may no longer be met. | It supports monitoring and notifications, not direct connectivity-quality control or reservation. |
 | [Predictive Connectivity Data](https://camaraproject.org/predictive-connectivity-data/) | Provides estimated future connectivity information for a geographic area or volume. | It supports planning and prediction, but does not reserve or assign QoS resources. |
 | [Session Insights](https://camaraproject.org/session-insights/) | Allows application KPIs such as latency, jitter, packet loss and bitrate to be shared and assessed for a session. | It is focused on session monitoring and insight, not on CQM reservation or QoS assignment. |
