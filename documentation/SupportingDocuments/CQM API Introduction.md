@@ -15,8 +15,6 @@ This whitepaper describes the Connectivity Quality Management APIs as defined in
 | API | Repository | Status |
 |-----|------------|--------|
 | `qos-profiles` | [QoSProfiles](https://github.com/camaraproject/QoSProfiles) | Stable |
-| Quality on Demand | [QualityOnDemand](https://github.com/camaraproject/QualityOnDemand) | Stable |
-| QoS Provisioning | [QualityOnDemand](https://github.com/camaraproject/QualityOnDemand) | Initial |
 | `quality-on-demand` | [QualityOnDemand](https://github.com/camaraproject/QualityOnDemand) | Stable |
 | `qos-provisioning` | [QualityOnDemand](https://github.com/camaraproject/QualityOnDemand) | Initial |
 | `qos-booking` | [QoSBooking](https://github.com/camaraproject/QoSBooking) | Initial |
