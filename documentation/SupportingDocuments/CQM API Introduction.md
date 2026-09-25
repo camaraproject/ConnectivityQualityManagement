@@ -194,7 +194,7 @@ A QoS session may not become available, or may later become unavailable, if the 
 | Aspect | Explanation |
 | --- | --- |
 | Need addressed | A device needs to remain associated with a QoS Profile beyond a time-bounded session. |
-| What it controls | A QoS-profile assignment configured in advance and applied whenever the device connects to the access network, until the assignment is revoked. |
+| What it controls | A QoS Profile assignment configured in advance and applied whenever the device connects to the access network, until the assignment is revoked. |
 | API consumer takeaway | The key distinction from `quality-on-demand` is persistence: the API consumer does not need to create a new QoS session every time the device reconnects. |
 | Not to be confused with | A universal guarantee that identical measured performance will be available at every time and location, or with a future time-and-area reservation. |
 
