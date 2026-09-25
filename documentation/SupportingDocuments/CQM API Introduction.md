@@ -8,7 +8,7 @@ For some usage contexts, an API consumer — such as an Application Service Prov
 
 This document explains the differences between these APIs at product and concept level; it is not a normative specification, a Connectivity Service Provider (CSP) implementation roadmap or a strict API selection guide, and actual API availability and supported capabilities vary by CSP and market.
 
-### API Repositories and Versions
+### The APIs within Connectivity Quality Management subproject
 
 This whitepaper describes the Connectivity Quality Management APIs as defined in the CAMARA **Sync26 meta-release**. The APIs are published across the following repositories:
 
