@@ -100,20 +100,6 @@ This journey is illustrative. It does **not** imply that every scenario uses eve
 
 ## 5. CQM API Introduction and Grouping
 
-*Table 1 — Overview of the CQM APIs*
-
-| API or capability | Category | Timing | Service area | Device model | QoS / profile model |
-| --- | --- | --- | --- | --- | --- |
-| `qos-profiles` | Discovery / support | n/a | n/a | Optional device filter | Catalogue of QoS Profiles |
-| `dedicated-network-profiles` | Discovery / support | n/a | n/a | n/a | Catalogue of network profiles |
-| Service-area discovery (`dedicated-network-areas`) | Discovery / support | n/a | Catalogue of eligible service areas | n/a | Associates areas with supported QoS Profiles and/or network profiles |
-| `quality-on-demand` | On-demand QoS session | Immediate, session duration | Not an explicit request dimension | Application flows associated with a device | One QoS Profile per session |
-| `qos-provisioning` | Provisioned QoS assignment | Persists until revoked | No explicit service area in the API contract | Device | One QoS Profile assignment |
-| `qos-booking` | Reservation-based | Time window (immediate or future) | Defined service area | One device per booking; optionally limited to identified application flows | One QoS Profile per booking |
-| `qos-booking-and-assignment` | Reservation-based | Time window (immediate or future) | Defined service area | Requested number of devices assigned to or released from a booking | One QoS Profile per booking |
-| `dedicated-network` | Reservation-based | Time window (immediate or future) | Defined service area | Devices managed separately via `dedicated-network-accesses` | One or multiple QoS Profiles per booking |
-| `dedicated-network-accesses` | Device-access management | Follows the dedicated network booking lifecycle | Inherited from the dedicated network | Device-access management | Subset of network's QoS Profiles, with its own default |
-
 The CQM APIs can be grouped by purpose:
 
 ![CQM Portfolio Grouping by Purpose](../images/section5_portfolio_grouping.svg)
@@ -139,6 +125,7 @@ The CQM APIs can be grouped by purpose:
   - `qos-booking-and-assignment`
   - `dedicated-network-accesses`
 
+A side-by-side comparison of the CQM APIs by timing, service area, device model and QoS / profile model is provided in [Section 7. Comparative Matrix and Purpose-Oriented Navigation](#7-comparative-matrix-and-purpose-oriented-navigation).
 
 ## 6. API Deep Dives
 
@@ -242,6 +229,8 @@ Once the dedicated network is activated, devices with granted access are served 
 | Not to be confused with | Discovering network profiles, creating a connectivity booking or creating the reserved connectivity environment itself. |
 
 ## 7. Comparative Matrix and Purpose-Oriented Navigation
+
+*Comparative matrix of the CQM APIs*
 
 | API or capability | Category | Timing | Service area | Device model | QoS / profile model |
 | --- | --- | --- | --- | --- | --- |
