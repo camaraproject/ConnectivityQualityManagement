@@ -27,18 +27,18 @@
   <rect x="36" y="429" width="60" height="20" rx="4" fill="#dbe4ff"/>
   <text x="66" y="443" text-anchor="middle" font-size="8.5" fill="#3b5bdb">No timing</text>
   <rect x="106" y="429" width="56" height="20" rx="4" fill="#dbe4ff"/>
-  <text x="134" y="443" text-anchor="middle" font-size="8.5" fill="#3b5bdb">Catalog</text>
+  <text x="134" y="443" text-anchor="middle" font-size="8.5" fill="#3b5bdb">Catalogue</text>
 
   <!-- GROUP 2 — ON-DEMAND -->
   <rect x="200" y="68" width="172" height="400" rx="10" fill="#e0f2fe" stroke="#0ea5e9" stroke-width="1.8"/>
   <rect x="200" y="68" width="172" height="44" rx="10" fill="#0ea5e9"/>
   <rect x="200" y="98" width="172" height="14" fill="#0ea5e9"/>
   <text x="286" y="88" text-anchor="middle" font-size="11" font-weight="700" fill="white">ON-DEMAND</text>
-  <text x="286" y="102" text-anchor="middle" font-size="9" fill="#bae6fd">Immediate QoS Session</text>
+  <text x="286" y="102" text-anchor="middle" font-size="9" fill="#bae6fd">Immediate QoS session</text>
 
   <rect x="216" y="124" width="140" height="34" rx="6" fill="white" stroke="#7dd3fc" stroke-width="1"/>
   <text x="286" y="138" text-anchor="middle" font-size="9" fill="#0369a1">Request a time-bounded</text>
-  <text x="286" y="151" text-anchor="middle" font-size="9" fill="#0369a1">QoS Session immediately</text>
+  <text x="286" y="151" text-anchor="middle" font-size="9" fill="#0369a1">QoS session immediately</text>
 
   <rect x="216" y="168" width="140" height="28" rx="6" fill="white" stroke="#0ea5e9" stroke-width="1.2"/>
   <text x="286" y="187" text-anchor="middle" font-size="10" font-weight="600" fill="#0369a1">quality-on-demand</text>
@@ -116,7 +116,7 @@
 
   <rect x="574" y="363" width="164" height="34" rx="6" fill="#fffbeb" stroke="#fcd34d" stroke-width="1"/>
   <text x="656" y="377" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">Activation timing depends</text>
-  <text x="656" y="390" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">on network operator</text>
+  <text x="656" y="390" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">on CSP</text>
 
   <!-- LINE 1: Tags describing the scope -->
   <rect x="584" y="407" width="72" height="20" rx="4" fill="#fde68a"/>
@@ -154,8 +154,8 @@
   <text x="844" y="347" text-anchor="middle" font-size="9" fill="#374151">Device-access control</text>
 
   <rect x="764" y="363" width="160" height="34" rx="6" fill="#ecfdf5" stroke="#6ee7b7" stroke-width="1"/>
-  <text x="844" y="377" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">May compose with QoD</text>
-  <text x="844" y="390" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">where CSP supports it</text>
+  <text x="844" y="377" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">Default profile applies;</text>
+  <text x="844" y="390" text-anchor="middle" font-size="8.5" fill="#6b7280" font-style="italic">QoD for other profiles</text>
 
   <!-- Line 1: Original tags -->
   <rect x="772" y="407" width="72" height="20" rx="4" fill="#a7f3d0"/>
